@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/login.css" />
+
+    <title>Log In</title>
+</head>
+
+<body>
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+
+        <div class="brand_name">EmpowerEd</div>
+        <div class="tagline">Inclusive Learning for Everyone</div>
+
+        <div class="form-container">
+
+            <h2>Login Account</h2>
+
+            <!-- ROLE TOGGLE -->
+            <div class="role-toggle" role="group" aria-label="Select role">
+                <button class="role-btn active" data-role="student" aria-pressed="true">
+                    Student
+                </button>
+                <button class="role-btn" data-role="teacher" aria-pressed="false">
+                    Teacher
+                </button>
+            </div>
+
+            <!-- FORM START -->
+            <form id="loginForm">
+
+                <!-- EMAIL -->
+                <label for="email">Email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                />
+
+                <!-- PASSWORD -->
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                />
+
+                <button type="submit" class="login-button">
+                    Log In
+                </button>
+
+            </form>
+            <!-- FORM END -->
+
+            <p class="signup-text">
+                Don't have an account? 
+                <a href="#">Sign Up</a>
+            </p>
+
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+        <h1>Think.<br>Learn.<br>Achieve.</h1>
+        <p>We make it possible for everyone</p>
+    </div>
+
+    <!-- JS -->
+    <script src="script/login.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class ="navbar">
+        <div class="brand">
+            <div class="logo-icon">
+                <img src="assets/logo.png" alt="EmpowerED logo" />
+            </div>
+            <div class ="logo">
+                 <h3> Empowered</h3>
+                 <span> Think. Learn. Achieve. </span>
+            </div>
+        </div>
+        
+        <!-- Accessibility Menu and Profile Button -->
+        <div class="nav-controls">
+            <div class="accessibility-menu">
+                <button class="accessibility-button" aria-expanded="false" aria-controls="accessibility-panel">Accessibility</button>
+                <div id="accessibility-panel" class="accessibility-panel" role="region" aria-label="Accessibility options">
+                    <h2>Accessibility Settings</h2>
+                    <div class="feature-group" aria-label="Text size">
+                        <label>Text Size</label>
+                        <button type="button" class="text-size-button" data-size="small">Small</button>
+                        <button type="button" class="text-size-button active" data-size="medium">Medium</button>
+                        <button type="button" class="text-size-button" data-size="large">Large</button>
+                    </div>
+                    <div class="feature-group" aria-label="Contrast settings">
+                        <label>Contrast</label>
+                        <button type="button" class="contrast-button active" data-contrast="normal">Normal</button>
+                        <button type="button" class="contrast-button" data-contrast="high">High Contrast</button>
+                    </div>
+                </div>
+            </div>
+            <div class ="Profile"> 
+                <button class="profile-button">Profile</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Courses -->
+
+    <section class ="hero">
+        <h2>My Courses</h2>
+        <p>Welcome to your Learning Dashboard! Select a Course to continue your studies!</p>
+    </section>
+
+    <section class="courses">
+    <div class="course-card" data-total-tasks="8" data-completed-tasks="0">
+        <div class="course-card-header">
+            <div class="course-card-icon">
+                <img src="assets/Math.png" alt="Mathematics icon" />
+            </div>
+            <div class="course-card-title">
+                <h2>Mathematics</h2>
+                <p class="course-meta">8 modules</p>
+            </div>
+        </div>
+
+        <p class="course-description">
+            Explore the world of numbers, equations, and problem-solving with our comprehensive math courses.
+        </p>
+
+        <div class="course-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <span class="progress-text" id="progress-text">0% Complete</span>
+        </div>
+    </div>
+</section>
+
+<script src="script/index.js"></script>
+
+</body>
+</html>

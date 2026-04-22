@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: #F4F6FB; /* softer than white */
+}
+
+/* Layout */
+.left, .right {
+    flex: 1;
+}
+
+/* ================= RIGHT SIDE ================= */
+.right {
+    background: linear-gradient(135deg, #2F4B7C, #4A90E2);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+}
+
+.right h1 {
+    font-size: 52px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.right p {
+    font-size: 18px;
+    opacity: 0.9;
+    
+}
+
+/* ================= LEFT SIDE ================= */
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+}
+
+/* Branding */
+.brand_name {
+    font-size: 30px;
+    font-weight: bold;
+    color: #1E2A4A;
+    margin-bottom: 8px;
+}
+
+.tagline {
+    font-size: 15px;
+    color: #5F6B7A;
+    margin-bottom: 30px;
+}
+
+/* ================= FORM ================= */
+.form-container {
+    width: 100%;
+    max-width: 420px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.left .form-container h2 {
+    font-size: 22px;
+    margin-bottom: 30px;
+    color: #2F4B7C;
+    text-align: center;
+}
+
+/* ================= ROLE TOGGLE ================= */
+.role-toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.role-toggle button {
+    flex: 1;
+    height: 48px;
+    border-radius: 8px;
+    border: 2px solid #D6DCEE;
+    background: transparent;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: #2F4B7C;
+    transition: all 0.2s ease;
+}
+
+/* Hover */
+.role-toggle button:hover {
+    background: #EEF3FF;
+}
+
+/* ACTIVE (important for accessibility) */
+.role-toggle button.active {
+    background: #2F4B7C;
+    color: white;
+    border-color: #2F4B7C;
+}
+
+/* ================= INPUT ================= */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #D6DCEE;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+/* Placeholder visibility */
+input::placeholder {
+    color: #8A94A6;
+}
+
+/* Focus state (VERY IMPORTANT) */
+input:focus {
+    outline: none;
+    border-color: #4A90E2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* ================= BUTTON ================= */
+.login-button {
+    width: 100%;
+    height: 48px;
+    margin-top: 10px;
+    background: #2F4B7C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+/* Hover */
+.login-button:hover {
+    background: #1E2A4A;
+    transform: translateY(-2px);
+}
+
+/* Signup */
+p.signup-text {
+    text-align: center;
+    margin-top: 20px;
+    color: black;
+    font-weight: 500;
+    display: block;
+}
+
+p.signup-text a {
+    color: #2F4B7C;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+/* ================= ACCESSIBILITY ================= */
+/* Keyboard focus for ALL elements */
+button:focus,
+a:focus {
+    outline: 3px solid #F6D365;
+    outline-offset: 2px;
+}
