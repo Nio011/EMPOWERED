@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="styles/course.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class ="navbar">
+        <div class="brand">
+            <div class="logo-icon">
+                <img src="assets/logo.png" alt="EmpowerED logo" />
+            </div>
+            <div class ="logo">
+                 <h3> Empowered</h3>
+                 <span> Think. Learn. Achieve. </span>
+            </div>
+        </div>
+        
+        <!-- Accessibility Menu and Profile Button -->
+        <div class="nav-controls">
+            <div class="accessibility-menu">
+                <button class="accessibility-button" aria-expanded="false" aria-controls="accessibility-panel">Accessibility</button>
+                <div id="accessibility-panel" class="accessibility-panel" role="region" aria-label="Accessibility options">
+                    <h2>Accessibility Settings</h2>
+                    <div class="feature-group" aria-label="Text size">
+                        <label>Text Size</label>
+                        <button type="button" class="text-size-button" data-size="small">Small</button>
+                        <button type="button" class="text-size-button active" data-size="medium">Medium</button>
+                        <button type="button" class="text-size-button" data-size="large">Large</button>
+                    </div>
+                    <div class="feature-group" aria-label="Contrast settings">
+                        <label>Contrast</label>
+                        <button type="button" class="contrast-button active" data-contrast="normal">Normal</button>
+                        <button type="button" class="contrast-button" data-contrast="high">High Contrast</button>
+                    </div>
+                </div>
+            </div>
+            <div class ="Profile"> 
+                <button class="profile-button">Profile</button>
+            </div>
+        </div>
+    </div>
+
+     <!--Button to go back to homepage-->
+        <div class="back-button-container">
+            <a href="index.html" class="back-button">Back to My Courses</a>
+        </div>
+
+    <section class ="hero">
+        <h2>Mathematics </h2>
+        <p> Explore the world of numbers, equations, and problem-solving with our comprehensive math courses.</p>
+    </section>
+
+    <section class ="feature-buttons">
+        <div class ="feature-cards">
+            <div class="feature-card-header">
+                <div class ="image-container">
+                    <img src="assets/Announcements.png" alt="Announcement Icon">
+                </div>
+                <div class="feature-card-title">
+                    <h2>Announcements</h2>
+                    <p class="feature-description">View important announcements and updates.</p>
+                </div>
+            </div>
+        </div>
+        <div class ="feature-cards">
+            <div class="feature-card-header">
+                <div class ="image-container">
+                    <img src="assets/Modules.png" alt="Modules Icon">
+                </div>
+                <div class="feature-card-title">
+                    <h2>Modules</h2>
+                    <p class="feature-description">Access course modules and learning materials.</p>
+                </div>
+            </div>
+        </div>
+        <div class ="feature-cards">
+            <div class="feature-card-header">
+                <div class ="image-container">
+                    <img src="assets/ModulesVid.png" alt="Modules Video Icon">
+                </div>
+                <div class="feature-card-title">
+                    <h2>Video Modules</h2>
+                    <p class="feature-description">Watch recorded lectures and video content.</p>
+                </div>
+            </div>
+        </div>
+        <div class ="feature-cards">
+            <div class="feature-card-header">
+                <div class ="image-container">
+                    <img src="assets/Assignments.png" alt="Assignments Icon">
+                </div>
+                <div class="feature-card-title">
+                    <h2>Assignments</h2>
+                    <p class="feature-description">View and submit assignments for grading.</p>
+                </div>
+            </div> 
+    </section>
+
+   
+</body>
+</html>
