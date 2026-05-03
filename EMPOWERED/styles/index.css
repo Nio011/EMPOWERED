@@ -401,6 +401,12 @@ body.high-contrast .course-progress .progress-fill {
     background: #FFD700;
 }
 
+body.high-contrast footer {
+    background: #1A1A1A;
+    color: #FFFFFF;
+    border-top: 2px solid #FFD700;
+}
+
 /*My courses */
 .hero {
     padding: 2rem;
@@ -502,4 +508,12 @@ body.high-contrast .course-progress .progress-fill {
 .progress-text {
     font-size: 0.875rem;
     color: #6b7280;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #1E2A4A;
+    color: #ffffff;
+    margin-top: auto;
 }

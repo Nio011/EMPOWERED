@@ -391,6 +391,12 @@ body.high-contrast .back-button:hover {
     color: #FFD700;
 }
 
+body.high-contrast footer {
+    background: #1A1A1A;
+    color: #FFFFFF;
+    border-top: 2px solid #FFD700;
+}
+
 
 /*buttons*/
 .hero {
@@ -419,6 +425,7 @@ body.high-contrast .back-button:hover {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     max-width: 1200px;
+    margin-bottom: 3rem;
 }
 
 .feature-cards {
@@ -482,4 +489,13 @@ body.high-contrast .back-button:hover {
 
 .back-button:hover {
     color: #2563eb;
+}
+
+footer {
+    margin-top: 10rem;
+    text-align: center;
+    padding: 1rem;
+    background: #1E2A4A;
+    color: #ffffff;
+    margin-top: auto;
 }
