@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
+    <!-- IMPORTANT: must be on every pages (COPY THIS) -->
     <!-- Navigation Bar -->
     <div class ="navbar">
         <div class="brand">
@@ -29,15 +30,25 @@
                 <div id="accessibility-panel" class="accessibility-panel" role="region" aria-label="Accessibility options">
                     <h2>Accessibility Settings</h2>
                     <div class="feature-group" aria-label="Text size">
-                        <label>Text Size</label>
-                        <button type="button" class="text-size-button" data-size="small">Small</button>
-                        <button type="button" class="text-size-button active" data-size="medium">Medium</button>
-                        <button type="button" class="text-size-button" data-size="large">Large</button>
+                        <label>
+                            Font Size
+                        </label>
+                        <div class="button-group">
+                            <button type="button" class="text-size-button" data-size="small">Small</button>
+                            <button type="button" class="text-size-button active" data-size="medium">Medium</button>
+                            <button type="button" class="text-size-button" data-size="large">Large</button>
+                        </div>
                     </div>
                     <div class="feature-group" aria-label="Contrast settings">
-                        <label>Contrast</label>
-                        <button type="button" class="contrast-button active" data-contrast="normal">Normal</button>
-                        <button type="button" class="contrast-button" data-contrast="high">High Contrast</button>
+                        <!-- High Contrast Mode Toggle -->
+                        <label>
+                            High Contrast Mode
+                        </label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="high-contrast-toggle" class="contrast-button" data-contrast="high">
+                            <label for="high-contrast-toggle" class="toggle-label"></label>
+                        </div>
+                        <p class="contrast-description">Enhanced contrast for better visibility</p>
                     </div>
                 </div>
             </div>
@@ -46,6 +57,7 @@
             </div>
         </div>
     </div>
+    <!-- END HERE -->
 
     <!-- Courses -->
 
@@ -79,6 +91,7 @@
     </div>
 </section>
 
+<script src="script/accessibility-settings.js"></script>
 <script src="script/index.js"></script>
 
 </body>
