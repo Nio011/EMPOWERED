@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Activities Dashboard</title>
+    <link rel="stylesheet" href="styles/ass.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class ="navbar">
+        <div class="brand">
+            <div class="logo-icon">
+                <img src="assets/logo.png" alt="EmpowerED logo" />
+            </div>
+            <div class ="logo">
+                <h3> Empowered</h3>
+                <span> Think. Learn. Achieve. </span>
+            </div>
+        </div>
+        
+        <!-- Accessibility Menu and Profile Button -->
+        <div class="nav-controls">
+            <div class="accessibility-menu">
+                <button class="accessibility-button" aria-expanded="false" aria-controls="accessibility-panel">Accessibility</button>
+                <div id="accessibility-panel" class="accessibility-panel" role="region" aria-label="Accessibility options">
+                    <h2>Accessibility Settings</h2>
+                    <div class="feature-group" aria-label="Text size">
+                        <label>
+                            Font Size
+                        </label>
+                        <div class="button-group">
+                            <button type="button" class="text-size-button" data-size="small">Small</button>
+                            <button type="button" class="text-size-button active" data-size="medium">Medium</button>
+                            <button type="button" class="text-size-button" data-size="large">Large</button>
+                        </div>
+                    </div>
+                    <div class="feature-group" aria-label="Contrast settings">
+                        <!-- High Contrast Mode Toggle -->
+                        <label>
+                            High Contrast Mode
+                        </label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="high-contrast-toggle" class="contrast-button" data-contrast="high">
+                            <label for="high-contrast-toggle" class="toggle-label"></label>
+                        </div>
+                        <p class="contrast-description">Enhanced contrast for better visibility</p>
+                    </div>
+                </div>
+            </div>
+            <div class ="Profile">
+                <button class="profile-button">Profile</button>
+            </div>
+        </div>
+    </div>
+    
+    <main class="container">
+        <header class="header">
+            <a href="course.html" class="back-link">← Back to Course</a>
+            <h1>Course Activities</h1>
+            <p>Complete assignments, quizzes, and discussions to earn points and progress in the course</p>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon icon-blue">🕒</div>
+                <div class="stat-content">
+                    <span class="stat-label">Pending</span>
+                    <h2 class="stat-value">4</h2>
+                    <span class="stat-sub">Activities to complete</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon icon-green">✅</div>
+                <div class="stat-content">
+                    <span class="stat-label">Completed</span>
+                    <h2 class="stat-value">1</h2>
+                    <span class="stat-sub">Activities finished</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon icon-purple">📋</div>
+                <div class="stat-content">
+                    <span class="stat-label">Total Points</span>
+                    <h2 class="stat-value">95/500</h2>
+                    <span class="stat-sub">Points earned</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="activity-section">
+            <h3 class="section-title">Pending Activities</h3>
+            
+            <!-- Pending Activities -->
+            <article class="activity-card">
+                <div class="card-main">
+                    <div class="type-icon">📄</div>
+                    <div class="card-info">
+                        <h4>Assignment 3: WCAG Compliance Audit</h4>
+                        <p class="description">Conduct a comprehensive WCAG 2.1 compliance audit on the provided website. Document all violations and provide recommendations for fixes.</p>
+                        <div class="meta-row">
+                            <span>📅 Due: April 29, 2026</span>
+                            <span>100 points</span>
+                            <span class="badge badge-progress">🕒 In Progress</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-primary">Start Assignment</button>
+            </article>
+
+            <article class="activity-card">
+                <div class="card-main">
+                    <div class="type-icon">📄</div>
+                    <div class="card-info">
+                        <h4>Assignment 3: WCAG Compliance Audit</h4>
+                        <p class="description">Conduct a comprehensive WCAG 2.1 compliance audit on the provided website. Document all violations and provide recommendations for fixes.</p>
+                        <div class="meta-row">
+                            <span>📅 Due: April 28, 2026</span>
+                            <span>100 points</span>
+                            <span class="badge badge-progress">🕒 In Progress</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-primary">Start Assignment</button>
+            </article>
+
+            <!-- Pending Quizzes -->
+            <article class="activity-card">
+                <div class="card-main">
+                    <div class="type-icon">📝</div>
+                    <div class="card-info">
+                        <h4>Quiz: Module 2 Assessment</h4>
+                        <p class="description">Math Quiz</p>
+                        <div class="meta-row">
+                            <span>📅 Due: April 24, 2026</span>
+                            <span>100 points</span>
+                            <span class="badge badge-upcoming">🕒 Upcoming</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="quiz.html">
+                    <button class="btn-primary">Start Quiz</button>
+                </a>
+            </article>
+
+            <article class="activity-card">
+                <div class="card-main">
+                    <div class="type-icon">📝</div>
+                    <div class="card-info">
+                        <h4>Quiz: Module 3 Assessment</h4>
+                        <p class="description">Math Quiz</p>
+                        <div class="meta-row">
+                            <span>📅 Due: April 27, 2026</span>
+                            <span>100 points</span>
+                            <span class="badge badge-upcoming">🕒 Upcoming</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="quiz2.html">
+                    <button class="btn-primary">Start Quiz</button>
+                </a>
+            </article>
+        </section>
+
+        <!-- Completed Activities -->
+        <section class="activity-section">
+            <h3 class="section-title">Completed Activities</h3>
+            
+            <article class="activity-card completed">
+                <div class="card-main">
+                    <div class="type-icon">📄</div>
+                    <div class="card-info">
+                        <h4>Assignment 2: Semantic HTML Redesign</h4>
+                        <div class="meta-row">
+                            <span>📅 Submitted: April 13, 2026</span>
+                            <span class="score">Score: 95/100</span>
+                            <span class="badge badge-success">✅ Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+</body>
+</html>

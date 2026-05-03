@@ -1,14 +1,17 @@
 const accessButton = document.querySelector('.accessibility-button');
 const panel = document.getElementById('accessibility-panel');
 const textSizeButtons = document.querySelectorAll('.text-size-button');
-const contrastButtons = document.querySelectorAll('.contrast-button');
+const contrastToggle = document.getElementById('high-contrast-toggle');
+
+// Load saved settings on page load (if accessibility settings is available)
+if (typeof AccessibilitySettings !== 'undefined') {
+    AccessibilitySettings.apply();
+}
 
 const updateBodyClasses = () => {
-    document.body.classList.remove('text-small', 'text-medium', 'text-large', 'high-contrast');
-    const activeText = document.querySelector('.text-size-button.active');
-    const activeContrast = document.querySelector('.contrast-button.active');
-    if (activeText) document.body.classList.add(`text-${activeText.dataset.size}`);
-    if (activeContrast && activeContrast.dataset.contrast === 'high') document.body.classList.add('high-contrast');
+    if (typeof AccessibilitySettings !== 'undefined') {
+        AccessibilitySettings.updateBodyClasses();
+    }
 };
 
 accessButton.addEventListener('click', () => {
@@ -21,15 +24,17 @@ textSizeButtons.forEach(button => {
         textSizeButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
         updateBodyClasses();
+        if (typeof AccessibilitySettings !== 'undefined') {
+            AccessibilitySettings.save();
+        }
     });
 });
 
-contrastButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        contrastButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        updateBodyClasses();
-    });
+contrastToggle.addEventListener('change', () => {
+    updateBodyClasses();
+    if (typeof AccessibilitySettings !== 'undefined') {
+        AccessibilitySettings.save();
+    }
 });
 
 document.addEventListener('click', event => {
@@ -39,4 +44,12 @@ document.addEventListener('click', event => {
     }
 });
 
-updateBodyClasses();
+// Make course cards clickable
+const courseCard = document.querySelector('.course-card');
+if (courseCard) {
+    courseCard.style.cursor = 'pointer';
+    courseCard.addEventListener('click', () => {
+        window.location.href = 'course.html';
+    });
+}
+

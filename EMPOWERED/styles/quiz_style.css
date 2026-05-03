@@ -1,0 +1,225 @@
+/* --- 1. Global Layout & Centering --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center; /* Horizontal Center */
+    align-items: center;     /* Vertical Center */
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- 2. Main Quiz Container --- */
+.hero {
+    position: relative;
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    padding: 60px 40px 40px 40px; /* Top padding increased for progress bar */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    overflow: visible; /* Clips the progress bar corners */
+}
+
+/* --- 3. Progress Bar & Bar-Stars --- */
+.progress-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: #e9ecef;
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Clip the bar corners here instead */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+    box-shadow: 0 0 10px rgba(0, 219, 222, 0.7);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.bar-star {
+    position: absolute;
+    top: 0;
+    font-size: 1.5rem;
+    pointer-events: none;
+    z-index: 100;
+    animation: starFloatUp 1s ease-out forwards;
+}
+
+@keyframes starFloatUp {
+    0% { transform: translateY(0) scale(0.5); opacity: 1; }
+    100% { transform: translateY(-60px) scale(1.5); opacity: 0; }
+}
+
+/* --- 4. Question & Options --- */
+.question-block {
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    padding: 10px;
+}
+
+.answer-option {
+    display: block;
+    background: #f8f9fa;
+    margin: 12px 0;
+    padding: 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.answer-option span {
+    display: inline-block;
+    width: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.answer-option:hover {
+    background: #e7f1ff;
+    border-color: #0d6efd;
+}
+
+.answer-option:active {
+    transform: scale(0.96);
+    background-color: #d1e7ff;
+}
+
+.answer-option input {
+    display: none; /* Keeps the UI clean */
+}
+
+/* --- 5. Navigation & Animation States --- */
+.fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+.shake {
+    animation: shake 0.4s ease-in-out;
+}
+
+.mic-btn {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.mic-btn.active {
+    background: #ff4b2b;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 75, 43, 0.5);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -100%);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+/* --- 6. ADHD Particle Bursts --- */
+.particle {
+    position: absolute;
+    pointer-events: none;
+    z-index: 100;
+    font-size: 2rem;
+    animation: scatter 0.8s ease-out forwards;
+}
+
+@keyframes scatter {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+    100% { transform: translate(var(--x), var(--y)) scale(1.5) rotate(var(--r)); opacity: 0; }
+}
+
+/* --- 7. Final Results & Review List --- */
+.review-list {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.review-item {
+    background: #fdfdfd;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: transform 0.2s;
+}
+
+.review-item:hover {
+    transform: scale(1.02);
+}
+
+.highlight-box {
+    margin-top: 10px;
+    padding: 10px;
+    background: #e8f5e9;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.correct-text {
+    color: #27ae60; font-weight: bold;
+}
+.wrong-text {
+    color: #e74c3c; font-weight: bold;
+}
+
+/* Custom Scrollbar */
+.review-list::-webkit-scrollbar {
+    width: 8px;
+}
+.review-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
