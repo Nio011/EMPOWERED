@@ -5,26 +5,117 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f2f5;
     display: flex;
-    justify-content: center; /* Horizontal Center */
-    align-items: center;     /* Vertical Center */
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
-/* --- 2. Main Quiz Container --- */
 .hero {
     position: relative;
     background: white;
-    width: 90%;
-    max-width: 500px;
-    padding: 60px 40px 40px 40px; /* Top padding increased for progress bar */
+    width: 95%;
+    max-width: 800px;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    text-align: center;
-    overflow: visible; /* Clips the progress bar corners */
+    overflow: hidden;
 }
 
-/* --- 3. Progress Bar & Bar-Stars --- */
+.main-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.quiz-side {
+    flex: 2;
+    position: relative;
+    padding-top: 40px;
+}
+
+.sidebar {
+    flex: 1;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    min-width: 150px;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.question-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.nav-box {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #6c757d;
+    transition: all 0.3s ease;
+}
+
+.nav-box.current {
+    border-color: #0d6efd;
+    color: #0d6efd;
+    transform: scale(1.1);
+}
+
+.nav-box:hover {
+    background-color: #e7f1ff;
+    border-color: #0d6efd;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.nav-box.current:hover {
+    background-color: #fff;
+}
+
+.nav-box.correct {
+    background: #2ecc71;
+    border-color: #27ae60;
+    color: white;
+}
+
+.nav-box.wrong {
+    background: #e74c3c;
+    border-color: #c0392b;
+    color: white;
+}
+
+.stats-mini {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .main-layout {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        order: -1;
+    }
+}
+
 .progress-wrapper {
     position: absolute;
     top: 0;
@@ -34,7 +125,7 @@ body {
     background: #e9ecef;
     display: flex;
     align-items: center;
-    overflow: hidden; /* Clip the bar corners here instead */
+    overflow: hidden;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
@@ -62,7 +153,6 @@ body {
     100% { transform: translateY(-60px) scale(1.5); opacity: 0; }
 }
 
-/* --- 4. Question & Options --- */
 .question-block {
     opacity: 1;
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -99,10 +189,9 @@ body {
 }
 
 .answer-option input {
-    display: none; /* Keeps the UI clean */
+    display: none;
 }
 
-/* --- 5. Navigation & Animation States --- */
 .fade-out {
     opacity: 0;
     transform: translateY(-20px);
@@ -159,7 +248,6 @@ body {
     75% { transform: translateX(10px); }
 }
 
-/* --- 6. ADHD Particle Bursts --- */
 .particle {
     position: absolute;
     pointer-events: none;
@@ -173,7 +261,6 @@ body {
     100% { transform: translate(var(--x), var(--y)) scale(1.5) rotate(var(--r)); opacity: 0; }
 }
 
-/* --- 7. Final Results & Review List --- */
 .review-list {
     max-height: 400px;
     overflow-y: auto;
@@ -211,7 +298,6 @@ body {
     color: #e74c3c; font-weight: bold;
 }
 
-/* Custom Scrollbar */
 .review-list::-webkit-scrollbar {
     width: 8px;
 }

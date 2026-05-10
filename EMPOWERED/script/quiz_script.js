@@ -135,6 +135,58 @@ const quizContainer = document.getElementById('quiz-container');
 const progressBar = document.getElementById('progress-bar');
 const starAnchor = document.getElementById('star-anchor');
 
+function initGrid() {
+    const grid = document.getElementById('question-grid');
+    grid.innerHTML = '';
+    myQuestions.forEach((_, i) => {
+        const box = document.createElement('div');
+        box.className = 'nav-box';
+        box.id = `nav-box-${i}`;
+        box.innerText = i + 1;
+        
+        box.style.cursor = "pointer";
+        box.onclick = () => jumpToQuestion(i);
+        
+        grid.appendChild(box);
+    });
+    updateGrid();
+}
+
+function updateGrid() {
+    myQuestions.forEach((_, i) => {
+        const box = document.getElementById(`nav-box-${i}`);
+        box.classList.remove('current');
+        
+        if (i === currentQuestionIndex) {
+            box.classList.add('current');
+        }
+        
+        // If question was already answered, color it
+        if (userHistory[i]) {
+            box.classList.add(userHistory[i].isCorrect ? 'correct' : 'wrong');
+        }
+    });
+    document.getElementById('live-points').innerText = points;
+}
+
+function jumpToQuestion(index) {
+    if (index === currentQuestionIndex || index >= myQuestions.length) return;
+
+    const block = document.getElementById('current-block');
+    
+    block.classList.add('fade-out');
+    
+    setTimeout(() => {
+        currentQuestionIndex = index;
+        showQuestion(currentQuestionIndex);
+        
+        const newBlock = document.getElementById('current-block');
+        if (newBlock) {
+            newBlock.classList.remove('fade-out');
+        }
+    }, 400);
+}
+
 function showQuestion(index) {
     const q = myQuestions[index];
     const progressPercent = (index / myQuestions.length) * 100;
@@ -158,6 +210,8 @@ function showQuestion(index) {
             <div class="options-container">${options}</div>
         </div>
     `;
+
+    updateGrid();
 }
 
 function burstStars() {
@@ -311,4 +365,5 @@ function showAllResults() {
     document.getElementById('progress-bar').style.width = '100%';
 }
 
+initGrid();
 showQuestion(currentQuestionIndex);
