@@ -161,7 +161,6 @@ function updateGrid() {
             box.classList.add('current');
         }
         
-        // If question was already answered, color it
         if (userHistory[i]) {
             box.classList.add(userHistory[i].isCorrect ? 'correct' : 'wrong');
         }
@@ -290,23 +289,43 @@ window.handleAnswer = (selectedIndex) => {
         block.classList.add('shake');
     }
 
-    userHistory.push({
+    userHistory[currentQuestionIndex] = {
         question: q.question,
         userAns: q.answers[selectedIndex],
         correctAns: q.answers[q.correct],
         isCorrect: isCorrect
-    });
+    };
+
+    updateGrid();
 
     setTimeout(() => {
         block.classList.add('fade-out');
         
         setTimeout(() => {
-            currentQuestionIndex++;
-            if (currentQuestionIndex < myQuestions.length) {
+            let nextIndex = -1;
+            for (let i = currentQuestionIndex + 1; i < myQuestions.length; i++) {
+                if (!userHistory[i]) {
+                    nextIndex = i;
+                    break;
+                }
+            }
+
+            if (nextIndex === -1) {
+                for (let i = 0; i < myQuestions.length; i++) {
+                    if (!userHistory[i]) {
+                        nextIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            if (nextIndex !== -1) {
+                currentQuestionIndex = nextIndex;
                 showQuestion(currentQuestionIndex);
             } else {
                 showAllResults();
             }
+            
         }, 500);
     }, 800);
 };
@@ -316,6 +335,16 @@ function showAllResults() {
     setTimeout(burstStars, 300);
 
     const reviewHTML = userHistory.map((item, i) => {
+
+        if (!item) {
+        return `
+            <div class="review-item" style="border-left: 6px solid #ccc; background: #f9f9f9;">
+                <h3>${q.question}</h3>
+                <p style="color: #666;"><em>Question skipped</em></p>
+            </div>
+        `;
+        }
+
         return `
             <div class="review-item" style="border-left: 6px solid ${item.isCorrect ? '#2ecc71' : '#e74c3c'}; padding: 15px; margin-bottom: 12px; background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: left;">
                 <p style="margin:0; font-size: 0.75rem; color: #aaa; text-transform: uppercase; letter-spacing: 1px;">Question ${i + 1}</p>

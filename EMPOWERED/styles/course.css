@@ -15,7 +15,7 @@ body {
 /*navbar styles*/
 .navbar {
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: space-between;
     gap: 1rem;
     background: #1E2A4A;
@@ -51,7 +51,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.25rem; 
+    gap: 0.25rem;
     padding: 0.25rem 0;
 }
 
@@ -69,7 +69,7 @@ body {
 .nav-controls {
     display: flex;
     align-items: center;
-    gap: 0.75rem; 
+    gap: 0.75rem;
 }
 
 .nav-controls button {
@@ -237,12 +237,12 @@ body.text-small .hero p {
     line-height: 1.6;
 }
 
-body.text-small .course-card-title h2 {
+body.text-small .feature-card-title h2 {
     font-size: 1.3rem;
     line-height: 1.4;
 }
 
-body.text-small .course-card-icon img {
+body.text-small .feature-card-icon img {
     width: 44px;
     height: 44px;
 }
@@ -262,12 +262,12 @@ body.text-medium .hero p {
     line-height: 1.6;
 }
 
-body.text-medium .course-card-title h2 {
+body.text-medium .feature-card-title h2 {
     font-size: 1.5rem;
     line-height: 1.4;
 }
 
-body.text-medium .course-card-icon img {
+body.text-medium .feature-card-icon img {
     width: 48px;
     height: 48px;
 }
@@ -287,12 +287,12 @@ body.text-large .hero p {
     line-height: 1.7;
 }
 
-body.text-large .course-card-title h2 {
+body.text-large .feature-card-title h2 {
     font-size: 1.75rem;
     line-height: 1.4;
 }
 
-body.text-large .course-card-icon img {
+body.text-large .feature-card-icon img {
     width: 56px;
     height: 56px;
 }
@@ -311,7 +311,7 @@ body.high-contrast .navbar {
 
 /* Headings */
 body.high-contrast .hero h2,
-body.high-contrast .course-card-title h2 {
+body.high-contrast .feature-card-title h2 {
     color: #FFFFFF;
 }
 

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Portal</title>
+    <link rel="stylesheet" href="styles/act.css">
+</head>
+<body>
+    <div class ="navbar">
+        <div class="brand">
+            <div class="logo-icon">
+                <img src="assets/logo.png" alt="EmpowerED logo" />
+            </div>
+            <div class ="logo">
+                <h3> Empowered</h3>
+                <span> Think. Learn. Achieve. </span>
+            </div>
+        </div>
+        
+        <!-- Accessibility Menu and Profile Button -->
+        <div class="nav-controls">
+            <div class="accessibility-menu">
+                <button class="accessibility-button" aria-expanded="false" aria-controls="accessibility-panel">Accessibility</button>
+                <div id="accessibility-panel" class="accessibility-panel" role="region" aria-label="Accessibility options">
+                    <h2>Accessibility Settings</h2>
+                    <div class="feature-group" aria-label="Text size">
+                        <label>
+                            Font Size
+                        </label>
+                        <div class="button-group">
+                            <button type="button" class="text-size-button" data-size="small">Small</button>
+                            <button type="button" class="text-size-button active" data-size="medium">Medium</button>
+                            <button type="button" class="text-size-button" data-size="large">Large</button>
+                        </div>
+                    </div>
+                    <div class="feature-group" aria-label="Contrast settings">
+                        <label>
+                            High Contrast Mode
+                        </label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="high-contrast-toggle" class="contrast-button" data-contrast="high">
+                            <label for="high-contrast-toggle" class="toggle-label"></label>
+                        </div>
+                        <p class="contrast-description">Enhanced contrast for better visibility</p>
+                    </div>
+                </div>
+            </div>
+            <div class ="Profile">
+                <button class="profile-button">Profile</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="back-button-container">
+            <a href="ass.html" class="back-button"> &laquo; Back to My Courses</a>
+    </div>
+
+    <section class="activity-content">
+        <div class="activity-section">
+            <h2>Activity Instructions</h2>
+            <p>Analyze the following data table for accessibility compliance:</p>
+            <table class="activity-table">
+                <thead>
+                    <tr><th>Problem</th><th>Issue</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Button 1</td><td>Missing Aria-Label</td></tr>
+                    <tr><td>Main Image</td><td>Low Alt-Text quality</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="submission-section">
+            <h3>Submission</h3>
+            <textarea id="activity-response" placeholder="Comments..."></textarea>
+            
+            <div class="upload-zone" id="drop-zone" role="button" tabindex="0">
+                <p>Drag files or <strong>click to browse</strong></p>
+            </div>
+
+            <input type="file" id="file-input" class="hidden-input" style="display:none;">
+            <button class="btn-submit" onclick="handleSubmission()">Submit</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 EmpowerED. All rights reserved.</p>
+    </footer>
+
+<script src="script/accessibility-settings.js"></script>
+<script src="script/act.js"></script>
+
+</body>
+</html>
