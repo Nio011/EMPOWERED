@@ -15,7 +15,7 @@ body {
 
 .navbar {
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: space-between;
     gap: 1rem;
     background: #1E2A4A;
@@ -51,7 +51,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.25rem; 
+    gap: 0.25rem;
     padding: 0.25rem 0;
 }
 
@@ -259,12 +259,12 @@ body.text-small .activity-table td {
 }
 
 body.text-small .submission-section h3 {
-    font-size: 1.3rem;
+    font-size: 1.125rem;
     line-height: 1.4;
 }
 
 body.text-small .submission-section textarea {
-    font-size: 1.3rem;
+    font-size: 1.125rem;
     line-height: 1.4;
 }
 
@@ -294,12 +294,12 @@ body.text-medium .activity-table td {
 }
 
 body.text-medium .submission-section h3 {
-    font-size: 1.3rem;
+    font-size: 1.45rem;
     line-height: 1.4;
 }
 
 body.text-medium .submission-section textarea {
-    font-size: 1.3rem;
+    font-size: 1.45rem;
     line-height: 1.4;
 }
 
@@ -329,12 +329,12 @@ body.text-large .activity-table td {
 }
 
 body.text-large .submission-section h3 {
-    font-size: 1.375rem;
+    font-size: 1.75rem;
     line-height: 1.7;
 }
 
 body.text-large .submission-section textarea {
-    font-size: 1.3rem;
+    font-size: 1.75rem;
     line-height: 1.4;
 }
 
@@ -452,6 +452,9 @@ body.high-contrast footer {
     border-radius: 12px;
     border: 1px solid #dadce0;
     margin-bottom: 24px;
+
+    margin-left: 7rem;
+    margin-right: 7rem;
 }
 
 .activity-table {
@@ -468,7 +471,7 @@ body.high-contrast footer {
 
 textarea {
     width: 100%;
-    min-height: 180px;
+    min-height: 20em;
     padding: 16px;
     border: 1px solid #dadce0;
     border-radius: 8px;
