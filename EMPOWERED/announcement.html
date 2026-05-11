@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Course Announcements | EmpowerED</title>
+
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/announcement.css">
+</head>
+
+<body class="text-medium">
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+    <div class="brand">
+        <div class="logo-icon">
+            <img src="assets/logo.png" alt="EmpowerED logo" />
+        </div>
+
+        <div class="logo">
+            <h3>EmpowerED</h3>
+            <span>Think. Learn. Achieve.</span>
+        </div>
+    </div>
+
+    <div class="nav-controls">
+
+        <div class="accessibility-menu">
+            <button class="accessibility-button" aria-expanded="false">
+                Accessibility
+            </button>
+
+            <div id="accessibility-panel" class="accessibility-panel">
+
+                <h2>Accessibility Settings</h2>
+
+                <div class="feature-group">
+                    <label>Font Size</label>
+
+                    <div class="button-group">
+                        <button class="text-size-button" data-size="small">Small</button>
+                        <button class="text-size-button active" data-size="medium">Medium</button>
+                        <button class="text-size-button" data-size="large">Large</button>
+                    </div>
+                </div>
+
+                <div class="feature-group">
+                    <label>High Contrast Mode</label>
+
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="high-contrast-toggle">
+                        <label for="high-contrast-toggle" class="toggle-label"></label>
+                    </div>
+
+                    <p class="contrast-description">
+                        Enhanced contrast for better visibility
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="Profile">
+            <button class="profile-button">Profile</button>
+        </div>
+
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="announcement-page">
+
+    <header class="header-container">
+        <a href="course.html" class="back-btn">← Back to Course</a>
+
+        <h1>Course Announcements</h1>
+        <p>Stay updated with important course information and deadlines</p>
+    </header>
+
+    <section class="list-container">
+
+        <!-- CARD 1 -->
+        <div class="announce-card border-red">
+            <div class="card-content">
+
+                <div class="card-top">
+                    <div class="title-wrap">
+                        <span class="icon">📌</span>
+                        <h3>Course Extension: Assignment Deadline Updated</h3>
+                    </div>
+                    <button class="speak-btn">🔊</button>
+                </div>
+
+                <div class="meta-info">
+                    <span>👤 Dr. Joachim Barboza</span>
+                    <span>📅 May 20, 2026</span>
+                    <span class="tag-red">Important</span>
+                </div>
+
+                <p class="body-text">
+                    Due to technical difficulties, Assignment 3 has been extended to April 27, 2026.
+                </p>
+
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="announce-card border-blue">
+            <div class="card-content">
+
+                <div class="card-top">
+                    <div class="title-wrap">
+                        <span class="icon">📌</span>
+                        <h3>New Accessibility Resources Available</h3>
+                    </div>
+                    <button class="speak-btn">🔊</button>
+                </div>
+
+                <div class="meta-info">
+                    <span>👤 Dr. Alessandra Metrillo</span>
+                    <span>📅 April 18, 2026</span>
+                </div>
+
+                <p class="body-text">
+                    New screen reader tools and accessibility resources are now available in Module 2.
+                </p>
+
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="announce-card border-blue">
+            <div class="card-content">
+
+                <div class="card-top">
+                    <div class="title-wrap">
+                        <span class="icon">📌</span>
+                        <h3>Quizzes Now Available: Module 2 & 3 Assessment</h3>
+                    </div>
+                    <button class="speak-btn">🔊</button>
+                </div>
+
+                <div class="meta-info">
+                    <span>👤 Dr. Ken Gonzale</span>
+                    <span>📅 April 24, 2026</span>
+                    <span class="tag-blue">Update</span>
+                </div>
+
+                <p class="body-text">
+                    Module 2 and Module 3 quizzes are now uploaded. Please check Pending Activities.
+                </p>
+
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="announce-card border-red">
+            <div class="card-content">
+
+                <div class="card-top">
+                    <div class="title-wrap">
+                        <span class="icon">📌</span>
+                        <h3>Final Project Guidelines Reminder</h3>
+                    </div>
+                    <button class="speak-btn">🔊</button>
+                </div>
+
+                <div class="meta-info">
+                    <span>👤 Dr. Neomi Cassandra</span>
+                    <span>📅 April 25, 2026</span>
+                </div>
+
+                <p class="body-text">
+                    Please be informed that the Final Project Guidelines have now been released. Kindly take time to carefully read and understand all the requirements, instructions, and deadlines provided to ensure proper compliance.
+                </p>
+
+            </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="announce-card border-blue">
+            <div class="card-content">
+
+                <div class="card-top">
+                    <div class="title-wrap">
+                        <span class="icon">📌</span>
+                        <h3>Peer Review Activity Deadline Reminder</h3>
+                    </div>
+                    <button class="speak-btn">🔊</button>
+                </div>
+
+                <div class="meta-info">
+                    <span>👤 Dr. Kyle Bautista</span>
+                    <span>📅 April 26, 2026</span>
+                </div>
+
+                <p class="body-text">
+                    All students must complete the peer review activity before the deadline. Late submissions will not be accepted.
+                </p>
+
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<!-- SCRIPTS -->
+<script src="script/accessibility-settings.js"></script>
+<script src="script/accessibility.js"></script>
+<script src="script/announcement.js"></script>
+
+</body>
+</html>
