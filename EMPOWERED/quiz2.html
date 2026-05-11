@@ -8,6 +8,58 @@
     <script defer src="script/quiz2.js"></script>
 </head>
 <body>
+
+    <div class ="navbar">
+        <div class="brand">
+            <div class="logo-icon">
+                <img src="assets/logo.png" alt="EmpowerED logo" />
+            </div>
+            <div class ="logo">
+                <h3> Empowered</h3>
+                <span> Think. Learn. Achieve. </span>
+            </div>
+        </div>
+        
+        <!-- Accessibility Menu and Profile Button -->
+        <div class="nav-controls">
+            <div class="accessibility-menu">
+                <button class="accessibility-button" aria-expanded="false" aria-controls="accessibility-panel">Accessibility</button>
+                <div id="accessibility-panel" class="accessibility-panel" role="region" aria-label="Accessibility options">
+                    <h2>Accessibility Settings</h2>
+                    <div class="feature-group" aria-label="Text size">
+                        <label>
+                            Font Size
+                        </label>
+                        <div class="button-group">
+                            <button type="button" class="text-size-button" data-size="small">Small</button>
+                            <button type="button" class="text-size-button active" data-size="medium">Medium</button>
+                            <button type="button" class="text-size-button" data-size="large">Large</button>
+                        </div>
+                    </div>
+                    <div class="feature-group" aria-label="Contrast settings">
+                        <label>
+                            High Contrast Mode
+                        </label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="high-contrast-toggle" class="contrast-button" data-contrast="high">
+                            <label for="high-contrast-toggle" class="toggle-label"></label>
+                        </div>
+                        <p class="contrast-description">Enhanced contrast for better visibility</p>
+                    </div>
+                </div>
+            </div>
+            <div class ="Profile">
+                <button class="profile-button">Profile</button>
+            </div>
+        </div>
+    </div>
+    <!--END OF NAV BAR-->
+
+     <!--Button to go back to homepage-->
+        <div class="back-button-container">
+            <a href="ass.html" class="back-button"> &laquo; Back to My Courses</a>
+        </div>
+
     <section id="home" class="hero">
         <div class="main-layout">
             <div class="quiz-side">
@@ -28,5 +80,13 @@
             </div>
         </div>
     </section>
+
+    <footer>
+        <p>&copy; 2026 EmpowerED. All rights reserved.</p>
+    </footer>
+
+<script src= "script/accessibility-settings.js"></script>
+<script src="script/quiz_script.js"></script>
+
 </body>
 </html>

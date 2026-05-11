@@ -1,55 +1,102 @@
+const accessButton = document.querySelector('.accessibility-button');
+const panel = document.getElementById('accessibility-panel');
+const textSizeButtons = document.querySelectorAll('.text-size-button');
+const contrastToggle = document.getElementById('high-contrast-toggle');
+
+// Load saved settings on page load (if accessibility settings is available)
+if (typeof AccessibilitySettings !== 'undefined') {
+    AccessibilitySettings.apply();
+}
+
+const updateBodyClasses = () => {
+    if (typeof AccessibilitySettings !== 'undefined') {
+        AccessibilitySettings.updateBodyClasses();
+    }
+};
+
+accessButton.addEventListener('click', () => {
+    const isOpen = panel.classList.toggle('open');
+    accessButton.setAttribute('aria-expanded', String(isOpen));
+});
+
+textSizeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        textSizeButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        updateBodyClasses();
+        if (typeof AccessibilitySettings !== 'undefined') {
+            AccessibilitySettings.save();
+        }
+    });
+});
+
+contrastToggle.addEventListener('change', () => {
+    updateBodyClasses();
+    if (typeof AccessibilitySettings !== 'undefined') {
+        AccessibilitySettings.save();
+    }
+});
+
+document.addEventListener('click', event => {
+    if (!event.target.closest('.accessibility-menu')) {
+        panel.classList.remove('open');
+        accessButton.setAttribute('aria-expanded', 'false');
+    }
+});
+
 const myQuestions = [
     {
-        question: "What is the sum of 1,250 and 875?",
-        answers: ["2,125", "2,025", "2,115", "1,925"],
+        question: "A box contains 25 cookies. If you have 4 boxes, how many cookies do you have in total?",
+        answers: ["100", "29", "50", "75"],
         correct: 0
     },
     {
-        question: "A baker makes 12 batches of cookies. Each batch has 15 cookies. How many cookies are there in total?", 
-        answers: ["150", "170", "180", "165"],
+        question: "If you divide 80 items into 4 equal groups, how many items are in each group?",
+        answers: ["10", "84", "40", "20"],
+        correct: 3
+    },
+    {
+        question: "An angle that is greater than 90 degrees is called:",
+        answers: ["Acute", "Right", "Obtuse", "Straight"],
         correct: 2
     },
     {
-        question: "Which of these numbers is a multiple of 9?",
-        answers: ["24", "36", "48", "19"],
-        correct: 1
-    },
-    {
-        question: "How many lines of symmetry does a square have?",
-        answers: ["2", "3", "4", "Infinite"],
+        question: "A shape has 4 sides of equal length and 4 square corners (right angles). What is this shape?",
+        answers: ["Triangle", "Circle", "Square", "Rectangle"],
         correct: 2
     },
     {
-        question: "Subtract: 5,000 - 1,432",
-        answers: ["3,568", "4,568", "3,678", "3,432"],
+        question: "What is the value of the digit 7 in the number 7,245?",
+        answers: ["700", "70", "7", "7000"],
+        correct: 3
+    },
+    {
+        question: "Which decimal is larger: 0.5 or 0.05?",
+        answers: ["0.5", "0.05", "They are equal", "None of the above"],
         correct: 0
     },
     {
-        question: "What is the rule for this pattern: 5, 11, 17, 23...?",
-        answers: ["Multiply by 2", "Add 5", "Add 6", "Multiply by 3"],
-        correct: 2
-    },
-    {
-        question: "Which number has a 6 in the hundreds place?",
-        answers: ["6,432", "4,612", "1,265", "65"],
-        correct: 1
-    },
-    {
-        question: "How many degrees are in a full circle?",
-        answers: ["90 degrees", "180 degrees", "360 degrees", "270 degrees"],
-        correct: 2
-    },
-    {
-        question: "What is 10 times the value of 400?",
-        answers: ["4,000", "40,000", "440", "4,400"],
+        question: "How many centimeters are in 1 meter?",
+        answers: ["100", "10", "50", "1000"],
         correct: 0
     },
     {
-        question: "A rectangular rug is 9 feet long and 7 feet wide. What is its area?",
-        answers: ["16 sq feet", "32 sq feet", "63 sq feet", "54 sq feet"],
-        correct: 2
+        question: "An angle that is less than 90 degrees is called:",
+        answers: ["Acute", "Right", "Obtuse", "Straight"],
+        correct: 0
+    },
+    {
+        question: "What comes next in this pattern: 2, 4, 8, 16, ...?",
+        answers: ["32", "24", "20", "30"],
+        correct: 0
+    },
+    {
+        question: "A rectangle has a length of 6 cm and a width of 4 cm. What is its perimeter?",
+        answers: ["20", "24", "10", "12"],
+        correct: 0
     }
 ];
+
 let currentQuestionIndex = 0;
 let points = 0;
 let userHistory = [];
@@ -160,7 +207,6 @@ function updateGrid() {
             box.classList.add('current');
         }
         
-        // If question was already answered, color it
         if (userHistory[i]) {
             box.classList.add(userHistory[i].isCorrect ? 'correct' : 'wrong');
         }
