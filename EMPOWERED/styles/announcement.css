@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(#E6E9F5, #DFF3F1);
+
+    /* IMPORTANT FIX: prevent navbar overlap issues */
+    padding-top: 110px;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: #1E2A4A;
+
+    padding: 1rem 7rem;
+
+    /* navbar always on top */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: 99999;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-icon img {
+    width: 80px;
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.logo h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span {
+    font-size: 14px;
+    color: #fff879;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nav-controls button {
+    padding: 0.65em 1em;
+    border-radius: 999px;
+    border: 1px solid #1f2937;
+    background: white;
+    color: #111827;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font: inherit;
+}
+
+.nav-controls button:hover {
+    background: #FFDE21;
+}
+
+/* ================= ACCESSIBILITY PANEL ================= */
+
+.accessibility-menu {
+    position: relative;
+    z-index: 100000;
+}
+
+.accessibility-panel {
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    width: min(20em, calc(100vw - 2rem));
+    background: white;
+    border: 1px solid #d1d5db;
+
+    box-shadow: 0 15px 30px rgba(15, 23, 42, 0.12);
+    border-radius: 12px;
+
+    padding: 1.25em;
+    margin-top: 0.75em;
+
+    display: none;
+
+    z-index: 100001 !important;
+}
+
+.accessibility-panel.open {
+    display: block;
+}
+
+.accessibility-panel h2 {
+    font-size: 1.125em;
+    margin-bottom: 1em;
+    color: #111827;
+}
+
+.feature-group {
+    margin-bottom: 1.25em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+}
+
+.feature-group label {
+    font-weight: 600;
+    color: #111827;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5em;
+}
+
+.text-size-button {
+    padding: 0.5em;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.text-size-button.active {
+    background: #0f172a;
+    color: white;
+}
+
+/* ================= TOGGLE ================= */
+
+.toggle-switch {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.toggle-label {
+    position: relative;
+    width: 2.75em;
+    height: 1.5em;
+    background-color: #cbd5e1;
+    border-radius: 0.75em;
+    cursor: pointer;
+}
+
+.toggle-label::after {
+    content: '';
+    position: absolute;
+    width: 1.25em;
+    height: 1.25em;
+    background: white;
+    border-radius: 50%;
+    top: 0.125em;
+    left: 0.125em;
+    transition: 0.2s;
+}
+
+.toggle-switch input:checked + .toggle-label {
+    background-color: #14b8a6;
+}
+
+.toggle-switch input:checked + .toggle-label::after {
+    left: 1.375em;
+}
+
+.contrast-description {
+    font-size: 0.875em;
+    color: #6b7280;
+}
+
+/* ================= PAGE ================= */
+
+.announcement-page {
+    padding: 3rem 7rem;
+}
+
+/* ================= CARDS ================= */
+
+.announce-card {
+    background: white;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e0e6ed;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    overflow: hidden;
+    transition: 0.2s ease;
+}
+
+.announce-card:hover {
+    transform: scale(1.01);
+}
+
+.border-red {
+    border-left: 10px solid #ff4d4d;
+}
+
+.border-blue {
+    border-left: 10px solid #3b82f6;
+}
+
+.card-content {
+    padding: 1.8rem 2.2rem;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-wrap h3 {
+    font-size: 1.25rem;
+    color: #1a1a1a;
+}
+
+.meta-info {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: #777;
+    margin: 12px 0;
+    flex-wrap: wrap;
+}
+
+.body-text {
+    line-height: 1.6;
+    color: #444;
+    margin-top: 15px;
+}
+
+.speak-btn {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.2s ease;
+}
+
+.speak-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ================= TEXT SIZE ================= */
+
+body.text-medium {
+    font-size: 18px;
+}
+
+body.text-large {
+    font-size: 20px;
+}
+
+/* ================= HIGH CONTRAST ================= */
+
+body.high-contrast {
+    background: black;
+    color: white;
+}
+
+body.high-contrast .navbar {
+    background: #1A1A1A;
+    border-bottom: 2px solid #FFD700;
+}
+
+body.high-contrast .accessibility-panel {
+    background: black;
+    border: 2px solid #FFD700;
+}
+
+body.high-contrast .text-size-button {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+body.high-contrast .text-size-button.active {
+    background: #FFD700;
+    color: black;
+}
+
+body.high-contrast .announce-card {
+    background: #121212;
+    border: 2px solid white;
+}
+
+body.high-contrast .body-text,
+body.high-contrast .meta-info,
+body.high-contrast .title-wrap h3,
+body.high-contrast .back-btn,
+body.high-contrast .header-container h1,
+body.high-contrast .header-container p {
+    color: white;
+}

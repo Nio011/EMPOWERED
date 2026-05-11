@@ -499,3 +499,10 @@ footer {
     color: #ffffff;
     margin-top: auto;
 }
+
+/* clickable card fix */
+.feature-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
