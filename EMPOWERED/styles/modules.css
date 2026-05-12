@@ -1,0 +1,178 @@
+/* ================= GLOBAL SCALING & LAYOUT ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* The key fix: Setting the base size on the body class.
+   1rem will equal these pixel values depending on the active class.
+*/
+body.text-small { font-size: 14px; }
+body.text-medium { font-size: 18px; }
+body.text-large { font-size: 22px; }
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(#E6E9F5, #DFF3F1);
+    transition: font-size 0.2s ease, background 0.3s ease;
+    line-height: 1.6;
+}
+
+main {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 7rem;
+}
+
+/* ================= NAVBAR SCALING ================= */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1E2A4A;
+    padding: 1rem 7rem;
+    width: 100%;
+}
+
+.brand { display: flex; align-items: center; gap: 0.75rem; }
+
+/* Using rem here ensures the brand text scales with the rest of the page */
+.logo h3 { 
+    font-size: 1.5rem; 
+    color: white; 
+    margin: 0;
+}
+
+.logo span { 
+    font-size: 0.8rem; 
+    color: #ffd700; 
+}
+
+.nav-controls { display: flex; gap: 1rem; align-items: center; }
+
+.accessibility-button, .profile-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* ================= CONTENT SCALING ================= */
+.header-container h1 {
+    font-size: 2.2rem; /* Will be ~30px on small, ~40px on medium, ~48px on large */
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.header-container p {
+    font-size: 1.2rem;
+    color: #666666;
+    margin-bottom: 2rem;
+}
+
+.back-button {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #1E2A4A;
+    font-weight: 600;
+}
+
+.module-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.module-header {
+    padding: 1.5rem 2rem;
+    background: #f8fafc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lesson-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.read-tag {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.8rem;
+    background: #fef9c3;
+    border-radius: 20px;
+}
+
+.body-text {
+    font-size: 1.1rem;
+    color: #666666;
+    line-height: 1.6;
+}
+
+/* ================= INTERACTIVE BUTTONS ================= */
+.btn-complete {
+    background: #050509;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-complete.finished {
+    background: #2ecc71;
+}
+
+/* ================= HIGH CONTRAST MODE ================= */
+body.high-contrast { background: #000000; }
+
+body.high-contrast .navbar { border-bottom: 2px solid #ffd700; }
+
+body.high-contrast .module-card {
+    background: #000000;
+    border: 2px solid #ffffff;
+}
+
+body.high-contrast .module-header {
+    background: #1a1a1a;
+    color: #ffffff;
+    border-bottom: 2px solid #ffd700;
+}
+
+body.high-contrast .lesson-title,
+body.high-contrast .body-text,
+body.high-contrast .header-container h1,
+body.high-contrast .header-container p,
+body.high-contrast .back-button {
+    color: #ffffff !important;
+}
+
+body.high-contrast .btn-complete.finished {
+    background: #ffd700;
+    color: #000;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 1.5rem;
+    background: #1E2A4A;
+    color: #ffffff;
+    width: 100%;
+    font-size: 0.9rem;
+}

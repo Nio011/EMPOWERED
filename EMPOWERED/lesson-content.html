@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson | EmpowerED</title>
+    <link rel="stylesheet" href="styles/modules.css">
+    <style>
+        .lesson-body { line-height: 1.8; margin-top: 2rem; }
+        .content-card { background: white; padding: 3rem; border-radius: 12px; border: 1px solid #eee; }
+        body.high-contrast .content-card { background: #000; border: 2px solid #fff; }
+    </style>
+</head>
+<body class="text-medium">
+    
+    <main class="modules-container">
+        <div class="back-button-container">
+            <a href="modules.html" class="back-button"> &laquo; Back to Modules</a>
+        </div>
+
+        <div class="content-card">
+            <h1 id="lesson-title">Loading Lesson...</h1>
+            <div id="lesson-text" class="body-text lesson-body">
+                </div>
+        </div>
+    </main>
+
+    <script src="script/accessibility-settings.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof AccessibilitySettings !== 'undefined') AccessibilitySettings.apply();
+            
+            // Simple content database for the 5-min reads
+            const lessons = {
+                "1-1": {
+                    title: "Understanding Place Value",
+                    content: "Place value is the value of each digit in a number. For example, the 5 in 350 represents 5 tens, or 50. However, the 5 in 5,006 represents 5 thousands, or 5,000. It is important to understand that a digit can have a different value depending on where it is placed in a number..."
+                },
+                "1-2": {
+                    title: "Multiplication Mastery",
+                    content: "Multiplication is often described as 'repeated addition.' Mastery involves understanding the properties of multiplication, such as the Commutative Property (a x b = b x a) and the Distributive Property. Practicing these allows for faster mental math and more complex problem solving..."
+                }
+            };
+
+            const params = new URLSearchParams(window.location.search);
+            const lessonId = params.get('id');
+            const data = lessons[lessonId] || lessons["1-1"];
+
+            document.getElementById('lesson-title').innerText = data.title;
+            document.getElementById('lesson-text').innerText = data.content;
+        });
+    </script>
+</body>
+</html>
