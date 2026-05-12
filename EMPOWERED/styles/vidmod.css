@@ -1,0 +1,224 @@
+/* ==========================================================================
+   Accessibility: High Contrast Mode
+   ========================================================================== */
+body.high-contrast {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.high-contrast .custom-card {
+    background-color: #1e1e1e;
+    border-color: #ffff00;
+    color: #ffffff;
+    box-shadow: 0 0 0 1px #ffff00; /* Crisp border for visibility */
+}
+
+/* Force text to be high contrast, overriding Bootstrap's muted classes */
+body.high-contrast .text-secondary,
+body.high-contrast .text-muted,
+body.high-contrast .description-text {
+    color: #e0e0e0 !important;
+}
+
+body.high-contrast .badge-custom {
+    background-color: #000000;
+    color: #ffff00;
+    border: 1px solid #ffff00;
+}
+
+body.high-contrast .transcript-box {
+    color: #ffffff;
+}
+
+/* High Contrast Playlist Styling */
+body.high-contrast .playlist-item {
+    border-color: #444;
+}
+
+body.high-contrast .playlist-item:hover {
+    background-color: #333333;
+    border-color: #ffff00;
+}
+
+body.high-contrast .playlist-item.active {
+    background-color: #000000;
+    border-color: #00ff00;
+}
+
+body.high-contrast .playlist-item .icon {
+    color: #ffff00;
+}
+
+body.high-contrast .playlist-item.active .icon,
+body.high-contrast .playlist-item.completed .icon {
+    color: #00ff00;
+}
+
+body.high-contrast .playlist-item.active .title,
+body.high-contrast .playlist-item.completed .title {
+    color: #ffffff;
+}
+
+/* High Contrast Progress Bar */
+body.high-contrast .progress {
+    background-color: #333333;
+    border: 1px solid #ffffff;
+}
+
+body.high-contrast .progress-bar.bg-success {
+    background-color: #00ff00 !important;
+}
+
+/* ==========================================================================
+   Accessibility: Font Scaling
+   ========================================================================== */
+/* Large Text Overrides */
+body.text-large .custom-card h4 { font-size: 1.75rem; }
+body.text-large .custom-card h5 { font-size: 1.5rem; }
+body.text-large .description-text { font-size: 1.15rem; }
+body.text-large .badge-custom { font-size: 1rem; }
+body.text-large .transcript-box { font-size: 1.15rem; }
+body.text-large .playlist-item .title { font-size: 1.15rem; }
+body.text-large .playlist-item .duration { font-size: 0.95rem; }
+
+/* Small Text Overrides */
+body.text-small .custom-card h4 { font-size: 1.25rem; }
+body.text-small .description-text { font-size: 0.85rem; }
+body.text-small .transcript-box { font-size: 0.85rem; }
+body.text-small .playlist-item .title { font-size: 0.9rem; }
+
+/* ==========================================================================
+   Base & Typography
+   ========================================================================== */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.description-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   Cards & Containers
+   ========================================================================== */
+.custom-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+}
+
+.badge-custom {
+    background-color: #e9ecef;
+    color: #495057;
+    font-weight: 500;
+    padding: 0.5em 0.8em;
+}
+
+/* ==========================================================================
+   Video Player 
+   ========================================================================== */
+.video-placeholder {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    background: #000;
+}
+
+.video-placeholder iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ==========================================================================
+   Transcript Area
+   ========================================================================== */
+.transcript-box {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 15px;
+    color: #495057;
+    line-height: 1.6;
+}
+
+/* Custom Scrollbar for Transcript */
+.transcript-box::-webkit-scrollbar {
+    width: 6px;
+}
+.transcript-box::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 4px;
+}
+.transcript-box::-webkit-scrollbar-thumb {
+    background: #cbd5e1; 
+    border-radius: 4px;
+}
+.transcript-box::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8; 
+}
+
+/* ==========================================================================
+   Playlist Styles
+   ========================================================================== */
+.playlist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.playlist-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid transparent;
+}
+
+.playlist-item:hover {
+    background-color: #f8f9fa;
+    border-color: #e9ecef;
+}
+
+.playlist-item.active {
+    background-color: #eef2ff;
+    border-color: #c7d2fe;
+}
+
+.playlist-item .icon {
+    color: #6366f1;
+    margin-right: 12px;
+    margin-top: 2px;
+    font-size: 0.9rem;
+}
+
+.playlist-item.active .icon {
+    color: #4f46e5;
+}
+
+/* ==========================================================================
+   Completed State Styles
+   ========================================================================== */
+.playlist-item.completed .icon {
+    color: #10b981; /* Green color for the checkmark */
+    font-weight: bold;
+}
+
+.playlist-item.completed .title {
+    color: #495057;
+}
+
+.mark-done-btn {
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
