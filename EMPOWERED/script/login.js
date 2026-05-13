@@ -9,6 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Logging in as:", activeRole);
 
         // redirect to index page
-        window.location.href = "index.html";
+        window.location.href = "dashboard.html";
     });
 });

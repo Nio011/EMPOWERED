@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Stats</title>
+    <link rel="stylesheet" href="styles/progress.css">
+
+     <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    
+</head>
+<body>
+
+<div class="dashboard">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div>
+      <div class="logo">
+        <div class="logo-icon">
+          <img src="assets/logo.png" alt="EmpowerEd Logo">
+        </div>
+
+        <div>
+          <h2>EmpowerEd</h2>
+          <p>Think. Learn. Achieve</p>
+        </div>
+      </div>
+
+      <div class="menu">
+        <a href="dashboard.html" ><i class="fa-solid fa-house"></i>Dashboard</a>
+        <a href="announcement-db.html"><i class="fa-solid fa-bullhorn"></i>Announcements</a>
+        <a href="all-courses.html"><i class="fa-solid fa-book"></i>Courses</a>
+        <a href="assignments.html"><i class="fa-solid fa-clipboard-list"></i>Assignments</a>
+        <a href="progress.html" class="active"><i class="fa-solid fa-chart-line"></i>Progress</a>
+        <a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a>
+        <a href="login.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+      </div>
+    </div>
+
+    <div class="bottom-box">
+
+      <div class="help-card">
+        <h4>Need Help?</h4>
+        <p style="color:#6b7280;margin-top:5px;">Visit our help center</p>
+      </div>
+
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+        <!-- TOPBAR -->
+    <div class="topbar">
+
+        <div class="welcome">
+        <h1><i class="fa-solid fa-chart-line"></i> My Progress</h1>
+        <p>Welcome to My Progress! Track your learning journey.</p>
+      </div>
+      
+        <!-- Accessibility Menu and Profile Button -->
+        <div class="nav-controls">
+            <div class="accessibility-menu">
+                <button class="accessibility-button" ><i class="fa-solid fa-eye" style="margin-right:8px;"></i>Accessibility</button>
+                <div id="accessibility-panel" class="accessibility-panel" role="region" aria-label="Accessibility options">
+                    <h2>Accessibility Settings</h2>
+                    <div class="feature-group" aria-label="Text size">
+                        <label>
+                            Font Size
+                        </label>
+                        <div class="button-group">
+                            <button type="button" class="text-size-button" data-size="small">Small</button>
+                            <button type="button" class="text-size-button active" data-size="medium">Medium</button>
+                            <button type="button" class="text-size-button" data-size="large">Large</button>
+                        </div>
+                    </div>
+                    <div class="feature-group" aria-label="Contrast settings">
+                        <!-- High Contrast Mode Toggle -->
+                        <label>
+                            High Contrast Mode
+                        </label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="high-contrast-toggle" class="contrast-button" data-contrast="high">
+                            <label for="high-contrast-toggle" class="toggle-label"></label>
+                        </div>
+                        <p class="contrast-description">Enhanced contrast for better visibility</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--Profile-->
+            <div class="profile">
+          <div class="profile-icon">
+            <i class="fa-regular fa-user"></i>
+          </div>
+
+          <div>
+            <h4>Kyle Bautista</h4>
+            <p style="color:#6b7280;font-size:14px;">Student</p>
+          </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- STATS -->
+
+    <div class="stats-grid">
+      <div class="card">
+        <p class="card-title">Overall Progress</p>
+        <div class="circle-container">
+          <div class="progress-circle">
+            <div class="inner-circle">
+              <h2>67%</h2>
+              <p>Completed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="card-title">Courses in Progress</p>
+        <div class="big-number">4 / 5</div>
+        <p style="margin-top:15px;color:#64748b;">
+          You're doing great! Keep going.
+        </p>
+
+      </div>
+      <div class="card">
+        <p class="card-title">Time Spent Learning</p>
+        <div class="big-number">24h 30m</div>
+        <p style="margin-top:15px;color:#64748b;">
+          This week
+        </p>
+      </div>
+    </div>
+
+    <!-- COURSE PROGRESS -->
+
+    <div class="content-grid">
+
+      <div class="card">
+
+        <h2 style="margin-bottom:30px;">Course Progress</h2>
+
+        <!-- Progress Item -->
+        <div class="progress-item">
+          <div class="progress-header">
+            <span>Mathematics</span>
+            <span>25%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill purple"></div>
+          </div>
+        </div>
+        
+        <!-- Progress Item -->
+        <div class="progress-item">
+          <div class="progress-header">
+            <span>Science</span>
+            <span>40%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill green"></div>
+          </div>
+        </div>
+
+        <!-- Progress Item -->
+        <div class="progress-item">
+          <div class="progress-header">
+            <span>English</span>
+            <span>60%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill yellow"></div>
+          </div>
+        </div>
+
+        <!-- Progress Item -->
+        <div class="progress-item">
+          <div class="progress-header">
+            <span>Programming</span>
+            <span>20%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill red"></div>
+          </div>
+        </div>
+
+        <!-- Progress Item -->
+        <div class="progress-item">
+          <div class="progress-header">
+            <span>Cybersecurity</span>
+            <span>0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill blue"></div>
+          </div>
+        </div>
+        </div>
+
+
+      <!-- ACHIEVEMENTS -->
+
+      <div class="card">
+
+        <h2 style="margin-bottom:30px;">Achievements</h2>
+
+        <div class="achievement">
+          <h4><i class="fa-solid fa-star" style="color: rgb(206, 120, 0);"></i> First Steps</h4>
+          <p>Completed your first module</p>
+        </div>
+
+        <div class="achievement">
+          <h4><i class="fa-solid fa-book" style="color: #2563eb;"></i> Dedicated Learner</h4>
+          <p>Learned for 5 hours</p>
+        </div>
+
+        <div class="achievement">
+          <h4><i class="fa-solid fa-trophy" style="color: #f59e0b;"></i> On a Roll</h4>
+          <p>Completed 3 modules</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- WEEKLY ACTIVITY -->
+
+    <div class="activity-card">
+
+      <h2>Weekly Learning Activity</h2>
+
+      <div class="chart">
+
+        <div class="bar-group">
+          <div class="bar mon"></div>
+          <span class="day">Mon</span>
+        </div>
+
+        <div class="bar-group">
+          <div class="bar tue"></div>
+          <span class="day">Tue</span>
+        </div>
+
+        <div class="bar-group">
+          <div class="bar wed"></div>
+          <span class="day">Wed</span>
+        </div>
+
+        <div class="bar-group">
+          <div class="bar thu"></div>
+          <span class="day">Thu</span>
+        </div>
+
+        <div class="bar-group">
+          <div class="bar fri"></div>
+          <span class="day">Fri</span>
+        </div>
+
+        <div class="bar-group">
+          <div class="bar sat"></div>
+          <span class="day">Sat</span>
+        </div>
+
+        <div class="bar-group">
+          <div class="bar sun"></div>
+          <span class="day">Sun</span>
+        </div>
+
+    </div>
+</div>
+    
+
+
+<footer>
+    <p>&copy; 2026 EmpowerED. All rights reserved.</p>
+</footer>
+
+<script src="script/progress.js"></script>
+<!-- Load accessibility FIRST, then dashboard -->
+<script src="script/accessibility-settings.js"></script>
+<script>
+    // TEST: Simple toggle - paste this temporarily
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.querySelector('.accessibility-button');
+        const panel = document.getElementById('accessibility-panel');
+        
+        btn.addEventListener('click', function() {
+            console.log('Button clicked!'); // Check console
+            panel.classList.toggle('open');
+            this.setAttribute('aria-expanded', panel.classList.contains('open'));
+        });
+    });
+</script>
+</body>
+</html>

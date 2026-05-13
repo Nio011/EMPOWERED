@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignments</title>
+
+    <link rel="stylesheet" href="styles/assignment.css">
+
+     <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    
+</head>
+<body>
+
+<div class="dashboard">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div>
+      <div class="logo">
+        <div class="logo-icon">
+          <img src="assets/logo.png" alt="EmpowerEd Logo">
+        </div>
+
+        <div>
+          <h2>EmpowerEd</h2>
+          <p>Think. Learn. Achieve</p>
+        </div>
+      </div>
+
+      <div class="menu">
+        <a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+        <a href="announcement-db.html"><i class="fa-solid fa-bullhorn"></i>Announcements</a>
+        <a href="all-courses.html"><i class="fa-solid fa-book"></i>Courses</a>
+        <a href="assignments.html" class="active"><i class="fa-solid fa-clipboard-list"></i>Assignments</a>
+        <a href="progress.html"><i class="fa-solid fa-chart-line"></i>Progress</a>
+        <a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a>
+        <a href="login.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+      </div>
+    </div>
+
+    <div class="bottom-box">
+
+      <div class="help-card">
+        <h4>Need Help?</h4>
+        <p style="color:#6b7280;margin-top:5px;">Visit our help center</p>
+      </div>
+
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+        <!-- TOPBAR -->
+    <div class="topbar">
+
+        <div class="welcome">
+        <h1><i class="fa-solid fa-clipboard-list"></i>  Assignments</h1>
+        <p>Track and manage your assignments.</p>
+      </div>
+      
+        <!-- Accessibility Menu and Profile Button -->
+        <div class="nav-controls">
+            <div class="accessibility-menu">
+                <button class="accessibility-button" ><i class="fa-solid fa-eye" style="margin-right:8px;"></i>Accessibility</button>
+                <div id="accessibility-panel" class="accessibility-panel" role="region" aria-label="Accessibility options">
+                    <h2>Accessibility Settings</h2>
+                    <div class="feature-group" aria-label="Text size">
+                        <label>
+                            Font Size
+                        </label>
+                        <div class="button-group">
+                            <button type="button" class="text-size-button" data-size="small">Small</button>
+                            <button type="button" class="text-size-button active" data-size="medium">Medium</button>
+                            <button type="button" class="text-size-button" data-size="large">Large</button>
+                        </div>
+                    </div>
+                    <div class="feature-group" aria-label="Contrast settings">
+                        <!-- High Contrast Mode Toggle -->
+                        <label>
+                            High Contrast Mode
+                        </label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="high-contrast-toggle" class="contrast-button" data-contrast="high">
+                            <label for="high-contrast-toggle" class="toggle-label"></label>
+                        </div>
+                        <p class="contrast-description">Enhanced contrast for better visibility</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--Profile-->
+            <div class="profile">
+          <div class="profile-icon">
+            <i class="fa-regular fa-user"></i>
+          </div>
+
+          <div>
+            <h4>Kyle Bautista</h4>
+            <p style="color:#6b7280;font-size:14px;">Student</p>
+          </div>
+        </div>
+        </div>
+    </div>
+<!-- ASSIGNMENTS MAIN CONTENT -->
+
+<div class="assignments-container">
+  <!-- TABS -->
+
+  <div class="tabs">
+
+    <div class="tab active">Upcoming</div>
+    <div class="tab">Submitted</div>
+    <div class="tab">Missing</div>
+
+  </div>
+
+  <!-- ASSIGNMENT CARD 1 -->
+
+  <div class="assignment-card">
+
+    <div class="assignment-left">
+
+      <div class="icon purple">
+        <i class="fa-solid fa-calculator"></i>
+      </div>
+
+      <div>
+        <h2>Quiz Title</h2>
+        <span>Mathematics</span>
+      </div>
+
+    </div>
+
+    <div class="assignment-info">
+
+      <div>
+        <p class="label">Due Date</p>
+        <h3>May 20, 2026</h3>
+        
+      </div>
+
+      <div>
+        <p class="label">Points</p>
+        <h3>20 pts</h3>
+      </div>
+      <div>
+        <p class="label">Status</p>
+        <span class="status due-soon">Due Soon</span>
+      </div>
+
+      <button class="details-btn">
+        <a href="#">View Details</a>
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- ASSIGNMENT CARD 2 -->
+
+  <div class="assignment-card">
+    <div class="assignment-left">
+      <div class="icon green">
+        <i class="fa-solid fa-flask"></i>
+      </div>
+
+      <div>
+        <h2>Quiz Title</h2>
+        <span>Mathematics</span>
+      </div>
+
+    </div>
+
+    <div class="assignment-info">
+
+      <div>
+        <p class="label">Due Date</p>
+        <h3>May 28, 2026</h3>
+
+      </div>
+
+      <div>
+        <p class="label">Points</p>
+        <h3>25 pts</h3>
+      </div>
+
+      <div>
+        <p class="label">Status</p>
+        <span class="status upcoming">Upcoming</span>
+      </div>
+
+      <button class="details-btn">
+        <a href="#">View Details</a>
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- ASSIGNMENT CARD 3 -->
+
+  <div class="assignment-card">
+
+    <div class="assignment-left">
+
+      <div class="icon orange">
+        <i class="fa-solid fa-file-pen"></i>
+      </div>
+
+      <div>
+        <h2>English Essay</h2>
+        <span>English</span>
+      </div>
+
+    </div>
+
+    <div class="assignment-info">
+
+      <div>
+        <p class="label">Due Date</p>
+        <h3>June 2, 2026</h3>
+       
+      </div>
+
+      <div>
+        <p class="label">Points</p>
+        <h3>30 pts</h3>
+      </div>
+
+      <div>
+        <p class="label">Status</p>
+        <span class="status upcoming">Upcoming</span>
+      </div>
+
+      <button class="details-btn">
+        <a href="#">View Details</a>
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- ASSIGNMENT CARD 4 -->
+
+  <div class="assignment-card">
+
+    <div class="assignment-left">
+
+      <div class="icon blue">
+        <i class="fa-solid fa-book"></i>
+      </div>
+
+      <div>
+        <h2>Module 2 Worksheet </h2>
+        <span>Mathematics</span>
+      </div>
+
+    </div>
+
+    <div class="assignment-info">
+
+      <div>
+        <p class="label">Due Date</p>
+        <h3>June 5, 2024</h3>
+      </div>
+
+      <div>
+        <p class="label">Points</p>
+        <h3>15 pts</h3>
+      </div>
+
+      <div>
+        <p class="label"> Status </p>
+        <span class="status upcoming">Upcoming</span>
+      </div>
+
+      <button class="details-btn">
+        <a href="#">View Details</a>
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+    </div>
+
+  </div>
+  </div>
+
+<footer>
+    <p>&copy; 2026 EmpowerED. All rights reserved.</p>
+</footer>
+
+<script src="script/all-courses.js"></script>
+<!-- Load accessibility FIRST, then dashboard -->
+<script src="script/accessibility-settings.js"></script>
+<script>
+    // TEST: Simple toggle - paste this temporarily
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.querySelector('.accessibility-button');
+        const panel = document.getElementById('accessibility-panel');
+        
+        btn.addEventListener('click', function() {
+            console.log('Button clicked!'); // Check console
+            panel.classList.toggle('open');
+            this.setAttribute('aria-expanded', panel.classList.contains('open'));
+        });
+    });
+</script>
+</body>
+</html>
+
+</body>
+</html>

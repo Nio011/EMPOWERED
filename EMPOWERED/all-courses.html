@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Courses</title>
+    <link rel="stylesheet" href="styles/all-courses.css">
+
+     <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    
+</head>
+<body>
+
+<div class="dashboard">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div>
+      <div class="logo">
+        <div class="logo-icon">
+          <img src="assets/logo.png" alt="EmpowerEd Logo">
+        </div>
+
+        <div>
+          <h2>EmpowerEd</h2>
+          <p>Think. Learn. Achieve</p>
+        </div>
+      </div>
+
+      <div class="menu">
+        <a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+        <a href="announcement-db.html"><i class="fa-solid fa-bullhorn"></i>Announcements</a>
+        <a href="all-courses.html" class="active"><i class="fa-solid fa-book"></i>Courses</a>
+        <a href="assignments.html"><i class="fa-solid fa-clipboard-list"></i>Assignments</a>
+        <a href="progress.html"><i class="fa-solid fa-chart-line"></i>Progress</a>
+        <a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a>
+        <a href="login.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+      </div>
+    </div>
+
+    <div class="bottom-box">
+
+      <div class="help-card">
+        <h4>Need Help?</h4>
+        <p style="color:#6b7280;margin-top:5px;">Visit our help center</p>
+      </div>
+
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+        <!-- TOPBAR -->
+    <div class="topbar">
+
+       <div class="welcome">
+        <h1><i class="fa-solid fa-graduation-cap"></i> My Courses</h1>
+        <p>Welcome to My Courses! Select a course to continue your learning. </p>
+      </div>
+      
+        <!-- Accessibility Menu and Profile Button -->
+        <div class="nav-controls">
+            <div class="accessibility-menu">
+                <button class="accessibility-button" ><i class="fa-solid fa-eye" style="margin-right:8px;"></i>Accessibility</button>
+                <div id="accessibility-panel" class="accessibility-panel" role="region" aria-label="Accessibility options">
+                    <h2>Accessibility Settings</h2>
+                    <div class="feature-group" aria-label="Text size">
+                        <label>
+                            Font Size
+                        </label>
+                        <div class="button-group">
+                            <button type="button" class="text-size-button" data-size="small">Small</button>
+                            <button type="button" class="text-size-button active" data-size="medium">Medium</button>
+                            <button type="button" class="text-size-button" data-size="large">Large</button>
+                        </div>
+                    </div>
+                    <div class="feature-group" aria-label="Contrast settings">
+                        <!-- High Contrast Mode Toggle -->
+                        <label>
+                            High Contrast Mode
+                        </label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="high-contrast-toggle" class="contrast-button" data-contrast="high">
+                            <label for="high-contrast-toggle" class="toggle-label"></label>
+                        </div>
+                        <p class="contrast-description">Enhanced contrast for better visibility</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--Profile-->
+            <div class="profile">
+          <div class="profile-icon">
+            <i class="fa-regular fa-user"></i>
+          </div>
+
+          <div>
+            <h4>Kyle Bautista</h4>
+            <p style="color:#6b7280;font-size:14px;">Student</p>
+          </div>
+        </div>
+        </div>
+    </div>
+
+
+    
+    <!-- COURSES -->
+
+    <div class="courses">
+      <!-- CARD -->
+      <div class="course-card">
+        <div class="course-top">
+          <div class="course-icon purple">
+            <i class="fa-solid fa-divide"></i>
+          </div>
+
+          <div>
+            <h3>Mathematics</h3>
+            <div class="badge badge-purple">8 modules</div>
+          </div>
+        </div>
+
+        <p>
+          Explore numbers, equations, and problem-solving step by step.
+        </p>
+
+        <div class="progress-bar">
+          <div class="progress progress-purple"></div>
+        </div>
+
+        <div class="progress-text">25% Complete</div>
+
+        <button class="continue-btn btn-purple">
+          <i class="fa-solid fa-circle-play"></i>
+          Continue Learning
+        </button>
+
+    </div>
+      <!-- CARD -->
+    <div class="course-card">
+
+        <div class="course-top">
+          <div class="course-icon green">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+
+          <div>
+            <h3>Science</h3>
+            <div class="badge badge-green">6 modules</div>
+          </div>
+        </div>
+
+        <p>
+          Discover the world around you through easy lessons.
+        </p>
+        <div class="progress-bar">
+          <div class="progress progress-green"></div>
+        </div>
+        <div class="progress-text">40% Complete</div>
+
+        <button class="continue-btn btn-green">
+          <i class="fa-solid fa-circle-play"></i>
+          Continue Learning
+        </button>
+
+    </div>
+
+    <!-- CARD -->
+    <div class="course-card">
+
+        <div class="course-top">
+            <div class="course-icon yellow">
+                <i class="fa-solid fa-pencil"></i>
+            </div>
+
+        <div>
+            <h3>English</h3>
+            <div class="badge badge-yellow">7 modules</div>
+        </div>
+        </div>
+
+        <p>
+          Improve reading, writing, and communication skills.
+        </p>
+
+        <div class="progress-bar">
+            <div class="progress progress-yellow"></div>
+        </div>
+        <div class="progress-text">60% Complete</div>
+            <button class="continue-btn btn-yellow">
+                <i class="fa-solid fa-circle-play"></i>
+                Continue Learning
+        </button>
+
+    </div>
+
+    <div class="course-card">
+
+        <div class="course-top">
+          <div class="course-icon red">
+            <i class="fa-solid fa-code"></i>
+          </div>
+
+          <div>
+            <h3>Programming</h3>
+            <div class="badge badge-red">3 modules</div>
+          </div>
+        </div>
+
+        <p>
+          Learn the fundamentals of programming and problem-solving.
+        </p>
+
+        <div class="progress-bar">
+          <div class="progress progress-red"></div>
+        </div>
+        <div class="progress-text">20% Complete</div>
+        <button class="continue-btn btn-red">
+          <i class="fa-solid fa-circle-play"></i>
+          Continue Learning
+        </button>
+
+    </div>
+
+      <!-- CARD -->
+    <div class="course-card">
+
+        <div class="course-top">
+            <div class="course-icon blue">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+
+        <div>
+            <h3>Cybersecurity</h3>
+            <div class="badge badge-blue">12 modules</div>
+        </div>
+        </div>
+
+        <p>
+            Understand online safety and protect your digital world.    
+        </p>
+
+        <div class="progress-bar">
+            <div class="progress progress-blue"></div>
+        </div>
+        <div class="progress-text">0% Complete</div>
+            <button class="continue-btn btn-blue">
+                <i class="fa-solid fa-circle-play"></i>
+                Start Learning
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+
+<footer>
+    <p>&copy; 2026 EmpowerED. All rights reserved.</p>
+</footer>
+
+<script src="script/all-courses.js"></script>
+<!-- Load accessibility FIRST, then dashboard -->
+<script src="script/accessibility-settings.js"></script>
+<script>
+    // TEST: Simple toggle - paste this temporarily
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.querySelector('.accessibility-button');
+        const panel = document.getElementById('accessibility-panel');
+        
+        btn.addEventListener('click', function() {
+            console.log('Button clicked!'); // Check console
+            panel.classList.toggle('open');
+            this.setAttribute('aria-expanded', panel.classList.contains('open'));
+        });
+    });
+</script>
+</body>
+</html>
