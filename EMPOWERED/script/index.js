@@ -3,7 +3,7 @@ const panel = document.getElementById('accessibility-panel');
 const textSizeButtons = document.querySelectorAll('.text-size-button');
 const contrastToggle = document.getElementById('high-contrast-toggle');
 
-// Load saved settings on page load (if accessibility settings is available)
+// Load saved settings on page load 
 if (typeof AccessibilitySettings !== 'undefined') {
     AccessibilitySettings.apply();
 }
