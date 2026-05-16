@@ -473,6 +473,7 @@ body.high-contrast footer {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.3s ease;
     width: 640px;
+    transition: all 0.3s ease;
 }
 
 .feature-cards:hover {
@@ -572,8 +573,6 @@ body.high-contrast footer {
     line-height: 1.5;
 }
 
-
-
 .back-button-container {
     padding-top: 2rem;
     padding-left: 7rem;
@@ -583,7 +582,7 @@ body.high-contrast footer {
     text-decoration: none;
     color: #000d36;
     font-weight: 500;
-    transition: color 0.2s ease;
+    transition: color 0.3s ease;
 }
 
 .back-button:hover {
