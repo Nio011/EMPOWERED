@@ -149,7 +149,7 @@ body {
     color: #111827;
     cursor: pointer;
     transition: all 0.2s ease;
-}       
+}
 
 .nav-controls button:hover,
 .nav-controls button:focus-visible {
@@ -526,6 +526,174 @@ footer {
     margin-top: auto;
 }
 
+/* Small */
 
+body.text-small {
+    font-size: 16px;
+    line-height: 1.6;
+}
 
+body.text-small .menu a {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+body.text-small .welcome h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+}
+
+body.text-small .welcome p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+body.text-small .profile h4 {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+body.text-small .profile p {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+body.text-small .tabs {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+body.text-small .assignment-card h2 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+body.text-small .assignment-card span {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+body.text-small .label p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+body.text-small .assignment-info h3 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+}
+
+/* Medium */
+
+body.text-medium{
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+body.text-medium .menu a {
+    font-size: 1.125rem;
+    line-height: 1.4;
+}
+
+body.text-medium .welcome h1 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+}
+
+body.text-medium .welcome p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+body.text-medium .profile h4 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+body.text-medium .profile p {
+    font-size: 1.125rem;
+    line-height: 1.4;
+}
+
+body.text-medium .tabs {
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+body.text-medium .assignment-card h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+}
+
+body.text-medium .assignment-card span {
+    font-size: 1.45rem;
+    line-height: 1.3;
+}
+
+body.text-medium .label p {
+    font-size: 1.125rem;
+    line-height: 1.4;
+}
+
+body.text-medium .assignment-info h3 {
+    font-size: 1.75rem;
+    line-height: 1.4;
+}
+
+/* Large */
+
+body.text-large {
+    font-size: 20px;
+    line-height: 1.7
+}
+
+body.text-large .menu a {
+    font-size: 1.375rem;
+    line-height: 1.7;
+}
+
+body.text-large .welcome h1 {
+    font-size: 3rem;
+    line-height: 1.3
+}
+
+body.text-large .welcome p {
+    font-size: 1.375rem;
+    line-height: 1.7;
+}
+
+body.text-large .profile h4 {
+    font-size: 1.375rem;
+    line-height: 1.7;
+}
+
+body.text-large .profile p {
+    font-size: 1.375rem;
+    line-height: 1.7;
+}
+
+body.text-large .tabs {
+    font-size: 1.75rem;
+    line-height: 1.7;
+}
+
+body.text-large .assignment-card h2 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+}
+
+body.text-large .assignment-card span {
+    font-size: 1.65rem;
+    line-height: 1.3;
+}
+
+body.text-large .label p {
+    font-size: 1.375rem;
+    line-height: 1.7;
+}
+
+body.text-large .assignment-info h3 {
+    font-size: 2rem;
+    line-height: 1.7;
+}
 
