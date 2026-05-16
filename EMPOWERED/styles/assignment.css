@@ -697,3 +697,155 @@ body.text-large .assignment-info h3 {
     line-height: 1.7;
 }
 
+/* High Contrast Mode */
+body.high-contrast {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+/* Navbar */
+body.high-contrast .navbar {
+    background: #1A1A1A;
+    border-bottom: 2px solid #FFD700; /* stronger accessible yellow */
+}
+
+/* Headings */
+body.high-contrast .hero h2,
+body.high-contrast .feature-card-title h2 {
+    color: #FFFFFF;
+}
+
+.body .high-contrast .hero p {
+    color: #FFFFFF;
+}
+
+body.high-contrast .accessibility-panel {
+    background: #000000;
+    border: 2px solid #FFD700;
+    color: #FFFFFF;
+}
+
+body.high-contrast .accessibility-button {
+    background: #FFD700;
+}
+
+body.high-contrast .accessibility-panel h2 {
+    color: #fdfdfd;
+    border-bottom: 1px solid #FFD700;
+}
+
+body.high-contrast .accessibility-panel .feature-group label {
+    color: #FFFFFF;
+}
+
+/* Text Size Buttons */
+body.high-contrast .accessibility-panel .text-size-button {
+    background: transparent;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+body.high-contrast .accessibility-panel .text-size-button.active {
+    background: #FFD700;
+    border: 2px solid #FFD700;
+    color: #000000;
+}
+
+/* Toggle Switch */
+body.high-contrast .toggle-label {
+    background-color: #333333;
+}
+
+body.high-contrast .toggle-switch input[type="checkbox"]:checked + .toggle-label {
+    background-color: #FFD700;
+}
+
+body.high-contrast .toggle-switch input[type="checkbox"]:checked + .toggle-label::after {
+    background-color: #000000;
+}
+
+body.high-contrast .sidebar {
+    background: #000000;
+}
+
+body.high-contrast .menu a {
+    color: #FFFFFF;
+}
+
+body.high-contrast .menu a:hover {
+    background: #333333;
+    color: #FFD700;
+}
+
+body.high-contrast .menu .active {
+    background: #333333;
+    color: #FFD700;
+}
+
+body.high-contrast .help-card {
+    background: #1A1A1A;
+    border: 2px solid #FFD700;
+    color: #FFFFFF;
+}
+
+body.high-contrast .profile-icon {
+    background: #333333;
+    color: #FFFFFF;
+}
+
+body.high-contrast .assignment-card {
+    background: #000000;
+}
+
+body.high-contrast .assignment-card h2,
+body.high-contrast .assignment-card h3,
+body.high-contrast .assignment-card p {
+    color: #FFFFFF;
+}
+
+body.high-contrast .assignment-card:hover {
+    border-color: #FFD700;
+}
+
+body.high-contrast .assignment-icon {
+    background: #333333;
+    color: #FFFFFF;
+}
+
+body.high-contrast .status.due {
+    background: #333333;
+    color: #FFFFFF;
+}
+
+body.high-contrast .tab {
+    color: #FFFFFF;
+}
+
+body.high-contrast .tab.active {
+    color: #FFD700;
+}
+
+body.high-contrast .status.due-soon{
+    background: #333333;
+    color: #FFFFFF;
+}
+
+body.high-contrast .status.upcoming {
+    background: #333333;
+    color: #FFFFFF;
+}
+
+body.high-contrast .icon {
+    background: #333333;
+    color: #FFFFFF;
+}
+
+body.high-contrast .details-btn {
+    background: #FFD700;
+    color: #000000;
+}
+
+body.high-contrast .assignment-info a {
+    color: #000000;
+}
+

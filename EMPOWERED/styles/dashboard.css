@@ -72,6 +72,7 @@ body {
       color:#374151;
       display:flex;
       align-items:center;
+      font-size:17px;
       gap:14px;
       padding:14px 16px;
       border-radius:14px;
@@ -942,6 +943,197 @@ body.text-large .task p {
 body.text-large .status {
     font-size: 1.375rem;
     line-height: 1.7;
+}
+
+/* High Contrast Mode */
+body.high-contrast {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+/* Navbar */
+body.high-contrast .navbar {
+    background: #1A1A1A;
+    border-bottom: 2px solid #FFD700; /* stronger accessible yellow */
+}
+
+/* Headings */
+body.high-contrast .hero h2,
+body.high-contrast .feature-card-title h2 {
+    color: #FFFFFF;
+}
+
+.body .high-contrast .hero p {
+    color: #FFFFFF;
+}
+
+body.high-contrast .accessibility-panel {
+    background: #000000;
+    border: 2px solid #FFD700;
+    color: #FFFFFF;
+}
+
+body.high-contrast .accessibility-button {
+    background: #FFD700;
+}
+
+body.high-contrast .accessibility-panel h2 {
+    color: #fdfdfd;
+    border-bottom: 1px solid #FFD700;
+}
+
+body.high-contrast .accessibility-panel .feature-group label {
+    color: #FFFFFF;
+}
+
+/* Text Size Buttons */
+body.high-contrast .accessibility-panel .text-size-button {
+    background: transparent;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+body.high-contrast .accessibility-panel .text-size-button.active {
+    background: #FFD700;
+    border: 2px solid #FFD700;
+    color: #000000;
+}
+
+/* Toggle Switch */
+body.high-contrast .toggle-label {
+    background-color: #333333;
+}
+
+body.high-contrast .toggle-switch input[type="checkbox"]:checked + .toggle-label {
+    background-color: #FFD700;
+}
+
+body.high-contrast .toggle-switch input[type="checkbox"]:checked + .toggle-label::after {
+    background-color: #000000;
+}
+
+body.high-contrast .sidebar {
+    background: #000000;
+}
+
+body.high-contrast .menu a {
+    color: #FFFFFF;
+}
+
+body.high-contrast .menu a:hover {
+    background: #333333;
+    color: #FFD700;
+}
+
+body.high-contrast .menu .active {
+    background: #333333;
+    color: #FFD700;
+}
+
+body.high-contrast .help-card {
+    background: #1A1A1A;
+    border: 2px solid #FFD700;
+    color: #FFFFFF;
+}
+
+body.high-contrast .profile-icon {
+    background: #333333;
+    color: #FFFFFF;
+}
+
+body.high-contrast .section-title a {
+    color: #FFD700;
+    background: #000000;
+}
+
+body.high-contrast .course-card {
+    background: #000000;
+}
+
+body.high-contrast .course-card:hover {
+    background: #333333;
+    border-color: #FFD700;
+}
+
+body.high-contrast .course-icon {
+    background: #333333;
+    color: #FFFFFF;
+}
+
+body.high-contrast .badge {
+    background: #333333;
+    color: #FFFFFF;
+}
+
+body.high-contrast .progress-bar {
+    background: #333333;
+}
+
+body.high-contrast .progress {
+    background: #FFD700;
+}
+
+body.high-contrast .progress-text {
+    color: #FFFFFF;
+}
+
+body.high-contrast .continue-btn {
+    background: #FFD700;
+    color: #000000;
+}
+
+body.high-contrast .card {
+    background: #000000;
+}
+
+body.high-contrast .card:hover {
+    background: #333333;
+    border-color: #FFD700;
+}
+
+body.high-contrast .circle {
+    background: conic-gradient(#FFD700 67%, #333333 0);
+}
+
+body.high-contrast .circle-inner {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+body.high-contrast .progress-btn {
+    background: #FFD700;
+    color: #000000;
+}
+
+body.high-contrast .task-icon {
+    background: #333333;
+    color: #FFFFFF;
+}
+
+body.high-contrast .status.due {
+    background: #333333;
+    color: #FFFFFF;
+}
+
+body.high-contrast .status.upcoming {
+    background: #333333;
+    color: #FFFFFF;
+}
+
+body.high-contrast .status.later {
+    background: #333333;
+    color: #FFFFFF;
+}
+
+body.high-contrast .tasks-btn {
+    background: #FFD700;
+    color: #000000;
+}
+
+body.high-contrast footer {
+    background: #1A1A1A;
+    color: #FFFFFF;
+    border-top: 2px solid #FFD700;
 }
 
 
