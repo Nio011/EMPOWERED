@@ -20,7 +20,7 @@
 </head>
 
 
-<body class="text-medium">
+<body>
 
 <!-- NAVBAR -->
 <div class ="navbar">
@@ -222,9 +222,21 @@
 </main>
 
 <!-- SCRIPTS -->
-<script src="script/accessibility-settings.js"></script>
-<script src="script/accessibility.js"></script>
+
 <script src="script/announcement.js"></script>
+<script src="script/accessibility-settings.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.querySelector('.accessibility-button');
+        const panel = document.getElementById('accessibility-panel');
+        
+        btn.addEventListener('click', function() {
+            console.log('Button clicked!'); // Check console
+            panel.classList.toggle('open');
+            this.setAttribute('aria-expanded', panel.classList.contains('open'));
+        });
+    });
+</script>
 
 </body>
 </html>
