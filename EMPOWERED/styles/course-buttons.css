@@ -476,22 +476,88 @@ body.high-contrast footer {
 }
 
 .feature-cards:hover {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-color:#6e6e6e;
+    box-shadow:0 10px 20px rgba(37,99,235,0.1);
+    transform: scale(1.02);
     cursor: pointer;
 }
 
+
 .feature-card-header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0rem;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:20px;
+}
+.fc-icon {
+   width:70px;
+    height:70px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    color:#fff;
 }
 
-.image-container img {
-    width: 48px;
-    height: 48px;
-    border-radius: 15px;
-}
+.purple{ background:#8b5cf6; }
+.green{ background:#22c55e; }
+.yellow{ background:#fbbf24; }
+.red{ background:#ef4444; }
+
+/*continue button*/
+
+    .continue-btn{
+      width:100%;
+      border:none;
+      padding:15px;
+      border-radius:16px;
+      font-size:17px;
+      font-weight:600;
+      cursor:pointer;
+      transition: all 0.3s ease;
+    }
+
+    .continue-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-purple{
+      background:#f3e8ff;
+      color:#7c3aed;
+    }
+
+    .btn-purple:hover {
+      background:#ede9fe;
+    }
+
+    .btn-green{
+      background:#dcfce7;
+      color:#16a34a;
+    }
+
+    .btn-green:hover {
+      background:#c6f6d5;
+    }
+
+    .btn-yellow{
+      background:#fef3c7;
+      color:#d97706;
+    }
+
+    .btn-yellow:hover {
+      background:#fde68a;
+    }
+
+    .btn-red{
+      background:#fee2e2;
+      color:#ef4444;
+    }
+
+    .btn-red:hover {
+      background:#fecaca;
+    }
 
 .feature-card-title h2 {
     font-size: 1.5rem;
@@ -506,10 +572,6 @@ body.high-contrast footer {
     line-height: 1.5;
 }
 
-.feature-meta {
-    color: #6b7280;
-    font-size: 0.875rem;
-}
 
 
 .back-button-container {
@@ -519,13 +581,14 @@ body.high-contrast footer {
 
 .back-button {
     text-decoration: none;
-    color: #2563eb;
+    color: #000d36;
     font-weight: 500;
     transition: color 0.2s ease;
 }
 
 .back-button:hover {
-    color: #000d36;
+    color: #2563eb;
+    
 }
 
 footer {
@@ -542,6 +605,40 @@ footer {
     text-decoration: none;
     color: inherit;
     display: block;
+}
+
+@media(max-width:900px){
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+        padding:20px;
+    }
+
+    .hero{
+        padding:30px 25px 10px;
+    }
+
+    .hero h2{
+        font-size:3rem;
+    }
+
+    .hero p{
+        font-size:1.1rem;
+    }
+
+    .feature-buttons{
+        padding:30px 25px 50px;
+        grid-template-columns:1fr;
+    }
+
+    .back-button-container{
+        padding:30px 25px 0;
+    }
+
+    .feature-cards{
+        min-height:240px;
+    }
 }
 
 @media(max-width:900px){
