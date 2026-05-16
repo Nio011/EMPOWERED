@@ -369,7 +369,6 @@ body {
 .meta-info {
     display: flex;
     gap: 15px;
-    font-size: 0.9rem;
     color: #777;
     margin: 12px 0;
     flex-wrap: wrap;
@@ -403,6 +402,145 @@ footer {
     margin-top: auto;
 }
 
+/* Small */
+
+body.text-small {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+body.text-small .menu a {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+body.text-small .welcome h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+}
+
+body.text-small .welcome p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+body.text-small .profile h4 {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+body.text-small .profile p {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+body.text-small .card-top h3 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+body.text-small .body-text p {
+    font-size: 1.125rem;
+    line-height: 1.4;
+}
+
+body.text-small .meta-info span {
+    font-size: 1rem;
+    line-height: 1.4;
+}
 
 
+/* Medium */
+
+body.text-medium{
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+body.text-medium .menu a {
+    font-size: 1.125rem;
+    line-height: 1.4;
+}
+
+body.text-medium .welcome h1 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+}
+
+body.text-medium .welcome p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+body.text-medium .profile h4 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+body.text-medium .profile p {
+    font-size: 1.125rem;
+    line-height: 1.4;
+}
+
+body.text-medium .card-top h3 {
+    font-size: 1.75rem;
+    line-height: 1.4;
+}
+
+body.text-medium .body-text p {
+    font-size: 1.35rem;
+    line-height: 1.4;
+}
+
+body.text-medium .meta-info span {
+    font-size: 1.125rem;
+    line-height: 1.4;
+}
+
+/* Large */
+
+body.text-large {
+    font-size: 20px;
+    line-height: 1.7
+}
+
+body.text-large .menu a {
+    font-size: 1.375rem;
+    line-height: 1.7;
+}
+
+body.text-large .welcome h1 {
+    font-size: 3rem;
+    line-height: 1.3
+}
+
+body.text-large .welcome p {
+    font-size: 1.375rem;
+    line-height: 1.7;
+}
+
+body.text-large .profile h4 {
+    font-size: 1.375rem;
+    line-height: 1.7;
+}
+
+body.text-large .profile p {
+    font-size: 1.375rem;
+    line-height: 1.7;
+}
+
+body.text-large .card-top h3 {
+    font-size: 2rem;
+    line-height: 1.7;
+}
+
+body.text-large .body-text p {
+    font-size: 1.65rem;
+    line-height: 1.4;
+}
+
+body.text-large .meta-info span {
+    font-size: 1.45rem;
+    line-height: 1.4;
+}
 
