@@ -65,6 +65,7 @@ body {
       display:flex;
       flex-direction:column;
       gap:10px;
+
     }
 
     .menu a{
@@ -76,7 +77,7 @@ body {
       padding:14px 16px;
       border-radius:14px;
       font-size:17px;
-      transition:0.3s;
+      transition: all 0.3s ease;
     }
 
 .menu a:hover{
@@ -365,6 +366,7 @@ body {
       border-radius:24px;
       padding:24px;
       cursor: pointer;
+      transition: all 0.3s ease;
     }
 
 .course-card:hover{

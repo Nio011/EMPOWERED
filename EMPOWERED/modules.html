@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Modules | EmpowerED</title>
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/announcement.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/modules.css">
     <style>
         .modules-container { padding: 3rem 7rem; }
@@ -22,23 +24,32 @@
         body.high-contrast .module-card { background: #000; border: 2px solid #fff; }
         body.high-contrast .module-header { background: #1a1a1a; border-bottom: 2px solid #fff; color: #fff; }
     </style>
+
+     <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 </head>
-<body class="text-medium">
-    
-    <div class ="navbar">
+<body>
+
+        <div class ="navbar">
         <div class="brand">
-            <div class="logo-icon">
-                <img src="assets/logo.png" alt="EmpowerED logo" />
-            </div>
-            <div class ="logo">
-                <h3> Empowered</h3>
-                <span> Think. Learn. Achieve. </span>
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="assets/logo.png" alt="EmpowerEd Logo">
+                </div>
+                <div>
+                    <h2>EmpowerEd</h2>
+                    <p>Think. Learn. Achieve</p>
+                </div>
             </div>
         </div>
+    
+
         
+        <!-- Accessibility Menu and Profile Button -->
         <div class="nav-controls">
             <div class="accessibility-menu">
-                <button class="accessibility-button" aria-expanded="false" aria-controls="accessibility-panel">Accessibility</button>
+                <button class="accessibility-button" ><i class="fa-solid fa-eye" style="margin-right:8px;"></i>Accessibility</button>
                 <div id="accessibility-panel" class="accessibility-panel" role="region" aria-label="Accessibility options">
                     <h2>Accessibility Settings</h2>
                     <div class="feature-group" aria-label="Text size">
@@ -52,6 +63,7 @@
                         </div>
                     </div>
                     <div class="feature-group" aria-label="Contrast settings">
+                        <!-- High Contrast Mode Toggle -->
                         <label>
                             High Contrast Mode
                         </label>
@@ -63,21 +75,56 @@
                     </div>
                 </div>
             </div>
-            <div class ="Profile"> 
-                <button class="profile-button">Profile</button>
-            </div>
+
+            <!--Profile-->
+            <div class="profile">
+          <div class="profile-icon">
+            <i class="fa-regular fa-user"></i>
+          </div>
+
+          <div>
+            <h4>Kyle Bautista</h4>
+            <p style="color:#6b7280;font-size:14px;">Student</p>
+          </div>
+        </div>
         </div>
     </div>
-    <main class="modules-container">
-        
-        <div class="back-button-container">
-            <a href="course.html" class="back-button"> &laquo; Back to Course</a>
-        </div>
 
-        <header class="header-container">
-            <h1>Mathematics Modules</h1>
-            <p>Complete lessons to unlock new modules and progress through the course</p>
-        </header>
+    <main class="modules-container">
+    <!--back button -->
+    <div class="back-button-container">
+        <a href="course-buttons.html" class="back-button"> &laquo; Back</a>
+    </div>
+
+     <!-- COURSE OVERVIEW DONT REMOVE-->
+    <section class="course-overview">
+        <div class="overview-left">
+            <div class="overview-icon">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+            <div>
+                <h2>Mathematics</h2>
+                <p>
+                    Explore algebra, equations, fractions, and problem-solving step by step.
+                </p>
+            </div>
+
+        </div>
+        <div class="overview-right">
+            <div class="progress-wrapper">
+                <div class="progress-labels">
+                    <span>Overall Progress</span>
+                    <span>25%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+
+                <small>5 of 20 lessons completed</small>
+            </div>
+        </div>
+    </section>
 
         <div class="module-card">
             <div class="module-header" onclick="toggleModule(this)">

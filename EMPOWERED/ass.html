@@ -2,28 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Activities Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/ass.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <div class ="navbar">
         <div class="brand">
-            <div class="logo-icon">
-                <img src="assets/logo.png" alt="EmpowerED logo" />
-            </div>
-            <div class ="logo">
-                <h3> Empowered</h3>
-                <span> Think. Learn. Achieve. </span>
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="assets/logo.png" alt="EmpowerEd Logo">
+                </div>
+                <div>
+                    <h2>EmpowerEd</h2>
+                    <p>Think. Learn. Achieve</p>
+                </div>
             </div>
         </div>
+    
+
         
         <!-- Accessibility Menu and Profile Button -->
         <div class="nav-controls">
             <div class="accessibility-menu">
-                <button class="accessibility-button" aria-expanded="false" aria-controls="accessibility-panel">Accessibility</button>
+                <button class="accessibility-button" ><i class="fa-solid fa-eye" style="margin-right:8px;"></i>Accessibility</button>
                 <div id="accessibility-panel" class="accessibility-panel" role="region" aria-label="Accessibility options">
                     <h2>Accessibility Settings</h2>
                     <div class="feature-group" aria-label="Text size">
@@ -49,16 +59,25 @@
                     </div>
                 </div>
             </div>
-            <div class ="Profile">
-                <button class="profile-button">Profile</button>
-            </div>
+
+            <!--Profile-->
+            <div class="profile">
+          <div class="profile-icon">
+            <i class="fa-regular fa-user"></i>
+          </div>
+
+          <div>
+            <h4>Kyle Bautista</h4>
+            <p style="color:#6b7280;font-size:14px;">Student</p>
+          </div>
+        </div>
         </div>
     </div>
     
     <main class="container">
 
         <div class="back-button-container">
-            <a href="course-buttons.html" class="back-button"> &laquo; Back to My Courses</a>
+            <a href="course-buttons.html" class="back-button"> &laquo; Back</a>
         </div>
 
         <header class="header">
@@ -68,7 +87,7 @@
 
         <section class="stats-grid">
             <div class="stat-card">
-                <div class="stat-icon icon-blue">🕒</div>
+                <div class="stat-icon icon-blue"><i class="fa-regular fa-clock"></i></div>
                 <div class="stat-content">
                     <span class="stat-label">Pending</span>
                     <h2 class="stat-value">3</h2>
@@ -76,7 +95,7 @@
                 </div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon icon-green">✅</div>
+                <div class="stat-icon icon-green"><i class="fa-regular fa-check-circle"></i></div>
                 <div class="stat-content">
                     <span class="stat-label">Completed</span>
                     <h2 class="stat-value">1</h2>
@@ -84,7 +103,7 @@
                 </div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon icon-purple">📋</div>
+                <div class="stat-icon icon-purple"><i class="fa-solid fa-award"></i></div>
                 <div class="stat-content">
                     <span class="stat-label">Total Points</span>
                     <h2 class="stat-value">15/55</h2>
@@ -99,14 +118,14 @@
             <!-- Pending Activities -->
             <article class="activity-card">
                 <div class="card-main">
-                    <div class="type-icon">📄</div>
+                    <div class="type-icon"><i class="fa-regular fa-file-lines"></i></div>
                     <div class="card-info">
                         <h4>Module 2: Worksheet</h4>
                         <p class="description">Worksheet for Module 2</p>
                         <div class="meta-row">
-                            <span>📅 Due: June 02, 2026</span>
+                            <span><i class="fa-regular fa-calendar"></i> Due: June 02, 2026</span>
                             <span>15 points</span>
-                            <span class="badge badge-progress">🕒 Upcoming</span>
+                            <span class="badge badge-progress"><i class="fa-regular fa-clock"></i> Upcoming</span>
                         </div>
                     </div>
                 </div>
@@ -118,14 +137,14 @@
             <!-- Pending Quizzes -->
             <article class="activity-card">
                 <div class="card-main">
-                    <div class="type-icon">📝</div>
+                    <div class="type-icon"><i class="fa-regular fa-file-lines"></i></div>
                     <div class="card-info">
                         <h4>Quiz: Module 2 Assessment</h4>
                         <p class="description">Mathematics Quiz</p>
                         <div class="meta-row">
-                            <span>📅 Due: May 20, 2026</span>
+                            <span><i class="fa-regular fa-calendar"></i> Due: May 20, 2026</span>
                             <span>10 points</span>
-                            <span class="badge badge-alert">🕒 Due Soon</span>
+                            <span class="badge badge-alert"><i class="fa-regular fa-clock"></i> Due Soon</span>
                         </div>
                     </div>
                 </div>
@@ -136,14 +155,14 @@
 
             <article class="activity-card">
                 <div class="card-main">
-                    <div class="type-icon">📝</div>
+                    <div class="type-icon"><i class="fa-regular fa-file-lines"></i></div>
                     <div class="card-info">
                         <h4>Quiz: Module 3 Assessment</h4>
                         <p class="description">Mathematics Quiz</p>
                         <div class="meta-row">
-                            <span>📅 Due: May 28, 2026</span>
+                            <span><i class="fa-regular fa-calendar"></i> Due: May 28, 2026</span>
                             <span>10 points</span>
-                            <span class="badge badge-progress">🕒 Upcoming</span>
+                            <span class="badge badge-progress"><i class="fa-regular fa-clock"></i> Upcoming</span>
                         </div>
                     </div>
                 </div>
@@ -159,13 +178,13 @@
             
             <article class="activity-card completed">
                 <div class="card-main">
-                    <div class="type-icon">📄</div>
+                    <div class="type-icon"><i class="fa-regular fa-file-lines"></i></div>
                     <div class="card-info">
                         <h4>Module 1: Worksheet</h4>
                         <div class="meta-row">
-                            <span>📅 Submitted: April 13, 2026</span>
+                            <span><i class="fa-regular fa-calendar"></i> Submitted: April 13, 2026</span>
                             <span class="score">Score: 15/20</span>
-                            <span class="badge badge-success">✅ Completed</span>
+                            <span class="badge badge-success"><i class="fa-regular fa-check-circle"></i> Completed</span>
                         </div>
                     </div>
                 </div>

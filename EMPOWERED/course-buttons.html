@@ -8,6 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage</title>
     <link rel="stylesheet" href="styles/course-buttons.css">
+
+     <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 </head>
 <body>
 
@@ -15,19 +19,23 @@
     <!-- Navigation Bar -->
     <div class ="navbar">
         <div class="brand">
-            <div class="logo-icon">
-                <img src="assets/logo.png" alt="EmpowerED logo" />
-            </div>
-            <div class ="logo">
-                <h3> Empowered</h3>
-                <span> Think. Learn. Achieve. </span>
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="assets/logo.png" alt="EmpowerEd Logo">
+                </div>
+                <div>
+                    <h2>EmpowerEd</h2>
+                    <p>Think. Learn. Achieve</p>
+                </div>
             </div>
         </div>
+    
+
         
         <!-- Accessibility Menu and Profile Button -->
         <div class="nav-controls">
             <div class="accessibility-menu">
-                <button class="accessibility-button" aria-expanded="false" aria-controls="accessibility-panel">Accessibility</button>
+                <button class="accessibility-button" ><i class="fa-solid fa-eye" style="margin-right:8px;"></i>Accessibility</button>
                 <div id="accessibility-panel" class="accessibility-panel" role="region" aria-label="Accessibility options">
                     <h2>Accessibility Settings</h2>
                     <div class="feature-group" aria-label="Text size">
@@ -41,6 +49,7 @@
                         </div>
                     </div>
                     <div class="feature-group" aria-label="Contrast settings">
+                        <!-- High Contrast Mode Toggle -->
                         <label>
                             High Contrast Mode
                         </label>
@@ -52,11 +61,21 @@
                     </div>
                 </div>
             </div>
-            <div class ="Profile"> 
-                <button class="profile-button">Profile</button>
-            </div>
+
+            <!--Profile-->
+            <div class="profile">
+          <div class="profile-icon">
+            <i class="fa-regular fa-user"></i>
+          </div>
+
+          <div>
+            <h4>Kyle Bautista</h4>
+            <p style="color:#6b7280;font-size:14px;">Student</p>
+          </div>
+        </div>
         </div>
     </div>
+    
     <!--END OF NAV BAR-->
 
      <!--Button to go back to homepage-->
@@ -69,59 +88,86 @@
         <p> Explore the world of numbers, equations, and problem-solving with our comprehensive math courses.</p>
     </section>
 
+    <!--ANNOUNCEMENT-->
     <section class ="feature-buttons">
-        <a href="announcement.html" class="feature-card-link">
         <div class="feature-cards">
+        <a href="announcement.html" class="feature-card-link">
             <div class="feature-card-header">
-                <div class="image-container">
-                    <img src="assets/Announcements.png" alt="Announcement Icon">
+                <div class="fc-icon red">
+                    <i class="fa-solid fa-bell" ></i>
                 </div>
-                <div class="feature-card-title">
-                    <h2>Announcements</h2>
+
+                <div>
+                    <h3> Announcements </h3>
                     <p class="feature-description">View important announcements and updates.</p>
                 </div>
             </div>
-        </div>
-    </a>
-        <a href="modules.html" class="feature-card-link" style="text-decoration: none; color: inherit; display: block;">
-            <div class="feature-cards">
-                <div class="feature-card-header">
-                    <div class="image-container">
-                        <img src="assets/Modules.png" alt="Modules Icon">
-                    </div>
-                    <div class="feature-card-title">
-                        <h2>Modules</h2>
-                        <p class="feature-description">Access course modules and learning materials.</p>
-                    </div>
+            <button class="continue-btn btn-red">
+                <i class="fa-solid fa-circle-play"></i>
+                View Announcements
+            </button>
+        </a>
+    </div>
+
+    <!--MODULES-->
+    <div class="feature-cards">
+        <a href="modules.html" class="feature-card-link">
+            <div class="feature-card-header">
+                <div class="fc-icon purple">
+                    <i class="fa-solid fa-book" ></i>
+                </div>
+
+                <div>
+                    <h3> Modules </h3>
+                    <p class="feature-description">Access course materials and lessons.</p>
                 </div>
             </div>
+            <button class="continue-btn btn-purple">
+                <i class="fa-solid fa-circle-play"></i>
+                View Modules
+            </button>
         </a>
-        <div class ="feature-cards">
-            <a href="vidmod.html" class="feature-card-link">
-                <div class="feature-card-header">
-                    <div class ="image-container">
-                        <img src="assets/ModulesVid.png" alt="Modules Video Icon">
-                    </div>
-                    <div class="feature-card-title">
-                        <h2>Video Modules</h2>
-                        <p class="feature-description">Watch recorded lectures and video content.</p>
-                    </div>
+    </div>
+
+    <!--Video Modules-->
+    <div class="feature-cards">
+        <a href="vidmod.html" class="feature-card-link">
+            <div class="feature-card-header">
+                <div class="fc-icon green">
+                    <i class="fa-solid fa-video" ></i>
                 </div>
-            </a>
-        </div>
-        <div class="feature-cards">
-            <a href="ass.html" class="feature-card-link" style="text-decoration: none; color: inherit; display: block;">
-                <div class="feature-card-header">
-                    <div class="image-container">
-                        <img src="assets/Assignments.png" alt="Assignments Icon">
-                    </div>
-                    <div class="feature-card-title">
-                        <h2>Assignments</h2>
-                        <p class="feature-description">View and submit assignments for grading.</p>
-                    </div>
+
+                <div>
+                    <h3> Video Modules </h3>
+                    <p class="feature-description">Watch educational videos and lectures.</p>
                 </div>
-            </a>
-        </div>
+            </div>
+            <button class="continue-btn btn-green">
+                <i class="fa-solid fa-circle-play"></i>
+                Watch Video Modules
+            </button>
+        </a>
+    </div>
+
+    <!--Assignments-->
+    <div class="feature-cards">
+        <a href="ass.html" class="feature-card-link">
+            <div class="feature-card-header">
+                <div class="fc-icon yellow">
+                    <i class="fa-solid fa-file-alt" ></i>
+                </div>
+
+                <div>
+                    <h3> Assignments </h3>
+                    <p class="feature-description">Submit assignments and view feedback.</p>
+                </div>
+            </div>
+            <button class="continue-btn btn-yellow">
+                <i class="fa-solid fa-circle-play"></i>
+                View Assignments
+            </button>
+        </a>
+    </div>
     </section>
 
     <footer>
