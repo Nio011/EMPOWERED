@@ -69,31 +69,6 @@ const myQuestions = [
         question: "What is the value of the digit 7 in the number 7,245?",
         answers: ["700", "70", "7", "7000"],
         correct: 3
-    },
-    {
-        question: "Which decimal is larger: 0.5 or 0.05?",
-        answers: ["0.5", "0.05", "They are equal", "None of the above"],
-        correct: 0
-    },
-    {
-        question: "How many centimeters are in 1 meter?",
-        answers: ["100", "10", "50", "1000"],
-        correct: 0
-    },
-    {
-        question: "An angle that is less than 90 degrees is called:",
-        answers: ["Acute", "Right", "Obtuse", "Straight"],
-        correct: 0
-    },
-    {
-        question: "What comes next in this pattern: 2, 4, 8, 16, ...?",
-        answers: ["32", "24", "20", "30"],
-        correct: 0
-    },
-    {
-        question: "A rectangle has a length of 6 cm and a width of 4 cm. What is its perimeter?",
-        answers: ["20", "24", "10", "12"],
-        correct: 0
     }
 ];
 
