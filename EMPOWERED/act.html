@@ -5,23 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity Portal</title>
     <link rel="stylesheet" href="styles/act.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 </head>
 <body>
     <div class ="navbar">
         <div class="brand">
-            <div class="logo-icon">
-                <img src="assets/logo.png" alt="EmpowerED logo" />
-            </div>
-            <div class ="logo">
-                <h3> Empowered</h3>
-                <span> Think. Learn. Achieve. </span>
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="assets/logo.png" alt="EmpowerEd Logo">
+                </div>
+                <div>
+                    <h2>EmpowerEd</h2>
+                    <p>Think. Learn. Achieve</p>
+                </div>
             </div>
         </div>
+    
+
         
         <!-- Accessibility Menu and Profile Button -->
         <div class="nav-controls">
             <div class="accessibility-menu">
-                <button class="accessibility-button" aria-expanded="false" aria-controls="accessibility-panel">Accessibility</button>
+                <button class="accessibility-button" ><i class="fa-solid fa-eye" style="margin-right:8px;"></i>Accessibility</button>
                 <div id="accessibility-panel" class="accessibility-panel" role="region" aria-label="Accessibility options">
                     <h2>Accessibility Settings</h2>
                     <div class="feature-group" aria-label="Text size">
@@ -35,6 +41,7 @@
                         </div>
                     </div>
                     <div class="feature-group" aria-label="Contrast settings">
+                        <!-- High Contrast Mode Toggle -->
                         <label>
                             High Contrast Mode
                         </label>
@@ -46,9 +53,18 @@
                     </div>
                 </div>
             </div>
-            <div class ="Profile">
-                <button class="profile-button">Profile</button>
-            </div>
+
+            <!--Profile-->
+            <div class="profile">
+          <div class="profile-icon">
+            <i class="fa-regular fa-user"></i>
+          </div>
+
+          <div>
+            <h4>Kyle Bautista</h4>
+            <p style="color:#6b7280;font-size:14px;">Student</p>
+          </div>
+        </div>
         </div>
     </div>
 

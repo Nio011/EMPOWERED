@@ -598,20 +598,49 @@ body.high-contrast footer {
     cursor: pointer;
 }
 
-.stat-icon {
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 20px;
-}
-
 .stat-label {
     text-align: center;
     font-size: 1.25rem;
 }
 
-.icon-blue { background: var(--blue-bg); }
-.icon-green { background: var(--green-bg); }
-.icon-purple { background: var(--purple-bg); }
+.icon{
+  width:70px;
+  height:70px;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  color:rgb(0, 0, 0);
+}
+
+.icon i{
+  width:40px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.purple{
+  background:#ede9fe;
+}
+
+.yellow{
+  background:#fef9c3;
+}
+
+.green{
+  background:#dcfce7;
+}
+
+.orange{
+  background:#ffedd5;
+}
+
+.blue{
+  background:#dbeafe;
+}
 
 .stat-label { color: var(--text-main); }
 .stat-value { margin: 8px 0; }
