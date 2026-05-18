@@ -9,37 +9,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/vidmod.css">
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <div class ="navbar">
+    <header class="main-header">
         <div class="brand">
             <div class="logo">
                 <div class="logo-icon">
                     <img src="assets/logo.png" alt="EmpowerEd Logo">
                 </div>
-                <div>
+                <div class="brand-text">
                     <h2>EmpowerEd</h2>
                     <p>Think. Learn. Achieve</p>
                 </div>
             </div>
         </div>
-    
 
-        
-        <!-- Accessibility Menu and Profile Button -->
         <div class="nav-controls">
             <div class="accessibility-menu">
-                <button class="accessibility-button" ><i class="fa-solid fa-eye" style="margin-right:8px;"></i>Accessibility</button>
+                <button class="accessibility-button"><i class="fa-solid fa-eye" style="margin-right:8px;"></i>Accessibility</button>
+                
                 <div id="accessibility-panel" class="accessibility-panel" role="region" aria-label="Accessibility options">
                     <h2>Accessibility Settings</h2>
                     <div class="feature-group" aria-label="Text size">
-                        <label>
-                            Font Size
-                        </label>
+                        <label>Font Size</label>
                         <div class="button-group">
                             <button type="button" class="text-size-button" data-size="small">Small</button>
                             <button type="button" class="text-size-button active" data-size="medium">Medium</button>
@@ -47,10 +41,7 @@
                         </div>
                     </div>
                     <div class="feature-group" aria-label="Contrast settings">
-                        <!-- High Contrast Mode Toggle -->
-                        <label>
-                            High Contrast Mode
-                        </label>
+                        <label>High Contrast Mode</label>
                         <div class="toggle-switch">
                             <input type="checkbox" id="high-contrast-toggle" class="contrast-button" data-contrast="high">
                             <label for="high-contrast-toggle" class="toggle-label"></label>
@@ -60,154 +51,152 @@
                 </div>
             </div>
 
-            <!--Profile-->
             <div class="profile">
-          <div class="profile-icon">
-            <i class="fa-regular fa-user"></i>
-          </div>
-
-          <div>
-            <h4>Kyle Bautista</h4>
-            <p style="color:#6b7280;font-size:14px;">Student</p>
-          </div>
+                <div class="profile-icon">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <div class="profile-info">
+                    <h4>Kyle Bautista</h4>
+                    <p>Student</p>
+                </div>
+            </div>
         </div>
-        </div>
-    </div>
+    </header>
     
     <main class="main-content">
+        <div class="back-button-container">
+            <a href="course-buttons.html" class="back-button"> &laquo; Back</a>
+        </div>
 
-    <div class="back-button-container">
-        <a href="course-buttons.html" class="back-button"> &laquo; Back</a>
-    </div>
+        <section class="hero">
+            <h1>Video Modules</h1>
+            <p>Watch recorded lectures and video content for Mathematics.</p>
+        </section>
 
-    <section class="hero">
-        <h2>Video Modules</h2>
-        <p>Watch recorded lectures and video content for Mathematics.</p>
-    </section>
-
-    <div class="container mt-4 mb-5">
-        <div class="content-container">
-            <div class="row gx-5">
-                
-                <div class="col-lg-8" id="videoContainer1">
-                    <div class="video-placeholder">
-                        <iframe class="w-100" src="https://www.youtube.com/embed/LBf2-yOfuyM" allowfullscreen title="Rounding Off Video Lesson"></iframe>
-                    </div>
-                    <div class="custom-card p-4 mb-4">
-                        <h4 class="fw-bold mb-2">Grade 4 - Mathematics - Rounding Off Video Lesson</h4>
-                        <p class="text-secondary mb-3 description-text">In this Grade 4 Mathematics video lesson we will be teaching you about Rounding Off.</p>
-                        <div class="video-meta mb-3"><span class="text-muted fw-semibold">29:49</span></div>
-                        <div class="d-flex flex-wrap gap-2 align-items-center">
-                            <span class="badge rounded-pill badge-custom">Captions Available</span>
-                            <span class="badge rounded-pill badge-custom">Transcript Available</span>
-                            <span class="badge rounded-pill badge-custom">Adjustable Speed</span>
-                            <button class="btn btn-sm btn-outline-success ms-auto mark-done-btn" data-video-target="LBf2-yOfuyM">Mark as Done</button>
+        <div class="container mt-4 mb-5">
+            <div class="content-container">
+                <div class="row gx-5">
+                    
+                    <div class="col-lg-8" id="videoContainer1">
+                        <div class="video-placeholder">
+                            <iframe class="w-100" src="https://www.youtube.com/embed/LBf2-yOfuyM" allowfullscreen title="Rounding Off Video Lesson"></iframe>
+                        </div>
+                        <div class="custom-card p-4 mb-4">
+                            <h4 class="fw-bold mb-2">Grade 4 - Mathematics - Rounding Off Video Lesson</h4>
+                            <p class="text-secondary mb-3 description-text">In this Grade 4 Mathematics video lesson we will be teaching you about Rounding Off.</p>
+                            <div class="video-meta mb-3"><span class="text-muted fw-semibold">29:49</span></div>
+                            <div class="d-flex flex-wrap gap-2 align-items-center">
+                                <span class="badge rounded-pill badge-custom">Captions Available</span>
+                                <span class="badge rounded-pill badge-custom">Transcript Available</span>
+                                <span class="badge rounded-pill badge-custom">Adjustable Speed</span>
+                                <button class="btn btn-sm btn-outline-success ms-auto mark-done-btn" data-video-target="LBf2-yOfuyM">Mark as Done</button>
+                            </div>
+                        </div>
+                        <div class="custom-card p-4">
+                            <h5 class="fw-bold mb-3">Transcript</h5>
+                            <div class="transcript-box">
+                                <p>[0:00] good morning great forces lovely to have you with me this morning let's jump straight into the lesson without me<br> [0:06] making a fool of myself by saying some in n things<br> [0:13] the usual beginning of the lesson just a reminder if you've got any questions great forward worksheet loud calm and<br> [0:19] off lesson click on the link above the video and do the worksheet just to make sure that you've understood<br> [0:23] today's list as per normal the next slide is going to be mental arithmetic<br> </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="custom-card p-4">
-                        <h5 class="fw-bold mb-3">Transcript</h5>
-                        <div class="transcript-box">
-                            <p>[0:00] good morning great force lovely to have you with me this morning let's jump straight into the lesson without me<br> [0:06] making a fool of myself by saying some in n things<br> [0:13] the usual beginning of the lesson just a reminder if you've got any questions great forward worksheet loud calm and<br> [0:19] off lesson click on the link above the video and do the worksheet just to make sure that you've understood<br> [0:23] today's list as per normal the next slide is going to be mental arithmetic<br> </p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-8 d-none" id="videoContainer2">
-                    <div class="video-placeholder">
-                        <iframe class="w-100" src="https://www.youtube.com/embed/DZcQ06E6Q0Y" allowfullscreen title="Adding and Subtracting Common Fractions"></iframe>
-                    </div>
-                    <div class="custom-card p-4 mb-4">
-                        <h4 class="fw-bold mb-2">Maths Extra Lesson: Grade 4 - Adding and Subtracting Common Fractions</h4>
-                        <p class="text-secondary mb-3 description-text">Learn how to add and subtract common fractions, handle same and different denominators, and find equivalent fractions.</p>
-                        <div class="video-meta mb-3"><span class="text-muted fw-semibold">36:35</span></div>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge rounded-pill badge-custom">Captions Available</span>
-                            <span class="badge rounded-pill badge-custom">Transcript Available</span>
-                            <span class="badge rounded-pill badge-custom">Adjustable Speed</span>
-                            <button class="btn btn-sm btn-outline-success ms-auto mark-done-btn" data-video-target="DZcQ06E6Q0Y">Mark as Done</button>
+                    <div class="col-lg-8 d-none" id="videoContainer2">
+                        <div class="video-placeholder">
+                            <iframe class="w-100" src="https://www.youtube.com/embed/DZcQ06E6Q0Y" allowfullscreen title="Adding and Subtracting Common Fractions"></iframe>
+                        </div>
+                        <div class="custom-card p-4 mb-4">
+                            <h4 class="fw-bold mb-2">Maths Extra Lesson: Grade 4 - Adding and Subtracting Common Fractions</h4>
+                            <p class="text-secondary mb-3 description-text">Learn how to add and subtract common fractions, handle same and different denominators, and find equivalent fractions.</p>
+                            <div class="video-meta mb-3"><span class="text-muted fw-semibold">36:35</span></div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge rounded-pill badge-custom">Captions Available</span>
+                                <span class="badge rounded-pill badge-custom">Transcript Available</span>
+                                <span class="badge rounded-pill badge-custom">Adjustable Speed</span>
+                                <button class="btn btn-sm btn-outline-success ms-auto mark-done-btn" data-video-target="DZcQ06E6Q0Y">Mark as Done</button>
+                            </div>
+                        </div>
+                        <div class="custom-card p-4">
+                            <h5 class="fw-bold mb-3">Transcript</h5>
+                            <div class="transcript-box">
+                                <p> [0:00] greetings grade fours you fantastic people mathematicians of the future welcome to this worksheet cloud grade 4 maths lesson on<br> [0:09] adding and subtracting common<br> [0:14] fractions<br> [0:28] so i'm mr t math teacher for today<br>  </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="custom-card p-4">
-                        <h5 class="fw-bold mb-3">Transcript</h5>
-                        <div class="transcript-box">
-                            <p> [0:00] greetings grade fours you fantastic people mathematicians of the future welcome to this worksheet cloud grade 4 maths lesson on<br> [0:09] adding and subtracting common<br> [0:14] fractions<br> [0:28] so i'm mr t math teacher for today<br>  </p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-8 d-none" id="videoContainer3">
-                    <div class="video-placeholder">
-                        <iframe class="w-100" src="https://www.youtube.com/embed/TQzWii-B25E" allowfullscreen title="2D Shapes"></iframe>
-                    </div>
-                    <div class="custom-card p-4 mb-4">
-                        <h4 class="fw-bold mb-2">Maths Extra Lesson: Grade 4 - 2D Shapes</h4>
-                        <p class="text-secondary mb-3 description-text">Explore 2D shapes, including polygons, triangles, quadrilaterals, and curved shapes.</p>
-                        <div class="video-meta mb-3"><span class="text-muted fw-semibold">37:11</span></div>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge rounded-pill badge-custom">Captions Available</span>
-                            <span class="badge rounded-pill badge-custom">Transcript Available</span>
-                            <span class="badge rounded-pill badge-custom">Adjustable Speed</span>
-                            <button class="btn btn-sm btn-outline-success ms-auto mark-done-btn" data-video-target="TQzWii-B25E">Mark as Done</button>
+                    <div class="col-lg-8 d-none" id="videoContainer3">
+                        <div class="video-placeholder">
+                            <iframe class="w-100" src="https://www.youtube.com/embed/TQzWii-B25E" allowfullscreen title="2D Shapes"></iframe>
+                        </div>
+                        <div class="custom-card p-4 mb-4">
+                            <h4 class="fw-bold mb-2">Maths Extra Lesson: Grade 4 - 2D Shapes</h4>
+                            <p class="text-secondary mb-3 description-text">Explore 2D shapes, including polygons, triangles, quadrilaterals, and curved shapes.</p>
+                            <div class="video-meta mb-3"><span class="text-muted fw-semibold">37:11</span></div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge rounded-pill badge-custom">Captions Available</span>
+                                <span class="badge rounded-pill badge-custom">Transcript Available</span>
+                                <span class="badge rounded-pill badge-custom">Adjustable Speed</span>
+                                <button class="btn btn-sm btn-outline-success ms-auto mark-done-btn" data-video-target="TQzWii-B25E">Mark as Done</button>
+                            </div>
+                        </div>
+                        <div class="custom-card p-4">
+                            <h5 class="fw-bold mb-3">Transcript</h5>
+                            <div class="transcript-box">
+                                <p>[0:00] hello and welcome great force to this worksheet cloud grade 4 maths lesson all about two-dimensional<br> [0:14] shapes<br> [0:28] i am mr t or math teacher for today<br> </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="custom-card p-4">
-                        <h5 class="fw-bold mb-3">Transcript</h5>
-                        <div class="transcript-box">
-                            <p>[0:00] hello and welcome great force to this worksheet cloud grade 4 maths lesson all about two-dimensional<br> [0:14] shapes<br> [0:28] i am mr t or math teacher for today<br> </p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-4">
-                    <div class="custom-card p-4">
-                        <h5 class="fw-bold mb-4">Course Playlist</h5>
-                        <div class="playlist-list mb-4">
-                            
-                            <div class="playlist-item active" data-video-id="LBf2-yOfuyM">
-                                <div class="icon">▶</div>
-                                <div>
-                                    <div class="title fw-semibold">Rounding Off Video Lesson</div>
-                                    <div class="duration text-muted small">29:49</div>
+                    <div class="col-lg-4">
+                        <div class="custom-card p-4">
+                            <h5 class="fw-bold mb-4">Course Playlist</h5>
+                            <div class="playlist-list mb-4">
+                                
+                                <div class="playlist-item active" data-video-id="LBf2-yOfuyM">
+                                    <div class="icon">▶</div>
+                                    <div>
+                                        <div class="title fw-semibold">Rounding Off Video Lesson</div>
+                                        <div class="duration text-muted small">29:49</div>
+                                    </div>
+                                </div>
+
+                                <div class="playlist-item" data-video-id="DZcQ06E6Q0Y">
+                                    <div class="icon">▶</div>
+                                    <div>
+                                        <div class="title fw-semibold">Adding and Subtracting Fractions</div>
+                                        <div class="duration text-muted small">36:35</div>
+                                    </div>
+                                </div>
+
+                                <div class="playlist-item" data-video-id="TQzWii-B25E">
+                                    <div class="icon">▶</div>
+                                    <div>
+                                        <div class="title fw-semibold">2D Shapes</div>
+                                        <div class="duration text-muted small">37:11</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="progress-container">
+                                <div class="d-flex justify-content-between text-muted small mb-2">
+                                    <span>Progress</span>
+                                    <span class="fw-bold text-dark" id="progressText">0 of 3 completed</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div id="progressBar" class="progress-bar bg-success" role="progressbar" style="width: 0%; transition: width 0.5s ease-in-out;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
 
-                            <div class="playlist-item" data-video-id="DZcQ06E6Q0Y">
-                                <div class="icon">▶</div>
-                                <div>
-                                    <div class="title fw-semibold">Adding and Subtracting Fractions</div>
-                                    <div class="duration text-muted small">36:35</div>
-                                </div>
-                            </div>
-
-                            <div class="playlist-item" data-video-id="TQzWii-B25E">
-                                <div class="icon">▶</div>
-                                <div>
-                                    <div class="title fw-semibold">2D Shapes</div>
-                                    <div class="duration text-muted small">37:11</div>
-                                </div>
-                            </div>
-
                         </div>
-
-                        <div class="progress-container">
-                            <div class="d-flex justify-content-between text-muted small mb-2">
-                                <span>Progress</span>
-                                <span class="fw-bold text-dark" id="progressText">0 of 3 completed</span>
-                            </div>
-                            <div class="progress" style="height: 8px;">
-                                <div id="progressBar" class="progress-bar bg-success" role="progressbar" style="width: 0%; transition: width 0.5s ease-in-out;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-<footer>
-    <p>&copy; 2026 EmpowerED. All rights reserved.</p>
-</footer>
+    <footer>
+        <p>&copy; 2026 EmpowerED. All rights reserved.</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script/accessibility-settings.js"></script>

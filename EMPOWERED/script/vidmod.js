@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // Only fetch if it hasn't been loaded yet
         if (transcriptBox && transcriptBox.getAttribute('data-loaded') === 'false') {
             try {
-                // Fetch the text file from the 'transcripts' folder using the new name
                 const response = await fetch(`transcripts/${fileName}`);
                 
                 if (!response.ok) {
@@ -39,12 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 
                 const text = await response.text();
-                
-                // Format text: Convert double line breaks into HTML paragraphs for readability
                 const formattedText = text.split('\n\n').map(p => `<p>${p}</p>`).join('');
                 
                 transcriptBox.innerHTML = formattedText;
-                transcriptBox.setAttribute('data-loaded', 'true'); // Prevent re-fetching
+                transcriptBox.setAttribute('data-loaded', 'true'); 
                 
             } catch (error) {
                 console.error("Error loading transcript:", error);
@@ -63,14 +60,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const highContrastToggle = document.getElementById('high-contrast-toggle');
     const textSizeButtons = document.querySelectorAll('.text-size-button');
 
-    // Toggle the panel open/close
+    // Toggle the panel open/close via classes to align with CSS changes
     if (accButton && accPanel) {
-        accButton.addEventListener('click', () => {
-            const isExpanded = accButton.getAttribute('aria-expanded') === 'true';
-            accButton.setAttribute('aria-expanded', !isExpanded);
-            accPanel.style.display = isExpanded ? 'none' : 'block';
+        accButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const isOpen = accPanel.classList.toggle('open');
+            accButton.setAttribute('aria-expanded', String(isOpen));
         });
     }
+
+    // Close panel if clicked outside
+    document.addEventListener('click', (event) => {
+        if (accPanel && accButton && !event.target.closest('.accessibility-menu')) {
+            accPanel.classList.remove('open');
+            accButton.setAttribute('aria-expanded', 'false');
+        }
+    });
 
     // High Contrast Toggle
     if (highContrastToggle) {
@@ -86,99 +91,85 @@ document.addEventListener("DOMContentLoaded", () => {
     // Text Size Toggle
     textSizeButtons.forEach(btn => {
         btn.addEventListener('click', function() {
-            // Remove active class from all buttons
             textSizeButtons.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
 
-            // Remove existing text classes from body
             document.body.classList.remove('text-small', 'text-large');
 
-            // Add the new class based on data-size
             const size = this.getAttribute('data-size');
             if (size === 'small') {
                 document.body.classList.add('text-small');
             } else if (size === 'large') {
                 document.body.classList.add('text-large');
             }
-            // 'medium' is the default, so it needs no class
         });
     });
 
     // Load the first video's transcript immediately on page load
     loadTranscript('LBf2-yOfuyM');
 
-    // --- 1. PLAYLIST CLICK LOGIC ---
+    // --- PLAYLIST CLICK LOGIC ---
     playlistItems.forEach(item => {
         item.addEventListener('click', function() {
-            // Update active state in playlist
             playlistItems.forEach(el => el.classList.remove('active'));
             this.classList.add('active');
 
-            // Hide all video containers
             Object.values(videoContainers).forEach(container => {
                 if (container) container.classList.add('d-none');
             });
 
-            // Show the target video container
             const targetVideoId = this.getAttribute('data-video-id');
             if (videoContainers[targetVideoId]) {
                 videoContainers[targetVideoId].classList.remove('d-none');
-                
-                // Fetch transcript when the user switches to this video
                 loadTranscript(targetVideoId);
             }
         });
     });
 
-    // --- 2. MARK AS DONE BUTTON LOGIC ---
+    // --- MARK AS DONE BUTTON LOGIC ---
     markDoneBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const videoId = this.getAttribute('data-video-target');
             const playlistItem = document.querySelector(`.playlist-item[data-video-id="${videoId}"]`);
             const iconElement = playlistItem.querySelector('.icon');
             
-            // Toggle Completion State
             if (completedVideos.has(videoId)) {
-                // UNMARK AS DONE
                 completedVideos.delete(videoId);
                 this.innerHTML = 'Mark as Done';
                 this.classList.remove('btn-success');
                 this.classList.add('btn-outline-success');
                 
-                // Revert Playlist UI
                 if(playlistItem) {
                     playlistItem.classList.remove('completed');
                     iconElement.innerHTML = '▶';
                 }
             } else {
-                // MARK AS DONE
                 completedVideos.add(videoId);
                 this.innerHTML = '✓ Completed';
                 this.classList.remove('btn-outline-success');
                 this.classList.add('btn-success');
                 
-                // Update Playlist UI
                 if(playlistItem) {
                     playlistItem.classList.add('completed');
                     iconElement.innerHTML = '✓';
                 }
             }
 
-            // Recalculate Progress
             updateProgress();
         });
     });
 
-    // --- 3. PROGRESS BAR CALCULATION ---
+    // --- PROGRESS BAR CALCULATION ---
     function updateProgress() {
         const count = completedVideos.size;
         const percentage = Math.round((count / totalVideos) * 100);
         
-        progressText.textContent = `${count} of ${totalVideos} completed`;
-        progressBar.style.width = `${percentage}%`;
-        progressBar.setAttribute('aria-valuenow', percentage);
+        if (progressText && progressBar) {
+            progressText.textContent = `${count} of ${totalVideos} completed`;
+            progressBar.style.width = `${percentage}%`;
+            progressBar.setAttribute('aria-valuenow', percentage);
+        }
     }
     
-    // Initialize progress on load
     updateProgress();
 });
