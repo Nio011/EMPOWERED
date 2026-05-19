@@ -282,17 +282,21 @@
     <p>&copy; 2026 EmpowerED. All rights reserved.</p>
 </footer>
 
-<script src="script/progress.js"></script>
-<!-- Load accessibility FIRST, then dashboard -->
+<!-- Load accessibility settings FIRST -->
 <script src="script/accessibility-settings.js"></script>
+<script src="script/progress.js"></script>
 <script>
-    // TEST: Simple toggle - paste this temporarily
     document.addEventListener('DOMContentLoaded', function() {
+        // Load saved accessibility settings
+        if (typeof AccessibilitySettings !== 'undefined') {
+            AccessibilitySettings.apply();
+        }
+        
+        // Toggle accessibility panel
         const btn = document.querySelector('.accessibility-button');
         const panel = document.getElementById('accessibility-panel');
         
         btn.addEventListener('click', function() {
-            console.log('Button clicked!'); // Check console
             panel.classList.toggle('open');
             this.setAttribute('aria-expanded', panel.classList.contains('open'));
         });

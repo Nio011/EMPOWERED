@@ -7,6 +7,22 @@ const AccessibilitySettings = {
         highContrast: false
     },
 
+    // Initialize listeners for cross-page synchronization
+    init: function() {
+        // Listen for changes from other tabs/windows
+        window.addEventListener('storage', (event) => {
+            if (event.key === 'accessibilitySettings' && event.newValue) {
+                // Settings changed in another tab/window, reload and apply
+                this.apply();
+            }
+        });
+
+        // Listen for custom sync event (for same-page changes)
+        document.addEventListener('accessibilitySettingsChanged', () => {
+            this.apply();
+        });
+    },
+
     // Save settings to localStorage
     save: function() {
         const activeText = document.querySelector('.text-size-button.active');
@@ -18,6 +34,9 @@ const AccessibilitySettings = {
         };
         
         localStorage.setItem('accessibilitySettings', JSON.stringify(settings));
+        
+        // Dispatch custom event to notify all elements on this page
+        document.dispatchEvent(new CustomEvent('accessibilitySettingsChanged'));
     },
 
     // Load settings from localStorage
@@ -59,3 +78,12 @@ const AccessibilitySettings = {
         if (contrastToggle && contrastToggle.checked) document.body.classList.add('high-contrast');
     }
 };
+
+// Initialize sync system when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        AccessibilitySettings.init();
+    });
+} else {
+    AccessibilitySettings.init();
+}
