@@ -669,6 +669,12 @@ body {
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: #000000;
+    margin-top: auto;
+}
 /* Small */
 
 body.text-small {
@@ -1051,7 +1057,6 @@ body.high-contrast .course-card {
 }
 
 body.high-contrast .course-card:hover {
-    background: #333333;
     border-color: #FFD700;
 }
 
@@ -1087,7 +1092,6 @@ body.high-contrast .card {
 }
 
 body.high-contrast .card:hover {
-    background: #333333;
     border-color: #FFD700;
 }
 

@@ -774,7 +774,6 @@ body.high-contrast .course-card {
 }
 
 body.high-contrast .course-card:hover {
-    background: #333333;
     border-color: #FFD700;
 }
 

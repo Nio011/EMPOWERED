@@ -503,6 +503,7 @@ body {
   cursor:pointer;
   font-weight:600;
   transition:0.3s;
+  margin-top: 12px;
 }
 
 .details-btn a{
@@ -826,12 +827,12 @@ body.high-contrast .tab.active {
 }
 
 body.high-contrast .status.due-soon{
-    background: #333333;
+    background: #ff3d3d;
     color: #FFFFFF;
 }
 
 body.high-contrast .status.upcoming {
-    background: #333333;
+    background: #ffd014;
     color: #FFFFFF;
 }
 
