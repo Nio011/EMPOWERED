@@ -33,6 +33,25 @@
         }
         .topic-item:last-child { border-bottom: none; }
         .status-icon { color: #2ecc71; font-weight: bold; }
+
+        /* ================= LESSON LINK CLEANUP (ADDED HERE) ================= */
+        .lesson-link {
+            text-decoration: none !important; /* Removes the underline completely */
+            color: inherit;
+            display: inline-block;
+        }
+
+        .lesson-link:hover .lesson-title {
+            text-decoration: none !important; /* Prevents underline from returning on mouse hover */
+            opacity: 0.8;                     /* Gives subtle visual feedback instead */
+        }
+
+        .lesson-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0;
+        }
         
         /* ================= COLOR THEMES FOR ACCORDION HEADERS ================= */
         .module-card.m1-violet-theme .module-header {
@@ -253,7 +272,7 @@
                 
                 <div class="topic-item">
                     <div class="lesson-mockup-frame" aria-hidden="true">
-                        <i class="fa-solid fa-arrow-left-right-to-line"></i>
+                        <i class="fa-solid fa-list-ol"></i>
                     </div>
                     <div class="topic-main">
                         <div class="topic-header">
@@ -291,7 +310,7 @@
             <div class="module-header" onclick="toggleModule(this)">
                 <div class="module-header-left">
                     <h3>Module 2: Introduction to Geometry</h3>
-                    <span class="meta-info progress-text global-badge-m2">0% Complete</span>
+                    <span class="meta-info progress-text">0% Complete</span>
                 </div>
                 <span class="accordion-arrow-indicator">▼</span>
             </div>
