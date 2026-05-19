@@ -18,44 +18,93 @@
         .topic-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid #f1f5f9; }
         .topic-item:last-child { border-bottom: none; }
         .status-icon { color: #2ecc71; font-weight: bold; }
-        .speak-btn { background: none; border: none; cursor: pointer; font-size: 1.2rem; opacity: 0.6; transition: 0.2s; }
-        .speak-btn:hover { opacity: 1; transform: scale(1.1); }
-        /* High Contrast Overrides */
-        body.high-contrast .module-card { background: #000; border: 2px solid #fff; }
-        body.high-contrast .module-header { background: #1a1a1a; border-bottom: 2px solid #fff; color: #fff; }
+        
+        .speak-btn {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        
+        .speak-btn:hover { background: #e2e8f0; transform: translateY(-1px); }
+        .speak-btn.reading { background: #fee2e2; border-color: #fca5a5; color: #b91c1c; }
+        
+        /* ================= SYSTEM ACCESSIBILITY SCALING OVERRIDES ================= */
+        body.text-small { font-size: 14px !important; }
+        body.text-medium { font-size: 16px !important; }
+        body.text-large { font-size: 18px !important; }
+
+        body.text-small h2 { font-size: 1.5rem; }
+        body.text-medium h2 { font-size: 1.75rem; }
+        body.text-large h2 { font-size: 2.2rem; }
+
+        body.text-small h3 { font-size: 1.2rem; }
+        body.text-medium h3 { font-size: 1.4rem; }
+        body.text-large h3 { font-size: 1.8rem; }
+
+        body.text-small h4 { font-size: 1rem; }
+        body.text-medium h4 { font-size: 1.15rem; }
+        body.text-large h4 { font-size: 1.4rem; }
+
+        body.text-small .body-text { font-size: 0.9rem; }
+        body.text-medium .body-text { font-size: 1rem; }
+        body.text-large .body-text { font-size: 1.2rem; }
+
+        /* ================= HIGH CONTRAST MODE SYNC ================= */
+        body.high-contrast { background: #000000 !important; color: #ffffff !important; }
+        body.high-contrast .navbar { background: #121212 !important; border-bottom: 2px solid #ffd700 !important; }
+        body.high-contrast .accessibility-panel { background: #1a1a1a !important; border: 2px solid #ffd700 !important; color: #ffffff !important; }
+        body.high-contrast .accessibility-panel h2, 
+        body.high-contrast .accessibility-panel label { color: #ffffff !important; }
+        body.high-contrast .text-size-button { background: #000000 !important; color: #ffffff !important; border: 1px solid #ffffff !important; }
+        body.high-contrast .text-size-button.active { background: #ffd700 !important; color: #000000 !important; border-color: #ffd700 !important; }
+        
+        body.high-contrast .course-overview { background: #121212 !important; border: 2px solid #ffffff !important; color: #ffffff !important; }
+        body.high-contrast .course-overview h2, body.high-contrast .course-overview p { color: #ffffff !important; }
+        body.high-contrast .overview-icon { background: #1a1a1a !important; color: #ffd700 !important; border: 1px solid #ffffff !important; }
+        body.high-contrast .progress-bar { background: #333333 !important; border: 1px solid #ffffff !important; }
+        body.high-contrast .progress-fill { background: #ffd700 !important; }
+
+        body.high-contrast .module-card { background: #000000 !important; border: 2px solid #ffffff !important; }
+        body.high-contrast .module-header { background: #1a1a1a !important; border-bottom: 2px solid #ffffff !important; color: #ffffff !important; }
+        body.high-contrast .topic-item { border-bottom: 1px solid #ffffff !important; }
+        body.high-contrast .body-text, body.high-contrast .lesson-title { color: #ffffff !important; }
+        body.high-contrast .back-button { color: #ffd700 !important; }
+        body.high-contrast .read-tag { background: #1a1a1a !important; color: #ffd700 !important; border: 1px solid #ffd700 !important; }
+        body.high-contrast .btn-complete { background: #ffd700 !important; color: #000000 !important; }
+        body.high-contrast .speak-btn { background: #1a1a1a !important; color: #ffffff !important; border: 1px solid #ffffff !important; }
+        body.high-contrast .speak-btn.reading { background: #b91c1c !important; color: #ffffff !important; border-color: #ffffff !important; }
+        body.high-contrast footer { background: #121212 !important; border-top: 2px solid #ffd700 !important; }
     </style>
-
-     <!-- Font Awesome -->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 </head>
-<body>
+<body class="text-medium">
 
-        <div class ="navbar">
+    <div class="navbar">
         <div class="brand">
             <div class="logo">
-                <div class="logo-icon">
-                    <img src="assets/logo.png" alt="EmpowerEd Logo">
-                </div>
+                <div class="logo-icon"><img src="assets/logo.png" alt="EmpowerEd Logo"></div>
                 <div>
                     <h2>EmpowerEd</h2>
                     <p>Think. Learn. Achieve</p>
                 </div>
             </div>
         </div>
-    
-
-        
-        <!-- Accessibility Menu and Profile Button -->
         <div class="nav-controls">
             <div class="accessibility-menu">
-                <button class="accessibility-button" ><i class="fa-solid fa-eye" style="margin-right:8px;"></i>Accessibility</button>
+                <button class="accessibility-button"><i class="fa-solid fa-eye" style="margin-right:8px;"></i>Accessibility</button>
                 <div id="accessibility-panel" class="accessibility-panel" role="region" aria-label="Accessibility options">
                     <h2>Accessibility Settings</h2>
                     <div class="feature-group" aria-label="Text size">
-                        <label>
-                            Font Size
-                        </label>
+                        <label>Font Size</label>
                         <div class="button-group">
                             <button type="button" class="text-size-button" data-size="small">Small</button>
                             <button type="button" class="text-size-button active" data-size="medium">Medium</button>
@@ -63,10 +112,7 @@
                         </div>
                     </div>
                     <div class="feature-group" aria-label="Contrast settings">
-                        <!-- High Contrast Mode Toggle -->
-                        <label>
-                            High Contrast Mode
-                        </label>
+                        <label>High Contrast Mode</label>
                         <div class="toggle-switch">
                             <input type="checkbox" id="high-contrast-toggle" class="contrast-button" data-contrast="high">
                             <label for="high-contrast-toggle" class="toggle-label"></label>
@@ -75,56 +121,42 @@
                     </div>
                 </div>
             </div>
-
-            <!--Profile-->
             <div class="profile">
-          <div class="profile-icon">
-            <i class="fa-regular fa-user"></i>
-          </div>
-
-          <div>
-            <h4>Kyle Bautista</h4>
-            <p style="color:#6b7280;font-size:14px;">Student</p>
-          </div>
-        </div>
+                <div class="profile-icon"><i class="fa-regular fa-user"></i></div>
+                <div>
+                    <h4>Kyle Bautista</h4>
+                    <p style="color:#6b7280;font-size:14px;">Student</p>
+                </div>
+            </div>
         </div>
     </div>
 
     <main class="modules-container">
-    <!--back button -->
-    <div class="back-button-container">
-        <a href="course-buttons.html" class="back-button"> &laquo; Back</a>
-    </div>
-
-     <!-- COURSE OVERVIEW DONT REMOVE-->
-    <section class="course-overview">
-        <div class="overview-left">
-            <div class="overview-icon">
-                <i class="fa-solid fa-calculator"></i>
-            </div>
-            <div>
-                <h2>Mathematics</h2>
-                <p>
-                    Explore algebra, equations, fractions, and problem-solving step by step.
-                </p>
-            </div>
-
+        <div class="back-button-container">
+            <a href="course-buttons.html" class="back-button"> &laquo; Back</a>
         </div>
-        <div class="overview-right">
-            <div class="progress-wrapper">
-                <div class="progress-labels">
-                    <span>Overall Progress</span>
-                    <span>25%</span>
-                </div>
 
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
+        <section class="course-overview">
+            <div class="overview-left">
+                <div class="overview-icon"><i class="fa-solid fa-calculator"></i></div>
+                <div>
+                    <h2>Mathematics</h2>
+                    <p class="body-text">Explore algebra, equations, fractions, and problem-solving step by step.</p>
                 </div>
-
-                <small>5 of 20 lessons completed</small>
             </div>
-        </div>
-    </section>
+            <div class="overview-right">
+                <div class="progress-wrapper">
+                    <div class="progress-labels">
+                        <span>Overall Progress</span>
+                        <span id="overall-progress-pct">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="overall-progress-fill" class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                    <small id="overall-progress-text" class="body-text">0 of 4 lessons completed</small>
+                </div>
+            </div>
+        </section>
 
         <div class="module-card">
             <div class="module-header" onclick="toggleModule(this)">
@@ -136,29 +168,31 @@
             </div>
             <div class="module-content open">
                 <div class="topic-item">
-    <div class="topic-main">
-        <div class="topic-header">
-            <a href="lesson-content.html?id=1-1" class="lesson-link">
-                <h4 class="lesson-title">Understanding Place Value</h4>
-            </a>
-            <span class="read-tag">📖 5 min read</span>
-        </div>
-        <p class="body-text">Learn how the position of a digit determines its value in large numbers.</p>
-        <button class="btn-complete" onclick="markComplete(this)">Mark as Complete</button>
-    </div>
-    <button class="speak-btn">🔊</button>
-</div>
+                    <div class="topic-main">
+                        <div class="topic-header">
+                            <a href="lesson-content.html?id=1-1" class="lesson-link">
+                                <h4 class="lesson-title">Understanding Place Value</h4>
+                            </a>
+                            <span class="read-tag">📖 5 min read</span>
+                        </div>
+                        <p class="body-text">Learn how the position of a digit determines its value in large numbers.</p>
+                        <button class="btn-complete" data-lesson-id="1-1" onclick="markComplete(this)">Mark as Complete</button>
+                    </div>
+                    <button class="speak-btn"><i class="fa-solid fa-volume-high"></i><span>Read Aloud</span></button>
+                </div>
 
                 <div class="topic-item">
                     <div class="topic-main">
                         <div class="topic-header">
-                            <h4 class="lesson-title">Multiplication Mastery</h4>
+                            <a href="lesson-content.html?id=1-2" class="lesson-link">
+                                <h4 class="lesson-title">Multiplication Mastery</h4>
+                            </a>
                             <span class="read-tag">📖 5 min read</span>
                         </div>
                         <p class="body-text">Master multi-digit multiplication using advanced techniques. This lesson focuses on speed and accuracy in long calculations.</p>
-                        <button class="btn-complete" onclick="markComplete(this)">Mark as Complete</button>
+                        <button class="btn-complete" data-lesson-id="1-2" onclick="markComplete(this)">Mark as Complete</button>
                     </div>
-                    <button class="speak-btn">🔊</button>
+                    <button class="speak-btn"><i class="fa-solid fa-volume-high"></i><span>Read Aloud</span></button>
                 </div>
             </div>
         </div>
@@ -175,25 +209,29 @@
                 <div class="topic-item">
                     <div class="topic-main">
                         <div class="topic-header">
-                            <h4 class="lesson-title">Properties of 2D Shapes</h4>
+                            <a href="lesson-content.html?id=2-1" class="lesson-link">
+                                <h4 class="lesson-title">Properties of 2D Shapes</h4>
+                            </a>
                             <span class="read-tag">📖 5 min read</span>
                         </div>
                         <p class="body-text">Explore the characteristics of various polygons. Learn to identify shapes based on their vertices, edges, and internal angles.</p>
-                        <button class="btn-complete" onclick="markComplete(this)">Mark as Complete</button>
+                        <button class="btn-complete" data-lesson-id="2-1" onclick="markComplete(this)">Mark as Complete</button>
                     </div>
-                    <button class="speak-btn">🔊</button>
+                    <button class="speak-btn"><i class="fa-solid fa-volume-high"></i><span>Read Aloud</span></button>
                 </div>
 
                 <div class="topic-item">
                     <div class="topic-main">
                         <div class="topic-header">
-                            <h4 class="lesson-title">Angles and Symmetry</h4>
+                            <a href="lesson-content.html?id=2-2" class="lesson-link">
+                                <h4 class="lesson-title">Angles and Symmetry</h4>
+                            </a>
                             <span class="read-tag">📖 5 min read</span>
                         </div>
                         <p class="body-text">Understand different types of angles and how symmetry appears in geometric figures and the real world.</p>
-                        <button class="btn-complete" onclick="markComplete(this)">Mark as Complete</button>
+                        <button class="btn-complete" data-lesson-id="2-2" onclick="markComplete(this)">Mark as Complete</button>
                     </div>
-                    <button class="speak-btn">🔊</button>
+                    <button class="speak-btn"><i class="fa-solid fa-volume-high"></i><span>Read Aloud</span></button>
                 </div>
             </div>
         </div>
@@ -205,5 +243,23 @@
 
     <script src="script/accessibility-settings.js"></script>
     <script src="script/modules.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.updateOverallProgress = function() {
+                const totalLessons = document.querySelectorAll('.btn-complete').length; 
+                const completedLessons = document.querySelectorAll('.btn-complete.finished').length;
+                const overallPercentage = Math.round((completedLessons / totalLessons) * 100);
+                
+                const progressFill = document.getElementById('overall-progress-fill');
+                const progressPct = document.getElementById('overall-progress-pct');
+                const progressText = document.getElementById('overall-progress-text');
+                
+                if (progressFill) progressFill.style.width = overallPercentage + '%';
+                if (progressPct) progressPct.innerText = overallPercentage + '%';
+                if (progressText) progressText.innerText = `${completedLessons} of ${totalLessons} lessons completed`;
+            };
+            window.updateOverallProgress();
+        });
+    </script>
 </body>
 </html>

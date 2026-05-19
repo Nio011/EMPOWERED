@@ -1,18 +1,26 @@
+// script/modules.js
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Accessibility Logic (Same as Course/Index)
+    // 1. Initialize Global Accessibility Engine Configs
+    if (typeof AccessibilitySettings !== 'undefined') {
+        AccessibilitySettings.apply();
+    }
+
+    // 2. Localized DOM Navigation Control Overrides
     const accessButton = document.querySelector('.accessibility-button');
     const panel = document.getElementById('accessibility-panel');
     const textSizeButtons = document.querySelectorAll('.text-size-button');
     const contrastToggle = document.getElementById('high-contrast-toggle');
 
-    if (typeof AccessibilitySettings !== 'undefined') {
-        AccessibilitySettings.apply();
+    if (accessButton && panel) {
+        accessButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            panel.classList.toggle('open');
+        });
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.accessibility-menu')) panel.classList.remove('open');
+        });
     }
-
-    accessButton.addEventListener('click', () => {
-        const isOpen = panel.classList.toggle('open');
-        accessButton.setAttribute('aria-expanded', String(isOpen));
-    });
 
     textSizeButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -25,42 +33,132 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    contrastToggle.addEventListener('change', () => {
-        if (typeof AccessibilitySettings !== 'undefined') {
-            AccessibilitySettings.updateBodyClasses();
-            AccessibilitySettings.save();
+    if (contrastToggle) {
+        contrastToggle.addEventListener('change', () => {
+            if (typeof AccessibilitySettings !== 'undefined') {
+                AccessibilitySettings.updateBodyClasses();
+                AccessibilitySettings.save();
+            }
+        });
+    }
+
+    // 3. Text-to-Speech "Read Aloud" Button Logic with "Stop" function
+    const readAloudButtons = document.querySelectorAll('.speak-btn');
+    let currentUtterance = null;
+    let activeSpeakBtn = null;
+
+    readAloudButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const item = button.closest('.topic-item');
+            const title = item.querySelector('.lesson-title').innerText;
+            const text = item.querySelector('.body-text').innerText;
+            
+            if (activeSpeakBtn === button) {
+                window.speechSynthesis.cancel();
+                button.classList.remove('reading');
+                button.querySelector('span').innerText = "Read Aloud";
+                activeSpeakBtn = null;
+            } else {
+                window.speechSynthesis.cancel();
+                if (activeSpeakBtn) {
+                    activeSpeakBtn.classList.remove('reading');
+                    activeSpeakBtn.querySelector('span').innerText = "Read Aloud";
+                }
+                
+                currentUtterance = new SpeechSynthesisUtterance(`${title}. ${text}`);
+                activeSpeakBtn = button;
+                
+                currentUtterance.onstart = () => {
+                    button.classList.add('reading');
+                    button.querySelector('span').innerText = "Stop";
+                };
+                
+                currentUtterance.onend = () => {
+                    button.classList.remove('reading');
+                    button.querySelector('span').innerText = "Read Aloud";
+                    if (activeSpeakBtn === button) activeSpeakBtn = null;
+                };
+                
+                window.speechSynthesis.speak(currentUtterance);
+            }
+        });
+    });
+
+    // Clean up audio streams if a user leaves the viewport layout
+    window.addEventListener('beforeunload', () => window.speechSynthesis.cancel());
+
+    // 4. RESTORE COMPLETION PERSISTENCE STATES ON LOAD
+    initializeCompletionStates();
+});
+
+// ================= ACCORDION ACCESSIBILITY CONTROLLER =================
+function toggleModule(header) {
+    const content = header.nextElementSibling;
+    const arrow = header.querySelector('span:last-child');
+    const isOpen = content.classList.toggle('open');
+    if (arrow) {
+        arrow.innerText = isOpen ? '▲' : '▼';
+    }
+}
+
+// ================= DYNAMIC PERSISTENT COMPLETION SYSTEM =================
+function initializeCompletionStates() {
+    const completionButtons = document.querySelectorAll('.btn-complete');
+    
+    completionButtons.forEach(btn => {
+        const lessonId = btn.getAttribute('data-lesson-id');
+        const isCompleted = localStorage.getItem(`lesson_${lessonId}_complete`) === 'true';
+        
+        if (isCompleted) {
+            btn.classList.add('finished');
+            btn.innerText = "✓ Completed";
+        } else {
+            btn.classList.remove('finished');
+            btn.innerText = "Mark as Complete";
         }
     });
 
-    // Text-to-Speech
-    const speakButtons = document.querySelectorAll('.speak-btn');
-    speakButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const topic = button.closest('.topic-item');
-            const text = topic.querySelector('.body-text').innerText;
-            window.speechSynthesis.cancel();
-            window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
-        });
-    });
-});
-
-function toggleModule(header) {
-    const content = header.nextElementSibling;
-    content.classList.toggle('open');
-    header.querySelector('span:last-child').innerText = content.classList.contains('open') ? '▲' : '▼';
+    // Recalculate module percentages and top course summary counters
+    updateAllModuleCardPercentages();
+    if (typeof window.updateOverallProgress === 'function') {
+        window.updateOverallProgress();
+    }
 }
 
 function markComplete(btn) {
-    if (btn.classList.contains('finished')) return;
+    const lessonId = btn.getAttribute('data-lesson-id');
+    const currentlyCompleted = btn.classList.contains('finished');
+    
+    if (currentlyCompleted) {
+        // Toggle Off
+        btn.classList.remove('finished');
+        btn.innerText = "Mark as Complete";
+        localStorage.setItem(`lesson_${lessonId}_complete`, 'false');
+    } else {
+        // Toggle On
+        btn.classList.add('finished');
+        btn.innerText = "✓ Completed";
+        localStorage.setItem(`lesson_${lessonId}_complete`, 'true');
+    }
+    
+    // Recalculate tracking matrices dynamically
+    updateAllModuleCardPercentages();
+    if (typeof window.updateOverallProgress === 'function') {
+        window.updateOverallProgress();
+    }
+}
 
-    btn.classList.add('finished');
-    btn.innerText = "✓ Completed";
-    
-    // Calculate progress for the specific module card
-    const card = btn.closest('.module-card');
-    const totalTopics = card.querySelectorAll('.topic-item').length;
-    const completedTopics = card.querySelectorAll('.btn-complete.finished').length;
-    
-    const percentage = Math.round((completedTopics / totalTopics) * 100);
-    card.querySelector('.progress-text').innerText = `${percentage}% Complete`;
+function updateAllModuleCardPercentages() {
+    const cards = document.querySelectorAll('.module-card');
+    cards.forEach(card => {
+        const totalTopics = card.querySelectorAll('.topic-item').length;
+        const completedTopics = card.querySelectorAll('.btn-complete.finished').length;
+        const percentage = totalTopics > 0 ? Math.round((completedTopics / totalTopics) * 100) : 0;
+        
+        const progressText = card.querySelector('.progress-text');
+        if (progressText) {
+            progressText.innerText = `${percentage}% Complete`;
+        }
+    });
 }

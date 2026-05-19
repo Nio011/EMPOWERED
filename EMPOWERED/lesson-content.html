@@ -5,49 +5,261 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lesson | EmpowerED</title>
     <link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     <style>
         .lesson-body { line-height: 1.8; margin-top: 2rem; }
-        .content-card { background: white; padding: 3rem; border-radius: 12px; border: 1px solid #eee; }
-        body.high-contrast .content-card { background: #000; border: 2px solid #fff; }
+        .content-card { background: white; padding: 3rem; border-radius: 12px; border: 1px solid #eee; position: relative; }
+        .lesson-controls { display: flex; justify-content: flex-end; margin-bottom: 1.5rem; gap: 1rem; }
+        
+        .speak-btn, .btn-page-complete {
+            background: #f1f5f9; border: 1px solid #cbd5e1; padding: 8px 16px; border-radius: 8px;
+            cursor: pointer; font-size: 1rem; font-weight: 500; display: flex; align-items: center; gap: 8px;
+            transition: all 0.2s ease;
+        }
+        .speak-btn:hover, .btn-page-complete:hover { background: #e2e8f0; transform: translateY(-1px); }
+        .speak-btn.reading { background: #fee2e2; border-color: #fca5a5; color: #b91c1c; }
+        
+        .btn-page-complete.finished { background: #dcfce7; border-color: #86efac; color: #166534; }
+
+        .content-card h3 { margin: 1.5rem 0 0.5rem 0; font-size: 1.4rem; color: #1e293b; }
+        .content-card p { margin-bottom: 1rem; }
+        .content-card ul { margin: 0 0 1.5rem 1.5rem; }
+        .content-card li { margin-bottom: 0.5rem; }
+        
+        /* ================= SYSTEM ACCESSIBILITY SCALING OVERRIDES ================= */
+        body.text-small { font-size: 14px !important; }
+        body.text-medium { font-size: 16px !important; }
+        body.text-large { font-size: 18px !important; }
+        body.text-small #lesson-title { font-size: 1.8rem !important; }
+        body.text-medium #lesson-title { font-size: 2.2rem !important; }
+        body.text-large #lesson-title { font-size: 2.6rem !important; }
+        body.text-small .lesson-body h3 { font-size: 1.15rem !important; }
+        body.text-medium .lesson-body h3 { font-size: 1.4rem !important; }
+        body.text-large .lesson-body h3 { font-size: 1.75rem !important; }
+        body.text-small .lesson-body, body.text-small .lesson-body p, body.text-small .lesson-body li { font-size: 0.9rem !important; }
+        body.text-medium .lesson-body, body.text-medium .lesson-body p, body.text-medium .lesson-body li { font-size: 1rem !important; }
+        body.text-large .lesson-body, body.text-large .lesson-body p, body.text-large .lesson-body li { font-size: 1.2rem !important; }
+
+        /* ================= HIGH CONTRAST MODE SYNC ================= */
+        body.high-contrast { background: #000000 !important; color: #ffffff !important; }
+        body.high-contrast .navbar { background: #121212 !important; border-bottom: 2px solid #ffd700 !important; }
+        body.high-contrast .accessibility-panel { background: #1a1a1a !important; border: 2px solid #ffd700 !important; color: #ffffff !important; }
+        body.high-contrast .text-size-button { background: #000000 !important; color: #ffffff !important; border: 1px solid #ffffff !important; }
+        body.high-contrast .text-size-button.active { background: #ffd700 !important; color: #000000 !important; border-color: #ffd700 !important; }
+        body.high-contrast .content-card { background: #000 !important; border: 2px solid #fff !important; color: #ffffff !important; }
+        body.high-contrast .content-card h3, body.high-contrast #lesson-title { color: #ffd700 !important; }
+        body.high-contrast .back-button { color: #ffd700 !important; }
+        body.high-contrast .speak-btn, body.high-contrast .btn-page-complete { background: #1a1a1a !important; color: #ffffff !important; border: 1px solid #ffffff !important; }
+        body.high-contrast .btn-page-complete.finished { background: #ffd700 !important; color: #000000 !important; border-color: #ffd700 !important; }
+        body.high-contrast footer { background: #121212 !important; border-top: 2px solid #ffd700 !important; }
     </style>
 </head>
 <body class="text-medium">
     
+    <div class="navbar">
+        <div class="brand">
+            <div class="logo">
+                <div class="logo-icon"><img src="assets/logo.png" alt="EmpowerEd Logo"></div>
+                <div>
+                    <h2>EmpowerEd</h2>
+                    <p>Think. Learn. Achieve</p>
+                </div>
+            </div>
+        </div>
+        <div class="nav-controls">
+            <div class="accessibility-menu">
+                <button class="accessibility-button"><i class="fa-solid fa-eye" style="margin-right:8px;"></i>Accessibility</button>
+                <div id="accessibility-panel" class="accessibility-panel" role="region" aria-label="Accessibility options">
+                    <h2>Accessibility Settings</h2>
+                    <div class="feature-group" aria-label="Text size">
+                        <label>Font Size</label>
+                        <div class="button-group">
+                            <button type="button" class="text-size-button" data-size="small">Small</button>
+                            <button type="button" class="text-size-button active" data-size="medium">Medium</button>
+                            <button type="button" class="text-size-button" data-size="large">Large</button>
+                        </div>
+                    </div>
+                    <div class="feature-group" aria-label="Contrast settings">
+                        <label>High Contrast Mode</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="high-contrast-toggle" class="contrast-button" data-contrast="high">
+                            <label for="high-contrast-toggle" class="toggle-label"></label>
+                        </div>
+                        <p class="contrast-description">Enhanced contrast for better visibility</p>
+                    </div>
+                </div>
+            </div>
+            <div class="profile">
+                <div class="profile-icon"><i class="fa-regular fa-user"></i></div>
+                <div>
+                    <h4>Kyle Bautista</h4>
+                    <p style="color:#6b7280;font-size:14px;">Student</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main class="modules-container">
         <div class="back-button-container">
             <a href="modules.html" class="back-button"> &laquo; Back to Modules</a>
         </div>
 
         <div class="content-card">
+            <div class="lesson-controls">
+                <button id="page-complete-btn" class="btn-page-complete">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span id="complete-btn-text">Mark as Complete</span>
+                </button>
+                <button id="lesson-speak-btn" class="speak-btn">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <span id="speak-btn-text">Read Aloud</span>
+                </button>
+            </div>
+
             <h1 id="lesson-title">Loading Lesson...</h1>
-            <div id="lesson-text" class="body-text lesson-body">
-                </div>
+            <div id="lesson-text" class="body-text lesson-body"></div>
         </div>
     </main>
+
+    <footer>
+        <p>&copy; 2026 EmpowerED. All rights reserved.</p>
+    </footer>
 
     <script src="script/accessibility-settings.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const accessButton = document.querySelector('.accessibility-button');
+            const panel = document.getElementById('accessibility-panel');
+            const textSizeButtons = document.querySelectorAll('.text-size-button');
+            const contrastToggle = document.getElementById('high-contrast-toggle');
+
             if (typeof AccessibilitySettings !== 'undefined') AccessibilitySettings.apply();
-            
-            // Simple content database for the 5-min reads
+
+            if (accessButton && panel) {
+                accessButton.addEventListener('click', (e) => { e.stopPropagation(); panel.classList.toggle('open'); });
+                document.addEventListener('click', (e) => { if (!e.target.closest('.accessibility-menu')) panel.classList.remove('open'); });
+            }
+
+            textSizeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    textSizeButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    if (typeof AccessibilitySettings !== 'undefined') { AccessibilitySettings.updateBodyClasses(); AccessibilitySettings.save(); }
+                });
+            });
+
+            if (contrastToggle) {
+                contrastToggle.addEventListener('change', () => {
+                    if (typeof AccessibilitySettings !== 'undefined') { AccessibilitySettings.updateBodyClasses(); AccessibilitySettings.save(); }
+                });
+            }
+
+            // ================= LESSON CURRICULUM KNOWLEDGE BASE =================
             const lessons = {
                 "1-1": {
                     title: "Understanding Place Value",
-                    content: "Place value is the value of each digit in a number. For example, the 5 in 350 represents 5 tens, or 50. However, the 5 in 5,006 represents 5 thousands, or 5,000. It is important to understand that a digit can have a different value depending on where it is placed in a number..."
+                    content: `
+                        <h3>What is place value?</h3>
+                        <p>Place value helps you to understand the value of each digit within a number. The same digit can have different values depending on its position in a number.</p>
+                        <p>For example in 362, the 6 represents 6 tens. But, in 326, the 6 represents 6 ones.</p>
+                        <h3>How place value works</h3>
+                        <p>Each place value is ten times greater than the place value to its right. Children must understand that while a digit can be the same, its value depends on where it is in the number.</p>
+                        <ul>
+                            <li>A digit in the tens place has a value ten times greater than the same digit in the ones place.</li>
+                            <li>A digit in the hundreds place has a value ten times greater than the same digit in the tens place.</li>
+                        </ul>
+                    `
                 },
                 "1-2": {
                     title: "Multiplication Mastery",
-                    content: "Multiplication is often described as 'repeated addition.' Mastery involves understanding the properties of multiplication, such as the Commutative Property (a x b = b x a) and the Distributive Property. Practicing these allows for faster mental math and more complex problem solving..."
+                    content: `
+                        <h3>Introduction to Multiplication</h3>
+                        <p>Multiplication is often described as 'repeated addition.' Mastery involves understanding the core properties of multiplication, such as the Commutative Property (a x b = b x a).</p>
+                    `
+                },
+                "2-1": {
+                    title: "Properties of 2D Shapes",
+                    content: `
+                        <h3>What are 2D Shapes?</h3>
+                        <p>A two-dimensional (2D) shape is a flat figure that has length and width, but no thickness or depth. Examples include squares, circles, and triangles.</p>
+                        <h3>Sides and Vertices</h3>
+                        <p>Polygons are defined by their straight sides and vertices (corners). For instance, a regular triangle contains three straight sides and three vertices.</p>
+                    `
+                },
+                "2-2": {
+                    title: "Angles and Symmetry",
+                    content: `
+                        <h3>Understanding Angles</h3>
+                        <p>An angle is formed when two straight lines meet at a shared endpoint called a vertex. Angles are measured in degrees.</p>
+                        <h3>Line of Symmetry</h3>
+                        <p>A line of symmetry is an imaginary line that passes through the center of a shape and divides it into two identical halves that mirror each other.</p>
+                    `
                 }
             };
 
             const params = new URLSearchParams(window.location.search);
-            const lessonId = params.get('id');
+            const lessonId = params.get('id') || "1-1";
             const data = lessons[lessonId] || lessons["1-1"];
 
             document.getElementById('lesson-title').innerText = data.title;
-            document.getElementById('lesson-text').innerText = data.content;
+            document.getElementById('lesson-text').innerHTML = data.content;
+
+            // ================= SHARED TOGGLE STATE HANDLER =================
+            const completeBtn = document.getElementById('page-complete-btn');
+            const completeBtnText = document.getElementById('complete-btn-text');
+            const storageKey = `lesson_${lessonId}_complete`;
+
+            if (localStorage.getItem(storageKey) === 'true') {
+                completeBtn.classList.add('finished');
+                completeBtnText.innerText = "✓ Completed";
+            }
+
+            completeBtn.addEventListener('click', () => {
+                const wasCompleted = completeBtn.classList.contains('finished');
+                if (wasCompleted) {
+                    completeBtn.classList.remove('finished');
+                    completeBtnText.innerText = "Mark as Complete";
+                    localStorage.setItem(storageKey, 'false');
+                } else {
+                    completeBtn.classList.add('finished');
+                    completeBtnText.innerText = "✓ Completed";
+                    localStorage.setItem(storageKey, 'true');
+                }
+            });
+
+            // ================= TEXT-TO-SPEECH READ ALOUD =================
+            const speakBtn = document.getElementById('lesson-speak-btn');
+            const speakBtnText = document.getElementById('speak-btn-text');
+            let isSpeaking = false;
+
+            if (speakBtn) {
+                speakBtn.addEventListener('click', () => {
+                    if (!isSpeaking) {
+                        window.speechSynthesis.cancel();
+                        const textToRead = document.getElementById('lesson-title').innerText + ". " + document.getElementById('lesson-text').innerText;
+                        const utterance = new SpeechSynthesisUtterance(textToRead);
+                        utterance.rate = 0.95;
+                        
+                        utterance.onstart = () => {
+                            isSpeaking = true;
+                            speakBtn.classList.add('reading');
+                            speakBtnText.innerText = "Stop";
+                        };
+                        utterance.onend = () => {
+                            isSpeaking = false;
+                            speakBtn.classList.remove('reading');
+                            speakBtnText.innerText = "Read Aloud";
+                        };
+                        window.speechSynthesis.speak(utterance);
+                    } else {
+                        window.speechSynthesis.cancel();
+                        isSpeaking = false;
+                        speakBtn.classList.remove('reading');
+                        speakBtnText.innerText = "Read Aloud";
+                    }
+                });
+            }
+            window.addEventListener('beforeunload', () => window.speechSynthesis.cancel());
         });
     </script>
 </body>
