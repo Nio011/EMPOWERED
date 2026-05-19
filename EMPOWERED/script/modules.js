@@ -95,8 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
 // ================= ACCORDION ACCESSIBILITY CONTROLLER =================
 function toggleModule(header) {
     const content = header.nextElementSibling;
-    const arrow = header.querySelector('span:last-child');
     const isOpen = content.classList.toggle('open');
+    
+    // FIXED: Targets exclusively the separate arrow node so percentages stay intact
+    const arrow = header.querySelector('.accordion-arrow-indicator');
     if (arrow) {
         arrow.innerText = isOpen ? '▲' : '▼';
     }
@@ -119,7 +121,7 @@ function initializeCompletionStates() {
         }
     });
 
-    // Recalculate module percentages and top course summary counters
+    // Synchronize both module-specific indicators and global header panel bars
     updateAllModuleCardPercentages();
     if (typeof window.updateOverallProgress === 'function') {
         window.updateOverallProgress();
@@ -142,7 +144,7 @@ function markComplete(btn) {
         localStorage.setItem(`lesson_${lessonId}_complete`, 'true');
     }
     
-    // Recalculate tracking matrices dynamically
+    // Recalculate tracking matrices dynamically across elements live
     updateAllModuleCardPercentages();
     if (typeof window.updateOverallProgress === 'function') {
         window.updateOverallProgress();
@@ -150,15 +152,22 @@ function markComplete(btn) {
 }
 
 function updateAllModuleCardPercentages() {
-    const cards = document.querySelectorAll('.module-card');
-    cards.forEach(card => {
-        const totalTopics = card.querySelectorAll('.topic-item').length;
-        const completedTopics = card.querySelectorAll('.btn-complete.finished').length;
-        const percentage = totalTopics > 0 ? Math.round((completedTopics / totalTopics) * 100) : 0;
-        
-        const progressText = card.querySelector('.progress-text');
-        if (progressText) {
-            progressText.innerText = `${percentage}% Complete`;
-        }
+    // FIXED: Correctly targets theme containers to read and push calculation states
+    // Computes Module 1 (Violet Theme)
+    const block1Completed = document.querySelectorAll('.m1-violet-theme .btn-complete.finished').length;
+    const block1Total = document.querySelectorAll('.m1-violet-theme .btn-complete').length;
+    const pct1 = block1Total > 0 ? Math.round((block1Completed / block1Total) * 100) : 0;
+    
+    document.querySelectorAll('.global-badge-m1').forEach(badge => {
+        badge.innerText = `${pct1}% Complete`;
+    });
+
+    // Computes Module 2 (Green Theme)
+    const block2Completed = document.querySelectorAll('.m2-green-theme .btn-complete.finished').length;
+    const block2Total = document.querySelectorAll('.m2-green-theme .btn-complete').length;
+    const pct2 = block2Total > 0 ? Math.round((block2Completed / block2Total) * 100) : 0;
+    
+    document.querySelectorAll('.global-badge-m2').forEach(badge => {
+        badge.innerText = `${pct2}% Complete`;
     });
 }

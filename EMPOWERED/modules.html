@@ -12,17 +12,100 @@
     <style>
         .modules-container { padding: 3rem 7rem; }
         .module-card { background: white; border-radius: 12px; margin-bottom: 1.5rem; border: 1px solid #e0e6ed; overflow: hidden; }
-        .module-header { padding: 1.5rem 2.2rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #f8fafc; border-bottom: 1px solid #e0e6ed; }
+        .module-header { padding: 1.5rem 2.2rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e0e6ed; }
         .module-content { padding: 2rem 2.2rem; display: none; }
         .module-content.open { display: block; }
-        .topic-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid #f1f5f9; }
+        
+        /* Layout formatting structure for title headers */
+        .module-header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .topic-item { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+            gap: 2rem; 
+            padding: 1.5rem 0; 
+            border-bottom: 1px solid #f1f5f9; 
+        }
         .topic-item:last-child { border-bottom: none; }
         .status-icon { color: #2ecc71; font-weight: bold; }
         
+        /* ================= COLOR THEMES FOR ACCORDION HEADERS ================= */
+        .module-card.m1-violet-theme .module-header {
+            background: #faf5ff;
+            border-left: 5px solid #8b5cf6;
+        }
+        .module-card.m1-violet-theme .module-header h3 {
+            color: #6d28d9;
+        }
+        .module-card.m1-violet-theme .progress-text {
+            color: #7c3aed;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .module-card.m2-green-theme .module-header {
+            background: #f0fdf4;
+            border-left: 5px solid #22c55e;
+        }
+        .module-card.m2-green-theme .module-header h3 {
+            color: #15803d;
+        }
+        .module-card.m2-green-theme .progress-text {
+            color: #16a34a;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        /* ================= LESSON MOCKUP IMAGES STYLING ================= */
+        .lesson-mockup-frame {
+            width: 140px;
+            height: 90px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+        }
+
+        .m1-violet-theme .lesson-mockup-frame {
+            background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+            border: 1px solid #d8b4fe;
+            color: #9333ea;
+        }
+
+        .m2-green-theme .lesson-mockup-frame {
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            border: 1px solid #86efac;
+            color: #16a34a;
+        }
+
+        .topic-main {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem; 
+            flex: 1;
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.25rem; 
+        }
+
+        .body-text { margin: 0 0 0.5rem 0; }
+
         .speak-btn {
             background: #f1f5f9;
             border: 1px solid #cbd5e1;
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 6px;
             cursor: pointer;
             font-size: 0.9rem;
@@ -32,6 +115,7 @@
             gap: 6px;
             transition: all 0.2s ease;
             white-space: nowrap;
+            align-self: center; 
         }
         
         .speak-btn:hover { background: #e2e8f0; transform: translateY(-1px); }
@@ -62,8 +146,6 @@
         body.high-contrast { background: #000000 !important; color: #ffffff !important; }
         body.high-contrast .navbar { background: #121212 !important; border-bottom: 2px solid #ffd700 !important; }
         body.high-contrast .accessibility-panel { background: #1a1a1a !important; border: 2px solid #ffd700 !important; color: #ffffff !important; }
-        body.high-contrast .accessibility-panel h2, 
-        body.high-contrast .accessibility-panel label { color: #ffffff !important; }
         body.high-contrast .text-size-button { background: #000000 !important; color: #ffffff !important; border: 1px solid #ffffff !important; }
         body.high-contrast .text-size-button.active { background: #ffd700 !important; color: #000000 !important; border-color: #ffd700 !important; }
         
@@ -80,8 +162,9 @@
         body.high-contrast .back-button { color: #ffd700 !important; }
         body.high-contrast .read-tag { background: #1a1a1a !important; color: #ffd700 !important; border: 1px solid #ffd700 !important; }
         body.high-contrast .btn-complete { background: #ffd700 !important; color: #000000 !important; }
-        body.high-contrast .speak-btn { background: #1a1a1a !important; color: #ffffff !important; border: 1px solid #ffffff !important; }
-        body.high-contrast .speak-btn.reading { background: #b91c1c !important; color: #ffffff !important; border-color: #ffffff !important; }
+        body.high-contrast .speak-btn { background: #000000 !important; color: #ffffff !important; border: 1px solid #ffffff !important; }
+        body.high-contrast .speak-btn.reading { background: #b91c1c !important; }
+        body.high-contrast .lesson-mockup-frame { background: #000000 !important; color: #ffffff !important; border: 2px dashed #ffffff !important; }
         body.high-contrast footer { background: #121212 !important; border-top: 2px solid #ffd700 !important; }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
@@ -158,16 +241,20 @@
             </div>
         </section>
 
-        <div class="module-card">
+        <div class="module-card m1-violet-theme">
             <div class="module-header" onclick="toggleModule(this)">
-                <div>
+                <div class="module-header-left">
                     <h3>Module 1: Foundations of Arithmetic</h3>
-                    <span class="meta-info progress-text">0% Complete</span>
+                    <span class="meta-info progress-text global-badge-m1">0% Complete</span>
                 </div>
-                <span>▼</span>
+                <span class="accordion-arrow-indicator">▼</span>
             </div>
             <div class="module-content open">
+                
                 <div class="topic-item">
+                    <div class="lesson-mockup-frame" aria-hidden="true">
+                        <i class="fa-solid fa-arrow-left-right-to-line"></i>
+                    </div>
                     <div class="topic-main">
                         <div class="topic-header">
                             <a href="lesson-content.html?id=1-1" class="lesson-link">
@@ -182,6 +269,9 @@
                 </div>
 
                 <div class="topic-item">
+                    <div class="lesson-mockup-frame" aria-hidden="true">
+                        <i class="fa-solid fa-asterisk"></i>
+                    </div>
                     <div class="topic-main">
                         <div class="topic-header">
                             <a href="lesson-content.html?id=1-2" class="lesson-link">
@@ -197,16 +287,20 @@
             </div>
         </div>
 
-        <div class="module-card">
+        <div class="module-card m2-green-theme">
             <div class="module-header" onclick="toggleModule(this)">
-                <div>
+                <div class="module-header-left">
                     <h3>Module 2: Introduction to Geometry</h3>
-                    <span class="meta-info progress-text">0% Complete</span>
+                    <span class="meta-info progress-text global-badge-m2">0% Complete</span>
                 </div>
-                <span>▼</span>
+                <span class="accordion-arrow-indicator">▼</span>
             </div>
             <div class="module-content">
+                
                 <div class="topic-item">
+                    <div class="lesson-mockup-frame" aria-hidden="true">
+                        <i class="fa-solid fa-shapes"></i>
+                    </div>
                     <div class="topic-main">
                         <div class="topic-header">
                             <a href="lesson-content.html?id=2-1" class="lesson-link">
@@ -221,6 +315,9 @@
                 </div>
 
                 <div class="topic-item">
+                    <div class="lesson-mockup-frame" aria-hidden="true">
+                        <i class="fa-solid fa-circle-nodes"></i>
+                    </div>
                     <div class="topic-main">
                         <div class="topic-header">
                             <a href="lesson-content.html?id=2-2" class="lesson-link">
@@ -245,6 +342,7 @@
     <script src="script/modules.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Live-recomputes global course percentage statistics
             window.updateOverallProgress = function() {
                 const totalLessons = document.querySelectorAll('.btn-complete').length; 
                 const completedLessons = document.querySelectorAll('.btn-complete.finished').length;
@@ -257,7 +355,26 @@
                 if (progressFill) progressFill.style.width = overallPercentage + '%';
                 if (progressPct) progressPct.innerText = overallPercentage + '%';
                 if (progressText) progressText.innerText = `${completedLessons} of ${totalLessons} lessons completed`;
+                
+                // FIXED: Direct class updates targeted globally by code block index loops
+                updateCardSpecificPercentages();
             };
+
+            function updateCardSpecificPercentages() {
+                // Compute Module 1 Progress Metrics
+                const m1Completed = document.querySelectorAll('.m1-violet-theme .btn-complete.finished').length;
+                const m1Total = document.querySelectorAll('.m1-violet-theme .btn-complete').length;
+                const m1Pct = m1Total > 0 ? Math.round((m1Completed / m1Total) * 100) : 0;
+                document.querySelectorAll('.global-badge-m1').forEach(badge => badge.innerText = `${m1Pct}% Complete`);
+
+                // Compute Module 2 Progress Metrics
+                const m2Completed = document.querySelectorAll('.m2-green-theme .btn-complete.finished').length;
+                const m2Total = document.querySelectorAll('.m2-green-theme .btn-complete').length;
+                const m2Pct = m2Total > 0 ? Math.round((m2Completed / m2Total) * 100) : 0;
+                document.querySelectorAll('.global-badge-m2').forEach(badge => badge.innerText = `${m2Pct}% Complete`);
+            }
+
+            // Run execution cycle immediately to clean default load numbers
             window.updateOverallProgress();
         });
     </script>
