@@ -69,7 +69,7 @@
     </div>
 
     <div class="back-button-container">
-            <a href="ass.html" class="back-button"> &laquo; Back to My Courses</a>
+            <a href="ass.html" class="back-button"> &laquo; Back</a>
     </div>
     <section id="home" class="hero">
         <div class="main-layout">
@@ -82,11 +82,18 @@
             </div>
 
             <div class="sidebar">
-                <h3>Progress</h3>
-                <div id="question-grid" class="question-grid">
-                    </div>
-                <div class="stats-mini">
-                    <p>Score: <span id="live-points">0</span></p>
+                <h3>Questions</h3>
+                <div id="question-grid" class="question-grid"></div>
+
+                <div class="stats-mini" style="margin-top: 40px;">
+                    Points: <span id="live-points">0</span>
+                </div>
+                
+                <div id="voice-controls-wrapper" style="margin-top: 25px; text-align: center; border-top: 1px solid #e9ecef; padding-top: 20px;">
+                    <button id="mic-toggle" class="mic-btn" onclick="toggleVoice()">🎤</button>
+                    <p style="font-size: 0.9rem; color: #555; background: #fff3cd; padding: 10px; border-radius: 8px; margin-top: 10px; line-height: 1.4;">
+                        Tip: Say <strong>"Triangle, Circle, Square, or Rectangle"</strong>
+                    </p>
                 </div>
             </div>
         </div>
