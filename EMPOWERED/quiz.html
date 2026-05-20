@@ -68,9 +68,10 @@
         </div>
     </div>
 
-    <div class="back-button-container">
-            <a href="ass.html" class="back-button"> &laquo; Back</a>
+    <div id="back-button-container" class="back-button-container" style="display: none;">
+        <a href="ass.html" class="back-button">&laquo; Back</a>
     </div>
+
     <section id="home" class="hero">
         <div class="main-layout">
             <div class="quiz-side">
@@ -89,9 +90,9 @@
                     Points: <span id="live-points">0</span>
                 </div>
                 
-                <div id="voice-controls-wrapper" style="margin-top: 25px; text-align: center; border-top: 1px solid #e9ecef; padding-top: 20px;">
+                <div id="voice-controls-wrapper" class="voice-control-wrapper" style="margin-top: 25px; text-align: center; border-top: 1px solid #e9ecef; padding-top: 20px; word-wrap: break-word;">
                     <button id="mic-toggle" class="mic-btn" onclick="toggleVoice()">🎤</button>
-                    <p style="font-size: 0.9rem; color: #555; background: #fff3cd; padding: 10px; border-radius: 8px; margin-top: 10px; line-height: 1.4;">
+                    <p class="tip" style="font-size: 2rem; color: #555; background: #fff3cd; padding: 10px; border-radius: 8px; margin-top: 10px; line-height: 1.4;">
                         Tip: Say <strong>"Triangle, Circle, Square, or Rectangle"</strong>
                     </p>
                 </div>

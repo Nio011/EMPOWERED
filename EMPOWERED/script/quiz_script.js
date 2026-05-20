@@ -186,12 +186,14 @@ function initGrid() {
 }
 
 function updateGrid() {
+    const isQuizFinished = userHistory.filter(Boolean).length === myQuestions.length;
     myQuestions.forEach((_, i) => {
         const box = document.getElementById(`nav-box-${i}`);
         if (!box) return;
+
         box.classList.remove('current');
         
-        if (i === currentQuestionIndex) {
+        if (!isQuizFinished && i === currentQuestionIndex) {
             box.classList.add('current');
         }
         
@@ -287,7 +289,18 @@ function showQuestion(index) {
 
 function handleReadAloudClick(index) {
     const questionText = myQuestions[index].question;
-    readAloud(questionText);
+    const answers = myQuestions[index].answers;
+    
+    const shapeLabels = ["Triangle", "Circle", "Square", "Rectangle"];
+    
+    let fullTextToRead = `${questionText}. Your options are: `;
+    
+    answers.forEach((ans, aIndex) => {
+        const shapeName = shapeLabels[aIndex] || "Option";
+        fullTextToRead += `${shapeName}: ${ans}. `;
+    });
+    
+    readAloud(fullTextToRead);
 }
 
 function burstStars() {
@@ -408,6 +421,9 @@ function showAllResults() {
     burstStars();
     setTimeout(burstStars, 300);
 
+    const backButton = document.getElementById('back-button-container');
+    if (backButton) backButton.style.display = 'block';
+
     const voiceControls = document.getElementById('voice-controls-wrapper');
     if (voiceControls) voiceControls.style.display = 'none';
 
@@ -434,11 +450,11 @@ function showAllResults() {
                 </div>
 
                 ${!item.isCorrect ? `
-                    <div style="margin-top: 8px; padding: 8px; background: #e8f5e9; color: #2e7d32; border-radius: 4px; font-size: 0.9rem;">
+                    <div class="correct" style="margin-top: 8px; padding: 8px; background: #e8f5e9; color: #2e7d32; border-radius: 4px; font-size: 0.9rem;">
                         <strong>Correct Answer:</strong> ${item.correctAns}
                     </div>
                 ` : `
-                    <div style="margin-top: 8px; padding: 8px; background: #e3f2fd; color: #1565c0; border-radius: 4px; font-size: 0.9rem;">
+                    <div class="correct" style="margin-top: 8px; padding: 8px; background: #e3f2fd; color: #1565c0; border-radius: 4px; font-size: 0.9rem;">
                         Perfect! Keep it up!
                     </div>
                 `}

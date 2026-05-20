@@ -50,19 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn = document.querySelector('.btn-submit');
 
     if (dropZone && fileInput) {
-        // 1. Make the dashed box clickable
         dropZone.addEventListener('click', () => {
             fileInput.click();
         });
 
-        // 2. Detect when a file is actually selected
         fileInput.addEventListener('change', () => {
             if (fileInput.files.length > 0) {
                 const fileName = fileInput.files[0].name;
-                // Update UI to show the file is attached
                 dropZone.querySelector('p').innerHTML = `<strong>Selected:</strong> ${fileName}`;
-                dropZone.style.borderColor = "#2ecc71"; // Turn green
-                dropZone.style.background = "#f0fff4";
             }
         });
     }

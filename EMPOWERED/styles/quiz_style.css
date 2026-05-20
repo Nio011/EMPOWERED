@@ -252,13 +252,12 @@ body {
 }
 
 .back-button-container {
-    padding-left: 7rem;
-    width: 100%;
-    max-width: 800px;
-    margin-top: 20px;
-    margin-bottom: 45px;
-    display: block;
-    text-align: left;
+    position: absolute;
+    top: 110px;
+    left: 7rem;
+    width: auto;
+    z-index: 10;
+    display: none;
 }
 
 .back-button {
@@ -278,7 +277,7 @@ body {
     max-width: 1900px;
     width: 95%;
     min-height: 700px;
-    margin: 0 auto;
+    margin: auto auto;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
@@ -400,6 +399,7 @@ body {
     opacity: 1;
     transition: opacity 0.5s ease, transform 0.5s ease;
     padding: 10px;
+    margin-top: 25px;
 
     display: flex;
     flex-direction: column;
@@ -466,12 +466,12 @@ body {
     background: #f0f0f0;
     border: none;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
+    width: 80px;
+    height: 80px;
+    font-size: 3rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 50px;
+    margin-top: 70px;
     margin-bottom: 10px;
 }
 
@@ -594,4 +594,172 @@ footer {
     padding: 1rem;
     color: #000000;
     margin-top: auto;
+}
+
+body.high-contrast {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+/* Navbar */
+body.high-contrast .navbar {
+    background: #1A1A1A;
+    border-bottom: 2px solid #FFD700; /* stronger accessible yellow */
+}
+
+/* Headings */
+body.high-contrast .hero h2,
+body.high-contrast .feature-card-title h2 {
+    color: #FFFFFF;
+}
+
+.body .high-contrast .hero p {
+    color: #FFFFFF;
+}
+
+body.high-contrast .accessibility-panel {
+    background: #000000;
+    border: 2px solid #FFD700;
+    color: #FFFFFF;
+}
+
+body.high-contrast .accessibility-button {
+    background: #FFD700;
+}
+
+body.high-contrast .accessibility-panel h2 {
+    color: #fdfdfd;
+    border-bottom: 1px solid #FFD700;
+}
+
+body.high-contrast .accessibility-panel .feature-group label {
+    color: #FFFFFF;
+}
+
+/* Text Size Buttons */
+body.high-contrast .accessibility-panel .text-size-button {
+    background: transparent;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+body.high-contrast .accessibility-panel .text-size-button.active {
+    background: #FFD700;
+    border: 2px solid #FFD700;
+    color: #000000;
+}
+
+/* Toggle Switch */
+body.high-contrast .toggle-label {
+    background-color: #333333;
+}
+
+body.high-contrast .toggle-switch input[type="checkbox"]:checked + .toggle-label {
+    background-color: #FFD700;
+}
+
+body.high-contrast .toggle-switch input[type="checkbox"]:checked + .toggle-label::after {
+    background-color: #000000;
+}
+
+body.high-contrast .hero {
+    background: #000000;
+    border: 2px solid #FFFFFF;
+}
+
+body.high-contrast .quiz-side {
+    color: #ffffff;
+    background: #000000;
+}
+
+body.high-contrast .sidebar {
+    color: #ffffff;
+    background: #000000;
+}
+
+body.high-contrast h3 {
+    color: #ffffff;
+}
+
+body.high-contrast .nav-box {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+    transition: all 0.3s ease !important;
+}
+
+body.high-contrast .nav-box.current {
+    border: 2px solid #ffff00 !important;
+    transform: scale(1.1);
+}
+
+body.high-contrast .nav-box.correct {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 3px solid #00ff00 !important;
+}
+
+body.high-contrast .nav-box.wrong {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 3px solid #ff0000 !important;
+}
+
+body.high-contrast .mic-btn {
+    background: #FFD700 !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+body.high-contrast .read-aloud-btn {
+    background: #FFD700 !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+body.high-contrast .tip {
+    color: #ffffff !important;
+    background: #000000 !important;
+    border: 2px solid #ffffff !important;
+    border-radius: 8px !important;
+}
+
+body.high-contrast .review-item {
+    color: #ffffff !important;
+    background: #000000 !important;
+}
+
+body.high-contrast .review-item p {
+    color: #ffffff !important;
+}
+
+body.high-contrast .review-item h3 {
+    color: #ffffff !important;
+}
+
+body.high-contrast .review-item h3 {
+    color: #ffffff !important;
+}
+
+body.high-contrast .review-item .correct {
+    background: #000000 !important;
+    border: 2px solid #ffffff !important;
+}
+
+body.high-contrast .results-page h1 {
+    color: #ffffff !important;
+}
+
+body.high-contrast .review-list {
+    color: #ffffff !important;
+    background: #000000 !important;
+    border: 2px solid #FFFFFF !important;
+}
+
+body.high-contrast .back-button {
+    color: #FFD700;
+}
+
+body.high-contrast footer {
+    color: #FFFFFF;
 }

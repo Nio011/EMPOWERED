@@ -528,11 +528,6 @@ body.high-contrast .meta-row {
     color: #FFFFFF;
 }
 
-body.high-contrast .badge {
-    background: #333333;
-    color: #FFFFFF;
-}
-
 body.high-contrast .btn-primary {
     background: #FFD700;
     color: #000000;
@@ -540,6 +535,11 @@ body.high-contrast .btn-primary {
 
 body.high-contrast .back-button {
     color: #FFFFFF;
+}
+
+body.high-contrast .back-button:hover {
+    color: #FFD700;
+    transition: 0.3s ease-in-out;
 }
 
 body.high-contrast footer {
@@ -748,11 +748,9 @@ body.high-contrast footer {
 }
 
 footer {
-    margin-top: 10rem;
     text-align: center;
     padding: 1rem;
-    background: #1E2A4A;
-    color: #ffffff;
+    color: #000000;
     margin-top: auto;
 }
 
