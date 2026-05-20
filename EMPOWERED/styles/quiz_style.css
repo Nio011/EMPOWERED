@@ -746,6 +746,19 @@ body.high-contrast .review-item .correct {
     border: 2px solid #ffffff !important;
 }
 
+body.high-contrast .review-item .wrong {
+    background: #000000 !important;
+    border: 2px solid #ffffff !important;
+}
+
+body.high-contrast .wrong {
+    color: #00ff00 !important;
+}
+
+body.high-contrast .correct {
+    color: #00F0FF !important;
+}
+
 body.high-contrast .results-page h1 {
     color: #ffffff !important;
 }

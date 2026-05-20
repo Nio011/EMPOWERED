@@ -450,7 +450,7 @@ function showAllResults() {
                 </div>
 
                 ${!item.isCorrect ? `
-                    <div class="correct" style="margin-top: 8px; padding: 8px; background: #e8f5e9; color: #2e7d32; border-radius: 4px; font-size: 0.9rem;">
+                    <div class="wrong" style="margin-top: 8px; padding: 8px; background: #e8f5e9; color: #2e7d32; border-radius: 4px; font-size: 0.9rem;">
                         <strong>Correct Answer:</strong> ${item.correctAns}
                     </div>
                 ` : `
