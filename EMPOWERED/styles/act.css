@@ -486,9 +486,7 @@ body.high-contrast .back-button:hover {
 }
 
 body.high-contrast footer {
-    background: #1A1A1A;
     color: #FFFFFF;
-    border-top: 2px solid #FFD700;
 }
 
 .activity-section, .submission-section {
@@ -576,6 +574,7 @@ textarea {
 .back-button-container {
     padding-top: 2rem;
     padding-left: 7rem;
+    margin-bottom: 20px;
 }
 
 .back-button {
