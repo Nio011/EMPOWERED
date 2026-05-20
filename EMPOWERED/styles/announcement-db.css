@@ -602,6 +602,10 @@ body.high-contrast .accessibility-panel .feature-group label {
     color: #FFFFFF;
 }
 
+body.high-contrast .contrast-description {
+    color: #FFFFFF;
+}
+
 body.high-contrast .border-red {
     border-left: 10px solid #ff6666;
 }
@@ -625,6 +629,16 @@ body.high-contrast .tag-red {
     background-color: #ff3333;
     color: white;
     border: 1px solid white;
+}
+
+body.high-contrast .meta-info,
+body.high-contrast .meta-info span,
+body.high-contrast .body-text,
+body.high-contrast .body-text p,
+body.high-contrast .logo p,
+body.high-contrast .welcome p,
+body.high-contrast footer {
+    color: #FFFFFF;
 }
 
 /* Text Size Buttons */
