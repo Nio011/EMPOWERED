@@ -109,13 +109,15 @@ if ('webkitSpeechRecognition' in window) {
         } else {
             showSpeechFeedback("Try saying the shape name!", "#e67e22");
             const btn = document.getElementById('mic-toggle');
-            btn.classList.add('shake');
-            setTimeout(() => {
-                btn.classList.remove('shake');
-                btn.classList.remove('active');
-                btn.innerText = "🎤";
-                isListening = false;
-            }, 400);
+            if (btn) {
+                btn.classList.add('shake');
+                setTimeout(() => {
+                    btn.classList.remove('shake');
+                    btn.classList.remove('active');
+                    btn.innerText = "🎤";
+                    isListening = false;
+                }, 400);
+            }
         }
     };
 
@@ -142,6 +144,7 @@ if ('webkitSpeechRecognition' in window) {
 
 function toggleVoice() {
     const btn = document.getElementById('mic-toggle');
+    if (!btn) return;
     if (!isListening) {
         recognition.start();
         isListening = true;
@@ -150,6 +153,15 @@ function toggleVoice() {
     } else {
         recognition.stop();
     }
+}
+
+function readAloud(text) {
+    window.speechSynthesis.cancel();
+    
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    utterance.rate = 1.0;
+    window.speechSynthesis.speak(utterance);
 }
 
 const quizContainer = document.getElementById('quiz-container');
@@ -174,11 +186,14 @@ function initGrid() {
 }
 
 function updateGrid() {
+    const isQuizFinished = userHistory.filter(Boolean).length === myQuestions.length;
     myQuestions.forEach((_, i) => {
         const box = document.getElementById(`nav-box-${i}`);
+        if (!box) return;
+
         box.classList.remove('current');
         
-        if (i === currentQuestionIndex) {
+        if (!isQuizFinished && i === currentQuestionIndex) {
             box.classList.add('current');
         }
         
@@ -186,15 +201,15 @@ function updateGrid() {
             box.classList.add(userHistory[i].isCorrect ? 'correct' : 'wrong');
         }
     });
-    document.getElementById('live-points').innerText = points;
+    const pointsElement = document.getElementById('live-points');
+    if (pointsElement) pointsElement.innerText = points;
 }
 
 function jumpToQuestion(index) {
     if (index === currentQuestionIndex || index >= myQuestions.length) return;
 
     const block = document.getElementById('current-block');
-    
-    block.classList.add('fade-out');
+    if (block) block.classList.add('fade-out');
     
     setTimeout(() => {
         currentQuestionIndex = index;
@@ -212,26 +227,80 @@ function showQuestion(index) {
     const progressPercent = (index / myQuestions.length) * 100;
     document.getElementById('progress-bar').style.width = `${progressPercent}%`;
 
-    const shapes = ["▲", "●", "■", "█"];
+    const shapes = [
+        // Triangle
+        `<svg viewBox="0 0 100 100" width="60" height="60" fill="currentColor">
+            <polygon points="50,15 92,85 8,85"/>
+        </svg>`,
+        
+        // Circle
+        `<svg viewBox="0 0 100 100" width="60" height="60" fill="currentColor">
+            <circle cx="50" cy="50" r="42"/>
+        </svg>`,
+        
+        // Square
+        `<svg viewBox="0 0 100 100" width="55" height="55" fill="currentColor">
+            <rect x="15" y="15" width="70" height="70"/>
+        </svg>`,
+        
+        // Rectangle
+        `<svg viewBox="0 0 100 100" width="80" height="55" fill="currentColor">
+            <rect x="5" y="22" width="90" height="56"/>
+        </svg>`
+    ];
+
     const options = q.answers.map((ans, aIndex) => `
-        <label class="answer-option">
-            <input type="radio" name="quiz-choice" onclick="handleAnswer(${aIndex})">
-            <span class="shape-label">${shapes[aIndex]}</span> ${ans}
-        </label>
+        <button class="answer-option-row opt-${aIndex}" onclick="handleAnswer(${aIndex})">
+            <div class="option-content-wrapper">
+                <span class="shape-label">${shapes[aIndex]}</span>
+                <span class="option-text-label">${ans}</span>
+            </div>
+        </button>
     `).join('');
 
     quizContainer.innerHTML = `
         <div class="question-block" id="current-block">
-            <button id="mic-toggle" class="mic-btn" onclick="toggleVoice()">🎤</button>
-            <p style="font-size: 0.85rem; color: #555; background: #fff3cd; padding: 5px; border-radius: 5px;">
-                Tip: Say <strong>"Triangle, Circle, Square, or Rectangle"</strong>
-            </p>
-            <h2>${q.question}</h2>
-            <div class="options-container">${options}</div>
+            <h2 style="font-size: 2.25rem; margin-bottom: 25px">${q.question}</h2>
+
+            <div style="display: flex; justify-content: center; margin-bottom: 30px;">
+                <button class="read-aloud-btn" onclick="handleReadAloudClick(${index})" style="
+                    align-items: center;
+                    gap: 8px;
+                    background: #f8f9fa;
+                    border: 1px solid #ced4da;
+                    padding: 8px 16px;
+                    border-radius: 20px;
+                    font-size: 2rem;
+                    cursor: pointer;
+                    font-weight: 500;
+                    color: #495057;
+                    transition: all 0.2s ease;
+                ">
+                    <span style="font-size: 2rem;">🔊</span> Read Aloud
+                </button>
+            </div>
+
+            <div class="options-grid-container">${options}</div>
         </div>
     `;
 
     updateGrid();
+}
+
+function handleReadAloudClick(index) {
+    const questionText = myQuestions[index].question;
+    const answers = myQuestions[index].answers;
+    
+    const shapeLabels = ["Triangle", "Circle", "Square", "Rectangle"];
+    
+    let fullTextToRead = `${questionText}. Your options are: `;
+    
+    answers.forEach((ans, aIndex) => {
+        const shapeName = shapeLabels[aIndex] || "Option";
+        fullTextToRead += `${shapeName}: ${ans}. `;
+    });
+    
+    readAloud(fullTextToRead);
 }
 
 function burstStars() {
@@ -270,7 +339,6 @@ function triggerStarAnimation() {
         const randomOffset = (Math.random() - 0.5) * 30;
         
         star.style.left = (barWidth + randomOffset) + 'px';
-        
         star.style.animationDelay = (i * 0.1) + 's';
 
         wrapper.appendChild(star);
@@ -281,7 +349,6 @@ function triggerStarAnimation() {
     }
 }
 
-const originalHandleAnswer = window.handleAnswer;
 window.handleAnswer = (selectedIndex) => {
     if (isListening) {
         recognition.stop();
@@ -292,20 +359,19 @@ window.handleAnswer = (selectedIndex) => {
     const isCorrect = selectedIndex === q.correct;
     const block = document.getElementById('current-block');
     
-    const answerNodes = block.querySelectorAll('.answer-option');
+    const answerNodes = block.querySelectorAll('.answer-option-row');
     const selectedNode = answerNodes[selectedIndex];
 
     if (isCorrect) {
         points += 10;
-        selectedNode.style.backgroundColor = "#d4edda";
-        selectedNode.style.borderColor = "#28a745";
+        selectedNode.style.backgroundColor = "#26890c";
+        selectedNode.style.borderColor = "#27ae60";
         
         triggerStarAnimation();
         burstStars();
     } else {
-        selectedNode.style.backgroundColor = "#f8d7da";
-        selectedNode.style.borderColor = "#dc3545";
-        selectedNode.style.color = "#721c24";
+        selectedNode.style.backgroundColor = "#e21b3c";
+        selectedNode.style.borderColor = "#c0392b";
         
         block.classList.add('shake');
     }
@@ -355,15 +421,21 @@ function showAllResults() {
     burstStars();
     setTimeout(burstStars, 300);
 
-    const reviewHTML = userHistory.map((item, i) => {
+    const backButton = document.getElementById('back-button-container');
+    if (backButton) backButton.style.display = 'block';
 
+    const voiceControls = document.getElementById('voice-controls-wrapper');
+    if (voiceControls) voiceControls.style.display = 'none';
+
+    const reviewHTML = userHistory.map((item, i) => {
         if (!item) {
-        return `
-            <div class="review-item" style="border-left: 6px solid #ccc; background: #f9f9f9;">
-                <h3>${q.question}</h3>
-                <p style="color: #666;"><em>Question skipped</em></p>
-            </div>
-        `;
+            const missingQuestion = myQuestions[i] ? myQuestions[i].question : "Question";
+            return `
+                <div class="review-item" style="border-left: 6px solid #ccc; background: #f9f9f9;">
+                    <h3>${missingQuestion}</h3>
+                    <p style="color: #666;"><em>Question skipped</em></p>
+                </div>
+            `;
         }
 
         return `
@@ -378,11 +450,11 @@ function showAllResults() {
                 </div>
 
                 ${!item.isCorrect ? `
-                    <div style="margin-top: 8px; padding: 8px; background: #e8f5e9; color: #2e7d32; border-radius: 4px; font-size: 0.9rem;">
+                    <div class="wrong" style="margin-top: 8px; padding: 8px; background: #e8f5e9; color: #2e7d32; border-radius: 4px; font-size: 0.9rem;">
                         <strong>Correct Answer:</strong> ${item.correctAns}
                     </div>
                 ` : `
-                    <div style="margin-top: 8px; padding: 8px; background: #e3f2fd; color: #1565c0; border-radius: 4px; font-size: 0.9rem;">
+                    <div class="correct" style="margin-top: 8px; padding: 8px; background: #e3f2fd; color: #1565c0; border-radius: 4px; font-size: 0.9rem;">
                         Perfect! Keep it up!
                     </div>
                 `}

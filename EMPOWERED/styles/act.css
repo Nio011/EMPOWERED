@@ -294,6 +294,11 @@ body.text-small .submission-section textarea {
     line-height: 1.4;
 }
 
+body.text-small .btn-submit {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
 body.text-medium {
     font-size: 18px;
     line-height: 1.6;
@@ -316,6 +321,11 @@ body.text-medium .activity-table th {
 
 body.text-medium .activity-table td {
     font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+body.text-medium .btn-submit {
+    font-size: 1.3rem;
     line-height: 1.6;
 }
 
@@ -354,6 +364,11 @@ body.text-large .activity-table td {
     line-height: 1.7;
 }
 
+body.text-large .btn-submit {
+    font-size: 1.75rem;
+    line-height: 1.4;
+}
+
 body.text-large .submission-section h3 {
     font-size: 1.75rem;
     line-height: 1.7;
@@ -379,10 +394,14 @@ body.high-contrast .navbar {
 /* Headings */
 body.high-contrast .activity-section,
 body.high-contrast .submission-section,
-body.high-contrast .upload-zone,
 body.high-contrast textarea {
     background: #000000;
     border: 2px solid #FFFFFF;
+}
+
+body.high-contrast .upload-zone {
+    border: 2px dashed #FFFFFF;
+    background: #000000;
 }
 
 body.high-contrast .activity-table{
@@ -467,9 +486,7 @@ body.high-contrast .back-button:hover {
 }
 
 body.high-contrast footer {
-    background: #1A1A1A;
     color: #FFFFFF;
-    border-top: 2px solid #FFD700;
 }
 
 .activity-section, .submission-section {
@@ -504,7 +521,7 @@ textarea {
 }
 
 .upload-zone {
-    border: 2px dashed #d97706;;
+    border: 2px dashed #000000;
     background: #f8f7ff;
     padding: 40px;
     text-align: center;
@@ -520,8 +537,8 @@ textarea {
 }
 
 .btn-submit {
-    background:#fef3c7;
-    color:#d97706;
+    background:#75975e;
+    color:#FFFFFF;
     width: 100%;
     padding: 16px;
     border: none;
@@ -533,7 +550,7 @@ textarea {
 }
 
 .btn-submit:hover {
-    background:#fde68a;
+    background:#4b6043;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -557,6 +574,7 @@ textarea {
 .back-button-container {
     padding-top: 2rem;
     padding-left: 7rem;
+    margin-bottom: 20px;
 }
 
 .back-button {
@@ -571,10 +589,8 @@ textarea {
 }
 
 footer {
-    margin-top: 10rem;
     text-align: center;
     padding: 1rem;
-    background: #1E2A4A;
-    color: #ffffff;
+    color: #000000;
     margin-top: auto;
 }

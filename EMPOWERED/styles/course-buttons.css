@@ -446,9 +446,7 @@ body.high-contrast .back-button:hover {
 }
 
 body.high-contrast footer {
-    background: #1A1A1A;
     color: #FFFFFF;
-    border-top: 2px solid #FFD700;
 }
 
 
@@ -613,11 +611,9 @@ body.high-contrast footer {
 }
 
 footer {
-    margin-top: 10rem;
     text-align: center;
     padding: 1rem;
-    background: #1E2A4A;
-    color: #ffffff;
+    color: #000000;
     margin-top: auto;
 }
 
