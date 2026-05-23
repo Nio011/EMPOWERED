@@ -422,7 +422,7 @@ function showAllResults() {
     setTimeout(burstStars, 300);
 
     const backButton = document.getElementById('back-button-container');
-    if (backButton) backButton.style.display = 'block';
+    if (backButton) backButton.style.display = 'none';
 
     const voiceControls = document.getElementById('voice-controls-wrapper');
     if (voiceControls) voiceControls.style.display = 'none';
@@ -478,9 +478,26 @@ function showAllResults() {
                 ${reviewHTML}
             </div>
 
-            <p style="margin-top: 20px; font-size: 0.85rem; color: #888;">
+            <p style="margin-top: 20px; font-size: 0.85rem; color: #888; margin-bottom: 15px;">
                 Scroll to review your performance
             </p>
+
+            <div style="margin-top: 15px;">
+                <button onclick="window.history.back();" style="
+                    background: #3498db;
+                    color: white;
+                    border: none;
+                    padding: 10px 25px;
+                    font-size: 1rem;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                    transition: background 0.2s;
+                    transition: all 0.3s ease;
+                " onmouseover="this.style.background='#2980b9'" onmouseout="this.style.background='#3498db'">
+                    « Back
+                </button>
+            </div>
         </div>
     `;
 

@@ -769,10 +769,36 @@ body.high-contrast .review-list {
     border: 2px solid #FFFFFF !important;
 }
 
-body.high-contrast .back-button {
-    color: #FFD700;
+body.high-contrast .results-page button {
+    background-color: #FFD700 !important;
+    color: #000000 !important;
+    border: 2px solid #FFD700 !important;
+}
+
+body.high-contrast .results-page button:hover {
+    transform: translateY(-2px);
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 body.high-contrast footer {
     color: #FFFFFF;
+}
+
+.question-block .read-aloud-btn:hover {
+    transform: translateY(-2px);
+    background: #e2e4e7 !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+body.high-contrast .read-aloud-btn:hover {
+    transform: translateY(-2px);
+    background: #FFD700 !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.mic-btn:hover {
+    transform: translateY(-2px);
+    background: #e2e4e7 !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
