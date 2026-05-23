@@ -288,7 +288,8 @@ body {
 }
 
 .back-button-container {
-    margin: 20px 0;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 
 .back-button-container a.back-button {
@@ -381,21 +382,10 @@ body {
 
 /* --- Consolidated Duplicated Footer Base Style --- */
 footer {
-    background-color: #1E2A4A; /* Matching course-buttons footer color */
-    color: #ffffff;
     text-align: center;
-    padding: 20px 0;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-}
-
-footer p {
-    margin: 0;
-    font-size: 14px;
+    padding: 1rem;
+    color: #000000;
+    margin-top: auto;
 }
 
 /* --- High Contrast Overrides --- */
@@ -464,9 +454,7 @@ body.high-contrast .back-button-container a.back-button:hover {
 }
 
 body.high-contrast footer {
-    background-color: #1a1a1a;
-    border-top: 3px solid #ffcc00;
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 /* --- Font Scaling --- */
