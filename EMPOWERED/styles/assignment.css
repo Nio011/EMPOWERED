@@ -358,7 +358,7 @@ body {
 }
 
 .tab.active{
-  color:#4f46e5;
+  color:#0b41b7;
   border-bottom:3px solid #4f46e5;
 }
 
@@ -399,7 +399,7 @@ body {
   align-items:center;
   justify-content:center;
   font-size:32px;
-  color:rgb(0, 0, 0);
+  color:rgb(255, 255, 255);
 }
 
 .icon i{
@@ -411,19 +411,19 @@ body {
 }
 
 .purple{
-  background:#ede9fe;
+  background:#531ecc;
 }
 
 .green{
-  background:#dcfce7;
+  background:#0d5427;
 }
 
 .orange{
-  background:#ffedd5;
+  background:#7e3710;
 }
 
 .blue{
-  background:#dbeafe;
+  background:#0b41b7;
 }
 
 /* INFO */
@@ -464,7 +464,7 @@ body {
   margin-top:10px;
   padding:6px 14px;
   background:#fef3c7;
-  color:#d97706;
+  color:#7e3710;
   border-radius:999px;
   font-size:14px;
   font-weight:600;
@@ -475,7 +475,7 @@ body {
   margin-top:0;
   padding:6px 14px;
   background:#fee2e2;
-  color:#dc2626;
+  color:#8e0b0b;
   border-radius:999px;
   font-size:14px;
   font-weight:600;
@@ -490,7 +490,7 @@ body {
 
 .status.upcoming{
   background:#fef3c7;
-  color:#d97706;
+  color:#7e3710;
 }
 
 
@@ -498,7 +498,7 @@ body {
   padding:14px 24px;
   border:none;
   background:#eef2ff;
-  color:#2563eb;
+  color:#0b41b7;
   border-radius:16px;
   cursor:pointer;
   font-weight:600;
@@ -508,7 +508,7 @@ body {
 
 .details-btn a{
     text-decoration:none;
-    color:#2563eb;
+    color:#0b41b7;
 }
 
 .details-btn:hover a{

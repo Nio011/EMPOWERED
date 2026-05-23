@@ -383,7 +383,7 @@ body {
       height:170px;
       border-radius:50%;
       background:conic-gradient(
-        #2563eb 0% 67%,
+        #0b41b7 0% 67%,
         #e5e7eb 67% 100%
       );
       display:flex;
@@ -444,27 +444,27 @@ body {
     }
 
     .purple{
-      background:#8b5cf6;
+      background:#531ecc;
       width:25%;
     }
 
     .green{
-      background:#22c55e;
+      background:#0d5427;
       width:40%;
     }
 
     .yellow{
-      background:#f59e0b;
+      background:#6f4a1f;
       width:60%;
     }
 
     .red{
-      background:#ef4444;
+      background:#8e0b0b;
       width:20%; 
     }
 
     .blue{
-      background:#3b82f6;
+      background:#0b41b7;
       width:0%;
     }
 
@@ -512,7 +512,7 @@ body {
 
     .bar{
       width:40px;
-      background:#2563eb;
+      background:#0b41b7;
       border-radius:12px 12px 0 0;
     }
 

@@ -338,11 +338,11 @@ body {
 }
 
 .border-red {
-    border-left: 10px solid #ff4d4d;
+    border-left: 10px solid #8e0b0b;
 }
 
 .border-blue {
-    border-left: 10px solid #3b82f6;
+    border-left: 10px solid #0b41b7;
 }
 
 .card-content {
@@ -385,7 +385,7 @@ body {
     border: 1px solid #d1d5db;
     font-size: 0.9em;
     font-weight: 500;
-    color: #374151;
+    color: #394251;
     cursor: pointer;
     transition: all 0.2s ease;
     display: inline-flex;
@@ -412,7 +412,7 @@ footer {
 /* Badge for important */
 .tag-red {
     background-color: #fee2e2;
-    color: #991b1b;
+    color: #8e0b0b;
     padding: 2px 8px;
     border-radius: 6px;
     font-weight: 600;

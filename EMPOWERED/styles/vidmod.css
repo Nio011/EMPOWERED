@@ -303,7 +303,7 @@ body {
 }
 
 .back-button-container a.back-button:hover {
-    color: #2563eb;
+    color: #0b41b7;
 }
 
 .hero h1 {
@@ -376,8 +376,8 @@ body {
 
 .playlist-item:hover { background-color: #f8f9fa; border-color: #e9ecef; }
 .playlist-item.active { background-color: #eef2ff; border-color: #c7d2fe; }
-.playlist-item .icon { color: #6366f1; margin-right: 12px; margin-top: 2px; font-size: 0.9rem; }
-.playlist-item.active .icon { color: #4f46e5; }
+.playlist-item .icon { color: #0b41b7; margin-right: 12px; margin-top: 2px; font-size: 0.9rem; }
+.playlist-item.active .icon { color: #0b41b7; }
 .playlist-item.completed .icon { color: #10b981; font-weight: bold; }
 .playlist-item.completed .title { color: #495057; }
 .mark-done-btn { transition: all 0.3s ease; font-weight: 500; }

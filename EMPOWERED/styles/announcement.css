@@ -310,11 +310,11 @@ body {
 }
 
 .border-red {
-    border-left: 10px solid #ff4d4d;
+    border-left: 10px solid #8e0b0b;
 }
 
 .border-blue {
-    border-left: 10px solid #3b82f6;
+    border-left: 10px solid #0b41b7;
 }
 
 .card-content {
@@ -377,7 +377,7 @@ body {
 /* Badge for important */
 .tag-red {
     background-color: #fee2e2;
-    color: #991b1b;
+    color: #8e0b0b;
     padding: 2px 8px;
     border-radius: 6px;
     font-weight: 600;
@@ -440,7 +440,7 @@ body.high-contrast .announce-card {
 }
 
 body.high-contrast .border-red {
-    border-left: 10px solid #ff6666;
+    border-left: 10px solid #8e0b0b;
 }
 
 body.high-contrast .border-blue {
@@ -459,7 +459,7 @@ body.high-contrast .speak-btn:hover {
 }
 
 body.high-contrast .tag-red {
-    background-color: #ff3333;
+    background-color: #8e0b0b;
     color: white;
     border: 1px solid white;
 }

@@ -379,9 +379,9 @@ body {
       color:#fff;
     }
 
-    .purple{ background:#8b5cf6; }
-    .green{ background:#22c55e; }
-    .yellow{ background:#fbbf24; }
+    .purple{ background:#531ecc; }
+    .green{ background:#0d5427; }
+    .yellow{ background:#6f4a1f; }
 
     .badge{
       display:inline-block;
@@ -394,17 +394,17 @@ body {
 
     .badge-purple{
       background:#f3e8ff;
-      color:#8b5cf6;
+      color:#531ecc;
     }
 
     .badge-green{
       background:#dcfce7;
-      color:#16a34a;
+      color:#0d5427;
     }
 
     .badge-yellow{
       background:#fef3c7;
-      color:#d97706;
+      color:#6f4a1f;
     }
 
     .course-card p{
@@ -427,9 +427,9 @@ body {
       border-radius:999px;
         }
 
-    .progress-purple{ width:25%; background:#8b5cf6; }
-    .progress-green{ width:40%; background:#22c55e; }
-    .progress-yellow{ width:60%; background:#fbbf24; }
+    .progress-purple{ width:25%; background:#531ecc; }
+    .progress-green{ width:40%; background:#0d5427; }
+    .progress-yellow{ width:60%; background:#6f4a1f; }
 
     .progress-text{
       text-align:right;
@@ -459,7 +459,7 @@ body {
 
     .btn-purple{
       background:#f3e8ff;
-      color:#7c3aed;
+      color:#531ecc;
     }
 
     .btn-purple:hover {
@@ -468,7 +468,7 @@ body {
 
     .btn-green{
       background:#dcfce7;
-      color:#16a34a;
+      color:#0d5427;
     }
 
     .btn-green:hover {
@@ -477,7 +477,7 @@ body {
 
     .btn-yellow{
       background:#fef3c7;
-      color:#d97706;
+      color:#6f4a1f;
     }
 
     .btn-yellow:hover {
@@ -523,7 +523,7 @@ body {
       width:180px;
       height:180px;
       border-radius:50%;
-      background:conic-gradient(#2563eb 67%, #dbeafe 0);
+      background:conic-gradient(#0b41b7 67%, #dbeafe 0);
       display:flex;
       align-items:center;
       justify-content:center;
@@ -571,7 +571,7 @@ body {
       padding:16px;
       border-radius:16px;
       background:#eff6ff;
-      color:#2563eb;
+      color:#0b41b7;
       font-weight:600;
       font-size:16px;
       cursor:pointer;
@@ -614,17 +614,17 @@ body {
 
     .task-purple{
       background:#f3e8ff;
-      color:#8b5cf6;
+      color:#531ecc;
     }
 
     .task-green{
       background:#dcfce7;
-      color:#16a34a;
+      color:#0d5427;
     }
 
     .task-orange{
       background:#ffedd5;
-      color:#ea580c;
+      color:#7e3710;
     }
 
     .status{
@@ -636,17 +636,17 @@ body {
 
     .due{
       background:#fee2e2;
-      color:#dc2626;
+      color:#8e0b0b;
     }
 
     .upcoming{
       background:#fef3c7;
-      color:#d97706;
+      color:#7e3710;
     }
 
     .later{
-      background:#d5d9e179;
-      color:#4e535d;
+      background:#ccd5e5;
+      color:#202327;
     }
 
     .tasks-btn{
@@ -655,7 +655,7 @@ body {
       border:none;
       border-radius:16px;
       background:#eff6ff;
-      color:#2563eb;
+      color:#0b41b7;
       font-size:17px;
       font-weight:600;
       margin-top:10px;
