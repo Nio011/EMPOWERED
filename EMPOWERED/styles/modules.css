@@ -17,7 +17,7 @@ body {
 main {
     flex: 1 0 auto;
     width: 100%;
-    max-width: 1300px;
+    max-width: 100%; /* Allows the cards to stretch fluidly across the viewport */
     margin: 0 auto;
 }
 
@@ -196,7 +196,7 @@ main {
     border-color: #0f172a;
 }
 
-/* Toggle Switch Switcher Element Track layouts */
+/* Toggle Switch Styles */
 .toggle-switch {
     display: flex;
     align-items: center;
@@ -244,7 +244,7 @@ main {
     margin-bottom: 0;
 }
 
-/* Profile Metadata Summary layout indicators */
+/* Profile Metadata Layout */
 .profile {
     display: flex;
     align-items: center;
@@ -280,11 +280,11 @@ body.high-contrast .profile p {
 
 /* ================= MODULE CONTENT HOUSING UI ================= */
 .modules-container {
-    padding: 2rem 7rem;
+    padding: 2rem 7rem; /* Spacing coordinates match up with header elements */
 }
 
 .back-button-container {
-    padding-left: 2rem;
+    padding-left: 0;
 }
 
 .back-button {
@@ -308,6 +308,7 @@ body.high-contrast .profile p {
     align-items: center;
     margin-bottom: 30px;
     border: 1px solid #e5e7eb;
+    width: 100%; /* Restored wide execution behavior across page columns */
 }
 
 .overview-left {
@@ -382,6 +383,7 @@ body.high-contrast .profile p {
     margin-bottom: 1.5rem;
     border: 1px solid #e0e6ed;
     overflow: hidden;
+    width: 100%; /* Restored wide card alignment layout blocks */
 }
 
 .module-header {
@@ -493,27 +495,27 @@ body.high-contrast .profile p {
     margin-left: 10px;
 }
 
-/* Thumbnail Visual Content Box Frame Mockups */
+/* Mockup Icons Layout Grid - Balanced Square Dimensions */
 .lesson-mockup-frame {
-    width: 140px;
+    width: 90px;  
     height: 90px;
-    border-radius: 8px;
+    border-radius: 25px; /* Matches math template curves safely */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 2.5rem; 
     flex-shrink: 0;
     box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
 }
 
 .m1-violet-theme .lesson-mockup-frame {
-    background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+    background: #ede9fe; 
     border: 1px solid #d8b4fe;
     color: #9333ea;
 }
 
 .m2-green-theme .lesson-mockup-frame {
-    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    background: #ede9fe; 
     border: 1px solid #86efac;
     color: #16a34a;
 }
@@ -617,7 +619,7 @@ body.high-contrast .module-header .global-badge-m2 {
     color: #ffffff !important;
 }
 
-/* FIXED: Module structural containers keep standard accessible white lines */
+/* Module structural containers keep standard accessible white lines */
 body.high-contrast .module-card { 
     background: #000000 !important; 
     border: 2px solid #ffffff !important; 
@@ -637,10 +639,10 @@ body.high-contrast .lesson-title {
     color: #ffffff !important; 
 }
 
-/* FIXED: Accessible yellow targets applied EXCLUSIVELY to the read aloud button */
+/* Isolated high contrast yellow target applied strictly to the speak button element node */
 body.high-contrast .speak-btn {
     background: #1a1a1a !important;
-    border: 2px solid #FFD700 !important;
+    border: 2px solid #FFD700 !important; 
     color: #FFD700 !important;
 }
 
@@ -676,16 +678,20 @@ body.high-contrast .read-tag { background: #1a1a1a !important; color: #ffd700 !i
 body.high-contrast .btn-complete { background: #ffd700 !important; color: #000000 !important; }
 body.high-contrast .lesson-mockup-frame { background: #000000 !important; color: #ffffff !important; border: 2px dashed #ffffff !important; }
 
-/* FIXED: Footer background and border sync up perfectly with dashboard standards */
-body.high-contrast footer {
-    color: #FFFFFF;
+/* Dashboard Footer Alignment */
+body.high-contrast footer { 
+    background: #000000 !important; 
+    color: #ffffff !important; 
+    border-top: 2px solid #FFD700 !important; 
 }
-
 
 /* ================= FOOTER ================= */
 footer {
     text-align: center;
-    padding: 1rem;
-    color: #000000;
+    padding: 1.5rem;
+    background: #1E2A4A;
+    color: #ffffff;
+    width: 100%;
+    font-size: 0.9rem;
     margin-top: auto;
 }
