@@ -435,6 +435,57 @@ body.high-contrast .badge-custom {
     border: 1px solid #ffff00;
 }
 
+/* Accessibility Panel High Contrast */
+body.high-contrast .accessibility-panel {
+    background-color: #1a1a1a;
+    border: 2px solid #ffff00;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+body.high-contrast .accessibility-panel h2,
+body.high-contrast .accessibility-panel .feature-group label {
+    color: #ffff00;
+}
+
+body.high-contrast .accessibility-panel .text-size-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #ffff00;
+}
+
+body.high-contrast .accessibility-panel .text-size-button:hover {
+    background-color: #333333;
+    border-color: #ffff00;
+}
+
+body.high-contrast .accessibility-panel .text-size-button.active {
+    background-color: #ffff00;
+    color: #000000;
+    border-color: #ffff00;
+}
+
+body.high-contrast .toggle-label {
+    background-color: #333333;
+    border: 1px solid #ffff00;
+}
+
+body.high-contrast .toggle-label::after {
+    background-color: #ffff00;
+}
+
+body.high-contrast .toggle-switch input[type="checkbox"]:checked + .toggle-label {
+    background-color: #ffff00;
+    border-color: #ffff00;
+}
+
+body.high-contrast .toggle-switch input[type="checkbox"]:checked + .toggle-label::after {
+    background-color: #000000;
+}
+
+body.high-contrast .contrast-description {
+    color: #e0e0e0;
+}
+
 body.high-contrast .playlist-item:hover { background-color: #333333; border-color: #ffff00; }
 body.high-contrast .playlist-item.active { background-color: #000000; border-color: #00ff00; }
 body.high-contrast .playlist-item .icon { color: #ffff00; }
