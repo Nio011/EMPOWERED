@@ -184,6 +184,8 @@ body {
     margin-bottom: 1em;
     color: #111827;
     font-weight: 600;
+    padding-bottom: 0.75em;
+    border-bottom: 2px solid #FFD700;
 }
 
 .accessibility-panel .feature-group {
@@ -437,53 +439,61 @@ body.high-contrast .badge-custom {
 
 /* Accessibility Panel High Contrast */
 body.high-contrast .accessibility-panel {
-    background-color: #1a1a1a;
-    border: 2px solid #ffff00;
+    background-color: #000000;
+    border: 2px solid #FFD700;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
-body.high-contrast .accessibility-panel h2,
+body.high-contrast .accessibility-panel h2 {
+    color: #ffffff;
+    border-bottom: 2px solid #FFD700;
+}
+
 body.high-contrast .accessibility-panel .feature-group label {
-    color: #ffff00;
+    color: #ffffff;
 }
 
 body.high-contrast .accessibility-panel .text-size-button {
-    background-color: #000000;
+    background-color: transparent;
     color: #ffffff;
-    border: 1px solid #ffff00;
+    border: 2px solid #ffffff;
 }
 
 body.high-contrast .accessibility-panel .text-size-button:hover {
     background-color: #333333;
-    border-color: #ffff00;
+    border-color: #FFD700;
 }
 
 body.high-contrast .accessibility-panel .text-size-button.active {
-    background-color: #ffff00;
+    background-color: #FFD700;
     color: #000000;
-    border-color: #ffff00;
+    border-color: #FFD700;
 }
 
 body.high-contrast .toggle-label {
     background-color: #333333;
-    border: 1px solid #ffff00;
+    border: none;
+    box-sizing: border-box;
 }
 
 body.high-contrast .toggle-label::after {
-    background-color: #ffff00;
+    background-color: #ffffff;
+    top: 0.125em;
+    left: 0.125em;
 }
 
 body.high-contrast .toggle-switch input[type="checkbox"]:checked + .toggle-label {
-    background-color: #ffff00;
-    border-color: #ffff00;
+    background-color: #FFD700;
 }
 
 body.high-contrast .toggle-switch input[type="checkbox"]:checked + .toggle-label::after {
     background-color: #000000;
+    top: 0.125em;
+    left: 1.375em;
 }
 
 body.high-contrast .contrast-description {
-    color: #e0e0e0;
+    color: #ffffff;
 }
 
 body.high-contrast .playlist-item:hover { background-color: #333333; border-color: #ffff00; }
@@ -516,8 +526,18 @@ body.text-large .badge-custom { font-size: 1rem; }
 body.text-large .transcript-box { font-size: 1.15rem; }
 body.text-large .playlist-item .title { font-size: 1.15rem; }
 body.text-large .playlist-item .duration { font-size: 0.95rem; }
+body.text-large .hero h1 { font-size: 3rem; }
+body.text-large .hero p { font-size: 1.375rem; }
+body.text-large .accessibility-panel .text-size-button { font-size: 1.125rem; }
+
+body.text-medium .hero h1 { font-size: 2.5rem; }
+body.text-medium .hero p { font-size: 1.125rem; }
+body.text-medium .accessibility-panel .text-size-button { font-size: 1rem; }
 
 body.text-small .custom-card h4 { font-size: 1.25rem; }
 body.text-small .description-text { font-size: 0.85rem; }
 body.text-small .transcript-box { font-size: 0.85rem; }
 body.text-small .playlist-item .title { font-size: 0.9rem; }
+body.text-small .hero h1 { font-size: 2rem; }
+body.text-small .hero p { font-size: 1rem; }
+body.text-small .accessibility-panel .text-size-button { font-size: 0.875rem; }
