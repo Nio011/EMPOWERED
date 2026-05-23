@@ -6,22 +6,12 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* The key fix: Setting the base size on the body class.
-   1rem will equal these pixel values depending on the active class.
-*/
-main {
-    flex: 1 0 auto;
-    width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
-}
-
 body {
-    background:linear-gradient(to bottom, #eef2f7, #e7f0f4);
-    color:#1f2937;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
+    background: linear-gradient(to bottom, #eef2f7, #e7f0f4);
+    color: #1f2937;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
@@ -32,61 +22,56 @@ main {
 }
 
 /* ================= NAVBAR SCALING ================= */
-.navbar{
-    width:100%;
-    background:#ffffff;
-    padding:30px 50px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:1px solid #e5e7eb;
-    box-shadow:0 2px 10px rgba(0,0,0,0.04);
-    position:sticky;
-    top:0;
-    z-index:100;
+.navbar {
+    width: 100%;
+    background: #ffffff;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-/*Logo styles*/
-
-.brand{
-    display:flex;
-    align-items:center;
+.brand {
+    display: flex;
+    align-items: center;
     padding-left: 4rem;
     padding-right: 7rem;
-
 }
 
-.logo{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      margin-bottom:0;
-    }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0;
+}
 
 .logo-icon {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    }
-
-.logo-icon img{
-    width:50px;
-    height:50px;
-    display:block;
 }
 
-.logo h2{
-    font-size:28px;
-    color:#2563eb;
-    
+.logo-icon img {
+    width: 50px;
+    height: 50px;
+    display: block;
 }
 
-.logo p{
-    font-size:12px;
-    color:#6b7280;
+.logo h2 {
+    font-size: 28px;
+    color: #2563eb;
 }
 
+.logo p {
+    font-size: 12px;
+    color: #6b7280;
+}
 
 .nav-controls {
     display: flex;
@@ -113,7 +98,7 @@ main {
     box-shadow: 0 0 0 3px rgba(237, 245, 81, 0.834);
 }
 
-/*Accesibility Features */
+/* Accessibility Panel Settings Menu */
 .feature-card {
     background: #ffffff;
     border: 2px solid #b6b6b6;
@@ -126,12 +111,12 @@ main {
 }
 
 .accessibility-panel {
-    border:1px solid #c7d2fe;
-    background:#eef2ff;
-    color:#2563eb;
-    font-weight:600;
-    align-items:center;
-    gap:10px;
+    border: 1px solid #c7d2fe;
+    background: #eef2ff;
+    color: #2563eb;
+    font-weight: 600;
+    align-items: center;
+    gap: 10px;
     position: absolute;
     top: calc(100% + 12px);
     right: 1.5em;
@@ -147,6 +132,7 @@ main {
 .accessibility-panel.open {
     display: block;
 }
+
 .accessibility-panel h2 {
     font-size: 1.125em;
     margin-bottom: 1em;
@@ -210,7 +196,7 @@ main {
     border-color: #0f172a;
 }
 
-/* Toggle Switch Styles */
+/* Toggle Switch Switcher Element Track layouts */
 .toggle-switch {
     display: flex;
     align-items: center;
@@ -258,164 +244,206 @@ main {
     margin-bottom: 0;
 }
 
-.profile{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
+/* Profile Metadata Summary layout indicators */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-    .profile-icon{
-      width:50px;
-      height:50px;
-      border-radius:50%;
-      background:#eef2ff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#2563eb;
-      font-size:22px;
-    }
+.profile-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #eef2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2563eb;
+    font-size: 22px;
+}
 
-/*NEW UI*/
-.modules-container{
-    padding:30px;
-    max-width:1500px;
-    margin:0 auto;
+/* ================= HIGH CONTRAST PROFILE SECTIONS ================= */
+body.high-contrast .profile-icon {
+    background: #333333 !important;
+    color: #ffffff !important;
+    border: 1px solid #ffffff !important;
+}
+
+body.high-contrast .profile h4 {
+    color: #ffffff !important;
+}
+
+body.high-contrast .profile p {
+    color: #94a3b8 !important;
+}
+
+/* ================= MODULE CONTENT HOUSING UI ================= */
+.modules-container {
+    padding: 2rem 7rem;
 }
 
 .back-button-container {
-    margin-bottom: 20px;
-    text-decoration: none;
-    color: #111827;
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
-
-.back-button-container a:hover {
-    color: #2563eb;
-}
-
-/* OVERVIEW */
-
-
-.course-overview{
-    background:white;
-    border-radius:30px;
-    padding:30px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:30px;
-    border:1px solid #e5e7eb;
-}
-
-.course-overview h2{
-    font-size:36px;
-    margin-bottom:10px;
-}
-
-.overview-left{
-    display:flex;
-    align-items:center;
-    gap:25px;
-}
-
-.overview-icon{
-    width:90px;
-    height:90px;
-    border-radius:25px;
-    background:#ede9fe;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#7c3aed;
-    font-size:42px;
-}
-
-.overview-left h2{
-    font-size:36px;
-    margin-bottom:10px;
-}
-
-.overview-left p{
-    color:#6b7280;
-    max-width:400px;
-    line-height:1.7;
-}
-
-.overview-right{
-    display:flex;
-    align-items:center;
-    gap:40px;
-}
-
-.progress-wrapper{
-    width:380px;
-}
-
-.progress-labels{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:12px;
-    font-weight:600;
-}
-
-.progress-bar{
-    width:100%;
-    height:12px;
-    background:#e5e7eb;
-    border-radius:999px;
-    overflow:hidden;
-    margin-bottom:10px;
-}
-
-.progress-fill{
-    width:25%;
-    height:100%;
-    background:#7c3aed;
-}
-
-.progress-wrapper small{
-    color:#6b7280;
-}
-
-
-/* ================= CONTENT SCALING ================= */
-.header-container h1 {
-    font-size: 2.2rem; /* Will be ~30px on small, ~40px on medium, ~48px on large */
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 0.5rem;
-}
-
-.header-container p {
-    font-size: 1.2rem;
-    color: #666666;
-    margin-bottom: 2rem;
+    padding-left: 7rem;
 }
 
 .back-button {
-    font-size: 1rem;
     text-decoration: none;
-    color: #1E2A4A;
+    color: #000d36;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: #2563eb;
+}
+
+/* Course Overview Summary Progress Banner Layout */
+.course-overview {
+    background: white;
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border: 1px solid #e5e7eb;
+}
+
+.overview-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.overview-icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 25px;
+    background: #ede9fe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #7c3aed;
+    font-size: 42px;
+}
+
+.overview-left h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.overview-left p {
+    color: #6b7280;
+    max-width: 400px;
+    line-height: 1.7;
+}
+
+.overview-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.progress-wrapper {
+    width: 380px;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
     font-weight: 600;
 }
 
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #7c3aed;
+}
+
+.progress-wrapper small {
+    color: #6b7280;
+}
+
+/* ================= LESSON CARD ELEMENTS LAYOUT ================= */
 .module-card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 0.75rem;
+    background: white;
+    border-radius: 12px;
     margin-bottom: 1.5rem;
+    border: 1px solid #e0e6ed;
     overflow: hidden;
 }
 
 .module-header {
-    padding: 1.5rem 2rem;
-    background: #f8fafc;
+    padding: 1.5rem 2.2rem;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
+}
+
+.module-header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.module-content {
+    padding: 2rem 2.2rem;
+    display: none;
+}
+
+.module-content.open {
+    display: block;
+}
+
+.topic-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.topic-item:last-child {
+    border-bottom: none;
+}
+
+.topic-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.topic-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Anchor Link Layout Formatting Rules */
+.lesson-link {
+    text-decoration: none !important;
+    color: inherit;
+    display: inline-block;
+}
+
+.lesson-link:hover .lesson-title {
+    text-decoration: none !important;
+    opacity: 0.8;
 }
 
 .lesson-title {
@@ -435,9 +463,62 @@ main {
     font-size: 1.1rem;
     color: #666666;
     line-height: 1.6;
+    margin: 0 0 0.5rem 0;
 }
 
-/* ================= INTERACTIVE BUTTONS ================= */
+/* Module Theming Variant Badges */
+.module-card.m1-violet-theme .module-header {
+    background: #faf5ff;
+    border-left: 5px solid #8b5cf6;
+}
+.module-card.m1-violet-theme .module-header h3 {
+    color: #6d28d9;
+}
+.module-card.m1-violet-theme .progress-text {
+    color: #7c3aed;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.module-card.m2-green-theme .module-header {
+    background: #f0fdf4;
+    border-left: 5px solid #22c55e;
+}
+.module-card.m2-green-theme .module-header h3 {
+    color: #15803d;
+}
+.module-card.m2-green-theme .progress-text {
+    color: #16a34a;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+/* Thumbnail Visual Content Box Frame Mockups */
+.lesson-mockup-frame {
+    width: 140px;
+    height: 90px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+}
+
+.m1-violet-theme .lesson-mockup-frame {
+    background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+    border: 1px solid #d8b4fe;
+    color: #9333ea;
+}
+
+.m2-green-theme .lesson-mockup-frame {
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    border: 1px solid #86efac;
+    color: #16a34a;
+}
+
+/* Interactive Action Form Button Switches */
 .btn-complete {
     background: #050509;
     color: white;
@@ -448,56 +529,163 @@ main {
     font-weight: 600;
     cursor: pointer;
     transition: background 0.3s ease;
+    width: max-content;
 }
 
 .btn-complete.finished {
     background: #2ecc71;
 }
 
-/* ================= HIGH CONTRAST MODE SYNC ================= */
-        body.high-contrast { background: #000000 !important; color: #ffffff !important; }
-        body.high-contrast .navbar { background: #121212 !important; border-bottom: 2px solid #ffd700 !important; }
-        
-        /* FIXED: Added explicit coloring rules to force panel text to turn white */
-        body.high-contrast .accessibility-panel { 
-            background: #1a1a1a !important; 
-            border: 2px solid #ffd700 !important; 
-            color: #ffffff !important; 
-        }
-        body.high-contrast .accessibility-panel h2, 
-        body.high-contrast .accessibility-panel label,
-        body.high-contrast .accessibility-panel .contrast-description { 
-            color: #ffffff !important; 
-        }
-        
-        body.high-contrast .text-size-button { background: #000000 !important; color: #ffffff !important; border: 1px solid #ffffff !important; }
-        body.high-contrast .text-size-button.active { background: #ffd700 !important; color: #000000 !important; border-color: #ffd700 !important; }
-        
-        body.high-contrast .course-overview { background: #121212 !important; border: 2px solid #ffffff !important; color: #ffffff !important; }
-        body.high-contrast .course-overview h2, body.high-contrast .course-overview p { color: #ffffff !important; }
-        body.high-contrast .overview-icon { background: #1a1a1a !important; color: #ffd700 !important; border: 1px solid #ffffff !important; }
-        body.high-contrast .progress-bar { background: #333333 !important; border: 1px solid #ffffff !important; }
-        body.high-contrast .progress-fill { background: #ffd700 !important; }
+.speak-btn {
+    background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important;
+    font-size: 0.9em !important;
+    font-weight: 500 !important;
+    color: #374151 !important;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.5em 0.8em !important;
+    border-radius: 20px !important;
+    white-space: nowrap;
+    align-self: center;
+}
 
-        body.high-contrast .module-card { background: #000000 !important; border: 2px solid #ffffff !important; }
-        body.high-contrast .module-header { background: #1a1a1a !important; border-bottom: 2px solid #ffffff !important; color: #ffffff !important; }
-        body.high-contrast .topic-item { border-bottom: 1px solid #ffffff !important; }
-        body.high-contrast .body-text, body.high-contrast .lesson-title { color: #ffffff !important; }
-        body.high-contrast .back-button { color: #ffd700 !important; }
-        body.high-contrast .read-tag { background: #1a1a1a !important; color: #ffd700 !important; border: 1px solid #ffd700 !important; }
-        body.high-contrast .btn-complete { background: #ffd700 !important; color: #000000 !important; }
-        body.high-contrast .speak-btn { background: #000000 !important; color: #ffffff !important; border: 1px solid #ffffff !important; }
-        body.high-contrast .speak-btn.reading { background: #b91c1c !important; }
-        body.high-contrast .lesson-mockup-frame { background: #000000 !important; color: #ffffff !important; border: 2px dashed #ffffff !important; }
-        body.high-contrast footer { background: #121212 !important; border-top: 2px solid #ffd700 !important; }
+.speak-btn:hover {
+    background: #e5e7eb !important;
+    color: #111827 !important;
+    transform: translateY(-1px);
+}
+
+.speak-btn.reading {
+    background: #fee2e2 !important;
+    border-color: #fca5a5 !important;
+    color: #b91c1c !important;
+}
+
+/* ================= SYSTEM ACCESSIBILITY SCALING OVERRIDES ================= */
+body.text-small { font-size: 16px !important; line-height: 1.6; }
+body.text-small .course-overview h2 { font-size: 2rem !important; line-height: 1.3; }
+body.text-small .course-overview p { font-size: 1rem !important; line-height: 1.6; }
+body.text-small .lesson-title { font-size: 1.3rem !important; line-height: 1.4; }
+
+body.text-medium { font-size: 18px !important; line-height: 1.6; }
+body.text-medium .course-overview h2 { font-size: 2.5rem !important; line-height: 1.3; }
+body.text-medium .course-overview p { font-size: 1.125rem !important; line-height: 1.6; }
+body.text-medium .lesson-title { font-size: 1.5rem !important; line-height: 1.4; }
+
+body.text-large { font-size: 20px !important; line-height: 1.7; }
+body.text-large .course-overview h2 { font-size: 3rem !important; line-height: 1.3; }
+body.text-large .course-overview p { font-size: 1.375rem !important; line-height: 1.7; }
+body.text-large .lesson-title { font-size: 1.75rem !important; line-height: 1.4; }
+
+/* ================= HIGH CONTRAST MODE SYNC ================= */
+body.high-contrast { background: #000000 !important; color: #ffffff !important; }
+body.high-contrast .navbar { background: #121212 !important; border-bottom: 2px solid #ffd700 !important; }
+
+body.high-contrast .accessibility-panel { 
+    background: #000000 !important; 
+    border: 2px solid #ffd700 !important; 
+    color: #ffffff !important; 
+}
+body.high-contrast .accessibility-panel h2 { 
+    color: #fdfdfd !important; 
+    border-bottom: 1px solid #ffd700 !important; 
+}
+body.high-contrast .accessibility-panel .feature-group label,
+body.high-contrast .accessibility-panel .contrast-description { 
+    color: #ffffff !important; 
+}
+
+body.high-contrast .text-size-button { background: transparent !important; border: 2px solid #ffffff !important; color: #ffffff !important; }
+body.high-contrast .text-size-button.active { background: #ffd700 !important; color: #000000 !important; border-color: #ffd700 !important; }
+
+body.high-contrast .course-overview { background: #121212 !important; border: 2px solid #ffffff !important; color: #ffffff !important; }
+body.high-contrast .course-overview h2, body.high-contrast .course-overview p { color: #ffffff !important; }
+body.high-contrast .overview-icon { background: #1a1a1a !important; color: #ffd700 !important; border: 1px solid #ffffff !important; }
+body.high-contrast .progress-bar { background: #333333 !important; border: 1px solid #ffffff !important; }
+body.high-contrast .progress-fill { background: #ffd700 !important; }
+
+/* Module Headers & Badges Typography Color Swaps */
+body.high-contrast .module-header h3,
+body.high-contrast .module-header h3 span,
+body.high-contrast .module-header .progress-text,
+body.high-contrast .module-header .global-badge-m1,
+body.high-contrast .module-header .global-badge-m2 {
+    color: #ffffff !important;
+}
+
+/* FIXED: Module structural containers keep standard accessible white lines */
+body.high-contrast .module-card { 
+    background: #000000 !important; 
+    border: 2px solid #ffffff !important; 
+}
+
+body.high-contrast .module-header { 
+    background: #1a1a1a !important; 
+    border-bottom: 2px solid #ffffff !important; 
+}
+
+body.high-contrast .topic-item { 
+    border-bottom: 1px solid #ffffff !important; 
+}
+
+body.high-contrast .body-text, 
+body.high-contrast .lesson-title { 
+    color: #ffffff !important; 
+}
+
+/* FIXED: Accessible yellow targets applied EXCLUSIVELY to the read aloud button */
+body.high-contrast .speak-btn {
+    background: #1a1a1a !important;
+    border: 2px solid #FFD700 !important;
+    color: #FFD700 !important;
+}
+
+body.high-contrast .speak-btn i,
+body.high-contrast .speak-btn span {
+    color: #FFD700 !important;
+}
+
+body.high-contrast .speak-btn:hover {
+    background: #FFD700 !important;
+    color: #000000 !important;
+}
+
+body.high-contrast .speak-btn:hover i,
+body.high-contrast .speak-btn:hover span {
+    color: #000000 !important;
+}
+
+body.high-contrast .speak-btn.reading {
+    background: #b91c1c !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+body.high-contrast .speak-btn.reading i,
+body.high-contrast .speak-btn.reading span {
+    color: #ffffff !important;
+}
+
+body.high-contrast .back-button { color: #ffffff !important; }
+body.high-contrast .back-button:hover { color: #ffd700 !important; }
+body.high-contrast .read-tag { background: #1a1a1a !important; color: #ffd700 !important; border: 1px solid #ffd700 !important; }
+body.high-contrast .btn-complete { background: #ffd700 !important; color: #000000 !important; }
+body.high-contrast .lesson-mockup-frame { background: #000000 !important; color: #ffffff !important; border: 2px dashed #ffffff !important; }
+
+/* FIXED: Footer background and border sync up perfectly with dashboard standards */
+body.high-contrast footer {
+    color: #FFFFFF;
+}
+
 
 /* ================= FOOTER ================= */
 footer {
-    flex-shrink: 0;
     text-align: center;
-    padding: 1.5rem;
-    background: #1E2A4A;
-    color: #ffffff;
-    width: 100%;
-    font-size: 0.9rem;
+    padding: 1rem;
+    color: #000000;
+    margin-top: auto;
 }

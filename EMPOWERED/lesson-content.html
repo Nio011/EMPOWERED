@@ -4,54 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lesson | EmpowerED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     <style>
-        .lesson-body { line-height: 1.8; margin-top: 2rem; }
-        .content-card { background: white; padding: 3rem; border-radius: 12px; border: 1px solid #eee; position: relative; }
-        .lesson-controls { display: flex; justify-content: flex-end; margin-bottom: 1.5rem; gap: 1rem; }
+        /* Isolated presentation formatting rules for the core layout card structure */
+        .content-card { 
+            background: white; 
+            padding: 3rem; 
+            border-radius: 12px; 
+            border: 1px solid #e5e7eb; 
+            position: relative; 
+            margin-top: 1.5rem;
+        }
         
-        .speak-btn, .btn-page-complete {
-            background: #f1f5f9; border: 1px solid #cbd5e1; padding: 8px 16px; border-radius: 8px;
-            cursor: pointer; font-size: 1rem; font-weight: 500; display: flex; align-items: center; gap: 8px;
+        .lesson-controls { 
+            display: flex; 
+            justify-content: flex-end; 
+            margin-bottom: 1.5rem; 
+            gap: 1rem; 
+        }
+        
+        .btn-page-complete {
+            background: #050509; 
+            color: white; 
+            border: none; 
+            padding: 0.8rem 1.5rem; 
+            border-radius: 8px;
+            cursor: pointer; 
+            font-size: 1rem; 
+            font-weight: 600; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px;
             transition: all 0.2s ease;
         }
-        .speak-btn:hover, .btn-page-complete:hover { background: #e2e8f0; transform: translateY(-1px); }
-        .speak-btn.reading { background: #fee2e2; border-color: #fca5a5; color: #b91c1c; }
         
-        .btn-page-complete.finished { background: #dcfce7; border-color: #86efac; color: #166534; }
-
-        .content-card h3 { margin: 1.5rem 0 0.5rem 0; font-size: 1.4rem; color: #1e293b; }
-        .content-card p { margin-bottom: 1rem; }
-        .content-card ul { margin: 0 0 1.5rem 1.5rem; }
-        .content-card li { margin-bottom: 0.5rem; }
+        .btn-page-complete:hover { 
+            transform: translateY(-1px); 
+            opacity: 0.9;
+        }
         
-        /* ================= SYSTEM ACCESSIBILITY SCALING OVERRIDES ================= */
-        body.text-small { font-size: 14px !important; }
-        body.text-medium { font-size: 16px !important; }
-        body.text-large { font-size: 18px !important; }
-        body.text-small #lesson-title { font-size: 1.8rem !important; }
-        body.text-medium #lesson-title { font-size: 2.2rem !important; }
-        body.text-large #lesson-title { font-size: 2.6rem !important; }
-        body.text-small .lesson-body h3 { font-size: 1.15rem !important; }
-        body.text-medium .lesson-body h3 { font-size: 1.4rem !important; }
-        body.text-large .lesson-body h3 { font-size: 1.75rem !important; }
-        body.text-small .lesson-body, body.text-small .lesson-body p, body.text-small .lesson-body li { font-size: 0.9rem !important; }
-        body.text-medium .lesson-body, body.text-medium .lesson-body p, body.text-medium .lesson-body li { font-size: 1rem !important; }
-        body.text-large .lesson-body, body.text-large .lesson-body p, body.text-large .lesson-body li { font-size: 1.2rem !important; }
+        .btn-page-complete.finished { 
+            background: #2ecc71 !important; 
+            color: white !important;
+        }
 
-        /* ================= HIGH CONTRAST MODE SYNC ================= */
-        body.high-contrast { background: #000000 !important; color: #ffffff !important; }
-        body.high-contrast .navbar { background: #121212 !important; border-bottom: 2px solid #ffd700 !important; }
-        body.high-contrast .accessibility-panel { background: #1a1a1a !important; border: 2px solid #ffd700 !important; color: #ffffff !important; }
-        body.high-contrast .text-size-button { background: #000000 !important; color: #ffffff !important; border: 1px solid #ffffff !important; }
-        body.high-contrast .text-size-button.active { background: #ffd700 !important; color: #000000 !important; border-color: #ffd700 !important; }
-        body.high-contrast .content-card { background: #000 !important; border: 2px solid #fff !important; color: #ffffff !important; }
-        body.high-contrast .content-card h3, body.high-contrast #lesson-title { color: #ffd700 !important; }
-        body.high-contrast .back-button { color: #ffd700 !important; }
-        body.high-contrast .speak-btn, body.high-contrast .btn-page-complete { background: #1a1a1a !important; color: #ffffff !important; border: 1px solid #ffffff !important; }
-        body.high-contrast .btn-page-complete.finished { background: #ffd700 !important; color: #000000 !important; border-color: #ffd700 !important; }
-        body.high-contrast footer { background: #121212 !important; border-top: 2px solid #ffd700 !important; }
+        .lesson-body h3 { margin: 1.5rem 0 0.5rem 0; font-size: 1.4rem; color: #1e293b; }
+        .lesson-body p { margin-bottom: 1rem; color: #4b5563; line-height: 1.8; }
+        .lesson-body ul { margin: 0 0 1.5rem 1.5rem; }
+        .lesson-body li { margin-bottom: 0.5rem; color: #4b5563; }
+
+        /* ================= FIXED: TEXT SCALING DESIGN MATRICES ================= */
+        body.text-small { font-size: 16px !important; line-height: 1.6; }
+        body.text-small #lesson-title { font-size: 2rem !important; }
+        body.text-small .lesson-body h3 { font-size: 1.3rem !important; }
+        body.text-small .lesson-body p, body.text-small .lesson-body li { font-size: 1rem !important; }
+
+        body.text-medium { font-size: 18px !important; line-height: 1.6; }
+        body.text-medium #lesson-title { font-size: 2.5rem !important; }
+        body.text-medium .lesson-body h3 { font-size: 1.75rem !important; }
+        body.text-medium .lesson-body p, body.text-medium .lesson-body li { font-size: 1.125rem !important; }
+
+        body.text-large { font-size: 20px !important; line-height: 1.7; }
+        body.text-large #lesson-title { font-size: 3rem !important; }
+        body.text-large .lesson-body h3 { font-size: 2rem !important; }
+        body.text-large .lesson-body p, body.text-large .lesson-body li { font-size: 1.375rem !important; }
+
+        /* ================= FIXED: HIGH CONTRAST STRUCTURAL OVERRIDES ================= */
+        body.high-contrast .content-card { 
+            background: #000000 !important; 
+            border: 2px solid #ffffff !important; 
+        }
+        
+        /* Forces all text items inside the canvas to turn white */
+        body.high-contrast #lesson-title,
+        body.high-contrast .lesson-body h3,
+        body.high-contrast .lesson-body p,
+        body.high-contrast .lesson-body li { 
+            color: #ffffff !important; 
+        }
+
+        body.high-contrast .btn-page-complete { 
+            background: #ffffff !important; 
+            color: #000000 !important; 
+            border: 2px solid #ffffff !important;
+        }
+        body.high-contrast .btn-page-complete.finished { 
+            background: #ffd700 !important; 
+            color: #000000 !important; 
+            border-color: #ffd700 !important;
+        }
     </style>
 </head>
 <body class="text-medium">
@@ -100,7 +145,8 @@
     </div>
 
     <main class="modules-container">
-        <div class="back-button-container">
+        
+        <div class="back-button-container" style="padding-left: 0; margin-bottom: 1.5rem; margin-top: 1rem;">
             <a href="modules.html" class="back-button"> &laquo; Back to Modules</a>
         </div>
 
@@ -126,6 +172,7 @@
     </footer>
 
     <script src="script/accessibility-settings.js"></script>
+    <script src="script/modules.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const accessButton = document.querySelector('.accessibility-button');
@@ -227,7 +274,7 @@
                 }
             });
 
-            // ================= TEXT-TO-SPEECH READ ALOUD =================
+            // ================= FIXED: TEXT-TO-SPEECH WITH SYNCED TOGGLE CONTROLS =================
             const speakBtn = document.getElementById('lesson-speak-btn');
             const speakBtnText = document.getElementById('speak-btn-text');
             let isSpeaking = false;

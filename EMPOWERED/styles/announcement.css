@@ -384,6 +384,14 @@ body {
     font-size: 0.85em;
 }
 
+/* ================= Footer ================= */
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: #000000;
+    margin-top: auto;
+}
+
 /* ================= TEXT SIZE ================= */
 
 body.text-small {
@@ -468,9 +476,16 @@ body.high-contrast .accessibility-panel h2,
 body.high-contrast .accessibility-panel label,
 body.high-contrast .contrast-description,
 body.high-contrast .logo h2,
-body.high-contrast .logo p {
+body.high-contrast .logo p
+                            {
     color: white;
 }
+
+body.high-contrast footer {
+    color: #FFFFFF;
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

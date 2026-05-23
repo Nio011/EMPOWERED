@@ -258,6 +258,23 @@ body{
       font-size:22px;
     }
 
+    /* ================= HIGH CONTRAST PROFILE SECTIONS ================= */
+/* Changes the light blue profile circle background to accessible dark grey */
+body.high-contrast .profile-icon {
+    background: #333333 !important;
+    color: #ffffff !important;
+}
+
+/* Forces the username text to render clean white */
+body.high-contrast .profile h4 {
+    color: #ffffff !important;
+}
+
+/* Forces the 'Student' role text tag to stay clearly visible */
+body.high-contrast .profile p {
+    color: #94a3b8 !important; /* Soft high-contrast grey matching global typography guidelines */
+}
+
 /* Text Size Adjustments - PWD Friendly */
 body.text-small {
     font-size: 16px;
