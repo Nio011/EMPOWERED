@@ -185,7 +185,7 @@ body {
     color: #111827;
     font-weight: 600;
     padding-bottom: 0.75em;
-    border-bottom: 2px solid #FFD700;
+    border-bottom: 2px solid transparent; 
 }
 
 .accessibility-panel .feature-group {
@@ -541,3 +541,29 @@ body.text-small .playlist-item .title { font-size: 0.9rem; }
 body.text-small .hero h1 { font-size: 2rem; }
 body.text-small .hero p { font-size: 1rem; }
 body.text-small .accessibility-panel .text-size-button { font-size: 0.875rem; }
+
+body.text-large .accessibility-button { font-size: 1.125rem; }
+body.text-large .profile-info h4 { font-size: 1.25rem; }
+body.text-large .profile-info p { font-size: 1.125rem; }
+body.text-large .back-button-container a.back-button { font-size: 1.25rem; }
+body.text-medium .accessibility-button { font-size: 1rem; }
+body.text-medium .profile-info h4 { font-size: 1.125rem; }
+body.text-medium .profile-info p { font-size: 1rem; }
+body.text-medium .back-button-container a.back-button { font-size: 1rem; }
+body.text-small .accessibility-button { font-size: 0.8rem; }
+body.text-small .profile-info h4 { font-size: 0.9rem; }
+body.text-small .profile-info p { font-size: 0.8rem; }
+body.text-small .back-button-container a.back-button { font-size: 0.9rem; }
+
+body.text-small .accessibility-panel h2 { font-size: 1.1rem; }
+body.text-small .accessibility-panel label { font-size: 0.85rem; }
+body.text-small .accessibility-panel .text-size-button { font-size: 0.875rem; }
+body.text-small .accessibility-panel .contrast-description { font-size: 0.75rem; }
+body.text-medium .accessibility-panel h2 { font-size: 1.25rem; }
+body.text-medium .accessibility-panel label { font-size: 1rem; }
+body.text-medium .accessibility-panel .text-size-button { font-size: 1rem; }
+body.text-medium .accessibility-panel .contrast-description { font-size: 0.875rem; }
+body.text-large .accessibility-panel h2 { font-size: 1.5rem; }
+body.text-large .accessibility-panel label { font-size: 1.15rem; }
+body.text-large .accessibility-panel .text-size-button { font-size: 1.125rem; }
+body.text-large .accessibility-panel .contrast-description { font-size: 1.05rem; }
