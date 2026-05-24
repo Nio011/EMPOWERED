@@ -389,13 +389,13 @@ window.handleAnswer = (selectedIndex) => {
 
     if (isCorrect) {
         points += 10;
-        selectedNode.style.backgroundColor = "#26890c";
+        selectedNode.style.backgroundColor = "#0d5427";
         selectedNode.style.borderColor = "#27ae60";
         
         triggerStarAnimation();
         burstStars();
     } else {
-        selectedNode.style.backgroundColor = "#e21b3c";
+        selectedNode.style.backgroundColor = "#8e0b0b";
         selectedNode.style.borderColor = "#c0392b";
         
         block.classList.add('shake');
@@ -447,7 +447,7 @@ function showAllResults() {
     setTimeout(burstStars, 300);
 
     const backButton = document.getElementById('back-button-container');
-    if (backButton) backButton.style.display = 'block';
+    if (backButton) backButton.style.display = 'none';
 
     const voiceControls = document.getElementById('voice-controls-wrapper');
     if (voiceControls) voiceControls.style.display = 'none';
@@ -475,7 +475,7 @@ function showAllResults() {
                 </div>
 
                 ${!item.isCorrect ? `
-                    <div class="correct" style="margin-top: 8px; padding: 8px; background: #e8f5e9; color: #2e7d32; border-radius: 4px; font-size: 0.9rem;">
+                    <div class="wrong" style="margin-top: 8px; padding: 8px; background: #e8f5e9; color: #2e7d32; border-radius: 4px; font-size: 0.9rem;">
                         <strong>Correct Answer:</strong> ${item.correctAns}
                     </div>
                 ` : `
@@ -503,9 +503,26 @@ function showAllResults() {
                 ${reviewHTML}
             </div>
 
-            <p style="margin-top: 20px; font-size: 0.85rem; color: #888;">
+            <p style="margin-top: 20px; font-size: 0.85rem; color: #888; margin-bottom: 15px;">
                 Scroll to review your performance
             </p>
+
+            <div style="margin-top: 15px;">
+                <button onclick="window.history.back();" style="
+                    background: #0b41b7;
+                    color: white;
+                    border: none;
+                    padding: 10px 25px;
+                    font-size: 1rem;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                    transition: background 0.2s;
+                    transition: all 0.3s ease;
+                " onmouseover="this.style.background='#2980b9'" onmouseout="this.style.background='#3498db'">
+                    « Back
+                </button>
+            </div>
         </div>
     `;
 

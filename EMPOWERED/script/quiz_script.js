@@ -364,13 +364,13 @@ window.handleAnswer = (selectedIndex) => {
 
     if (isCorrect) {
         points += 10;
-        selectedNode.style.backgroundColor = "#26890c";
+        selectedNode.style.backgroundColor = "#0d5427";
         selectedNode.style.borderColor = "#27ae60";
         
         triggerStarAnimation();
         burstStars();
     } else {
-        selectedNode.style.backgroundColor = "#e21b3c";
+        selectedNode.style.backgroundColor = "#8e0b0b";
         selectedNode.style.borderColor = "#c0392b";
         
         block.classList.add('shake');
@@ -484,7 +484,7 @@ function showAllResults() {
 
             <div style="margin-top: 15px;">
                 <button onclick="window.history.back();" style="
-                    background: #3498db;
+                    background: #0b41b7;
                     color: white;
                     border: none;
                     padding: 10px 25px;

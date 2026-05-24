@@ -516,10 +516,10 @@ body.high-contrast footer {
     color:#fff;
 }
 
-.purple{ background:#8b5cf6; }
-.green{ background:#22c55e; }
-.yellow{ background:#fbbf24; }
-.red{ background:#ef4444; }
+.purple{ background:#531ecc; }
+.green{ background:#0d5427; }
+.yellow{ background:#6f4a1f; }
+.red{ background:#8e0b0b; }
 
 /*continue button*/
 
@@ -541,7 +541,7 @@ body.high-contrast footer {
 
     .btn-purple{
       background:#f3e8ff;
-      color:#7c3aed;
+      color:#531ecc;
     }
 
     .btn-purple:hover {
@@ -550,7 +550,7 @@ body.high-contrast footer {
 
     .btn-green{
       background:#dcfce7;
-      color:#16a34a;
+      color:#0d5427;
     }
 
     .btn-green:hover {
@@ -559,7 +559,7 @@ body.high-contrast footer {
 
     .btn-yellow{
       background:#fef3c7;
-      color:#d97706;
+      color:#6f4a1f;
     }
 
     .btn-yellow:hover {
@@ -568,7 +568,7 @@ body.high-contrast footer {
 
     .btn-red{
       background:#fee2e2;
-      color:#ef4444;
+      color:#8e0b0b;
     }
 
     .btn-red:hover {
@@ -577,7 +577,7 @@ body.high-contrast footer {
 
 .badge.badge-upcoming {
     background:#fef3c7;
-    color:#d97706;
+    color:#6f4a1f;
 }
 
 .feature-card-title h2 {
@@ -606,7 +606,7 @@ body.high-contrast footer {
 }
 
 .back-button:hover {
-    color: #2563eb;
+    color: #0b41b7;
     
 }
 

@@ -355,13 +355,13 @@ body {
 }
 
 .nav-box.correct {
-    background: #2ecc71;
+    background: #0d5427;
     border-color: #27ae60;
     color: white;
 }
 
 .nav-box.wrong {
-    background: #e74c3c;
+    background: #8e0b0b;
     border-color: #c0392b;
     color: white;
 }
@@ -457,10 +457,10 @@ body {
     transform: scale(0.98);
 }
 
-.answer-option-row.opt-0 { background-color: #7F00FF; }
-.answer-option-row.opt-1 { background-color: #1368ce; }
-.answer-option-row.opt-2 { background-color: #d89e00; }
-.answer-option-row.opt-3 { background-color: #AA336A; }
+.answer-option-row.opt-0 { background-color: #531ecc; }
+.answer-option-row.opt-1 { background-color: #0b41b7; }
+.answer-option-row.opt-2 { background-color: #6f4a1f; }
+.answer-option-row.opt-3 { background-color: #83214f; }
 
 .mic-btn {
     background: #f0f0f0;
@@ -564,11 +564,11 @@ body {
     background: #e8f5e9;
     border-radius: 6px;
     font-weight: bold;
-    color: #2e7d32;
+    color: #0d5427;
 }
 
-.correct-text { color: #27ae60; font-weight: bold; }
-.wrong-text { color: #e74c3c; font-weight: bold; }
+.correct-text { color: #0d5427; font-weight: bold; }
+.wrong-text { color: #8e0b0b; font-weight: bold; }
 
 .review-list::-webkit-scrollbar { width: 8px; }
 .review-list::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
@@ -752,11 +752,11 @@ body.high-contrast .review-item .wrong {
 }
 
 body.high-contrast .wrong {
-    color: #00ff00 !important;
+    color: #0d5427 !important;
 }
 
 body.high-contrast .correct {
-    color: #00F0FF !important;
+    color: #0b41b7 !important;
 }
 
 body.high-contrast .results-page h1 {
@@ -769,10 +769,36 @@ body.high-contrast .review-list {
     border: 2px solid #FFFFFF !important;
 }
 
-body.high-contrast .back-button {
-    color: #FFD700;
+body.high-contrast .results-page button {
+    background-color: #FFD700 !important;
+    color: #000000 !important;
+    border: 2px solid #FFD700 !important;
+}
+
+body.high-contrast .results-page button:hover {
+    transform: translateY(-2px);
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 body.high-contrast footer {
     color: #FFFFFF;
+}
+
+.question-block .read-aloud-btn:hover {
+    transform: translateY(-2px);
+    background: #e2e4e7 !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+body.high-contrast .read-aloud-btn:hover {
+    transform: translateY(-2px);
+    background: #FFD700 !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.mic-btn:hover {
+    transform: translateY(-2px);
+    background: #e2e4e7 !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
