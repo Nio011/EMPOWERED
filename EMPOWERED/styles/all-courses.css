@@ -393,11 +393,11 @@ body {
       color:#fff;
     }
 
-    .purple{ background:#8b5cf6; }
-    .green{ background:#22c55e; }
-    .yellow{ background:#fbbf24; }
-    .red{ background:#ef4444; }
-    .blue{ background:#2563eb; }
+    .purple{ background:#531ecc; }
+    .green{ background:#0d5427; }
+    .yellow{ background:#6f4a1f; }
+    .red{ background:#8e0b0b; }
+    .blue{ background:#0b41b7; }
 
     .badge{
       display:inline-block;
@@ -410,27 +410,27 @@ body {
 
     .badge-purple{
       background:#f3e8ff;
-      color:#8b5cf6;
+      color:#531ecc;
     }
 
     .badge-green{
       background:#dcfce7;
-      color:#16a34a;
+      color:#0d5427;
     }
 
     .badge-yellow{
       background:#fef3c7;
-      color:#d97706;
+      color:#6f4a1f;
     }
 
     .badge-red{
       background:#fee2e2;
-      color:#ef4444;
+      color:#8e0b0b;
     }
 
     .badge-blue{
       background:#dbeafe;
-      color:#2563eb;
+      color:#0b41b7;
     }
 
     .badge-yellow{
@@ -463,11 +463,11 @@ body {
       border-radius:999px;
     }
 
-    .progress-purple{ width:25%; background:#8b5cf6; }
-    .progress-green{ width:40%; background:#22c55e; }
-    .progress-yellow{ width:60%; background:#fbbf24; }
-    .progress-red{ width:20%; background:#ef4444; }
-    .progress-blue{ width:0%; background:#2563eb; }
+    .progress-purple{ width:25%; background:#531ecc; }
+    .progress-green{ width:40%; background:#0d5427; }
+    .progress-yellow{ width:60%; background:#6f4a1f; }
+    .progress-red{ width:20%; background:#8e0b0b; }
+    .progress-blue{ width:0%; background:#0b41b7; }
 
     .progress-text{
       text-align:right;
@@ -691,9 +691,10 @@ body.high-contrast .feature-card-title h2 {
     color: #FFFFFF;
 }
 
-.body .high-contrast .hero p {
+body.high-contrast .welcome p {
     color: #FFFFFF;
 }
+
 
 body.high-contrast .accessibility-panel {
     background: #000000;
@@ -771,6 +772,10 @@ body.high-contrast .profile-icon {
 
 body.high-contrast .course-card {
     background: #000000;
+}
+
+body.high-contrast .course-card p {
+    color: #FFFFFF;
 }
 
 body.high-contrast .course-card:hover {

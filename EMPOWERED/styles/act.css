@@ -537,7 +537,7 @@ textarea {
 }
 
 .btn-submit {
-    background:#75975e;
+    background:#0d5427;
     color:#FFFFFF;
     width: 100%;
     padding: 16px;
@@ -550,7 +550,7 @@ textarea {
 }
 
 .btn-submit:hover {
-    background:#4b6043;
+    background:#0b4b23;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -565,7 +565,7 @@ textarea {
 }
 
 .upload-zone:hover {
-    border-color: #0056b3;
+    border-color: #0b41b7;
     background: #f0f4ff;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
