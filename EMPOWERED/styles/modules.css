@@ -679,19 +679,15 @@ body.high-contrast .btn-complete { background: #ffd700 !important; color: #00000
 body.high-contrast .lesson-mockup-frame { background: #000000 !important; color: #ffffff !important; border: 2px dashed #ffffff !important; }
 
 /* Dashboard Footer Alignment */
-body.high-contrast footer { 
-    background: #000000 !important; 
-    color: #ffffff !important; 
-    border-top: 2px solid #FFD700 !important; 
+body.high-contrast footer {
+    color: #FFFFFF;
 }
+
 
 /* ================= FOOTER ================= */
 footer {
     text-align: center;
-    padding: 1.5rem;
-    background: #1E2A4A;
-    color: #ffffff;
-    width: 100%;
-    font-size: 0.9rem;
+    padding: 1rem;
+    color: #000000;
     margin-top: auto;
 }
