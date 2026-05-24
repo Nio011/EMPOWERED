@@ -1005,6 +1005,11 @@ body.high-contrast .accessibility-panel .text-size-button.active {
     color: #000000;
 }
 
+body.high-contrast .welcome p {
+    color: #FFFFFF;
+}
+
+
 /* Toggle Switch */
 body.high-contrast .toggle-label {
     background-color: #333333;
@@ -1050,6 +1055,10 @@ body.high-contrast .profile-icon {
 body.high-contrast .section-title a {
     color: #FFD700;
     background: #000000;
+}
+
+body.high-contrast .course-card p {
+    color: #FFFFFF;
 }
 
 body.high-contrast .course-card {
@@ -1104,10 +1113,16 @@ body.high-contrast .circle-inner {
     color: #FFFFFF;
 }
 
+body.high-contrast .circle-inner p {
+    color: #FFFFFF;
+}
+
 body.high-contrast .progress-btn {
     background: #FFD700;
     color: #000000;
 }
+
+
 
 body.high-contrast .task-icon {
     background: #333333;

@@ -691,9 +691,10 @@ body.high-contrast .feature-card-title h2 {
     color: #FFFFFF;
 }
 
-.body .high-contrast .hero p {
+body.high-contrast .welcome p {
     color: #FFFFFF;
 }
+
 
 body.high-contrast .accessibility-panel {
     background: #000000;
@@ -771,6 +772,10 @@ body.high-contrast .profile-icon {
 
 body.high-contrast .course-card {
     background: #000000;
+}
+
+body.high-contrast .course-card p {
+    color: #FFFFFF;
 }
 
 body.high-contrast .course-card:hover {

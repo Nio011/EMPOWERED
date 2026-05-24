@@ -794,6 +794,11 @@ body.high-contrast .profile-icon {
     color: #FFFFFF;
 }
 
+body.high-contrast .welcome p {
+    color: #FFFFFF;
+}
+
+
 body.high-contrast .assignment-card {
     background: #000000;
 }
@@ -813,6 +818,10 @@ body.high-contrast .assignment-icon {
     color: #FFFFFF;
 }
 
+body.high-contrast .assignment-left span {
+    color: #FFFFFF
+}
+
 body.high-contrast .status.due {
     background: #333333;
     color: #FFFFFF;
@@ -827,13 +836,13 @@ body.high-contrast .tab.active {
 }
 
 body.high-contrast .status.due-soon{
-    background: #ff3d3d;
-    color: #FFFFFF;
+    background: #ec2222;
+    color: #000000;
 }
 
 body.high-contrast .status.upcoming {
-    background: #ffd014;
-    color: #FFFFFF;
+    background: #ffa200;
+    color: #000000;
 }
 
 body.high-contrast .icon {
