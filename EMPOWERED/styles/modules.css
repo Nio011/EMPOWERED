@@ -614,7 +614,9 @@ body.high-contrast .module-header h3,
 body.high-contrast .module-header h3 span,
 body.high-contrast .module-header .progress-text,
 body.high-contrast .module-header .global-badge-m1,
-body.high-contrast .module-header .global-badge-m2 {
+body.high-contrast .module-header .global-badge-m2
+body .high-contrast .hero p,
+body.high-contrast .logo p {
     color: #ffffff !important;
 }
 

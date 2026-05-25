@@ -823,15 +823,16 @@ body.high-contrast .navbar {
 
 /* Headings */
 body.high-contrast .hero h2,
-body.high-contrast .feature-card-title h2 {
+body.high-contrast .feature-card-title h2,
+body.high-contrast .logo p{
     color: #FFFFFF;
 }
 
-.body .high-contrast .hero p {
+body .high-contrast .hero p {
     color: #FFFFFF;
 }
 
-.body .high-contrast .feature-card p {
+body .high-contrast .feature-card p {
     color: #FFFFFF;
 }
 
