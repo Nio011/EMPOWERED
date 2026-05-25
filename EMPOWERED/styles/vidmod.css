@@ -519,6 +519,10 @@ body.high-contrast footer {
 }
 
 /* --- Font Scaling --- */
+body.text-small { font-size: 16px; line-height: 1.6; }
+body.text-medium { font-size: 18px; line-height: 1.6; }
+body.text-large { font-size: 20px; line-height: 1.7; }
+
 body.text-large .custom-card h4 { font-size: 1.75rem; }
 body.text-large .custom-card h5 { font-size: 1.5rem; }
 body.text-large .description-text { font-size: 1.15rem; }
