@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     <style>
-        /* Isolated presentation formatting rules for the core layout card structure */
+        /* Presentation formatting rules for the core layout card structure */
         .content-card { 
             background: white; 
             padding: 3rem; 
@@ -57,7 +57,7 @@
         .lesson-body ul { margin: 0 0 1.5rem 1.5rem; }
         .lesson-body li { margin-bottom: 0.5rem; color: #4b5563; }
 
-        /* ================= FIXED: TEXT SCALING DESIGN MATRICES ================= */
+        /* ================= SYSTEM ACCESSIBILITY SCALING OVERRIDES ================= */
         body.text-small { font-size: 16px !important; line-height: 1.6; }
         body.text-small #lesson-title { font-size: 2rem !important; }
         body.text-small .lesson-body h3 { font-size: 1.3rem !important; }
@@ -73,13 +73,12 @@
         body.text-large .lesson-body h3 { font-size: 2rem !important; }
         body.text-large .lesson-body p, body.text-large .lesson-body li { font-size: 1.375rem !important; }
 
-        /* ================= FIXED: HIGH CONTRAST STRUCTURAL OVERRIDES ================= */
+        /* ================= HIGH CONTRAST STRUCTURAL OVERRIDES ================= */
         body.high-contrast .content-card { 
             background: #000000 !important; 
             border: 2px solid #ffffff !important; 
         }
         
-        /* Forces all text items inside the canvas to turn white */
         body.high-contrast #lesson-title,
         body.high-contrast .lesson-body h3,
         body.high-contrast .lesson-body p,
@@ -175,32 +174,6 @@
     <script src="script/modules.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const accessButton = document.querySelector('.accessibility-button');
-            const panel = document.getElementById('accessibility-panel');
-            const textSizeButtons = document.querySelectorAll('.text-size-button');
-            const contrastToggle = document.getElementById('high-contrast-toggle');
-
-            if (typeof AccessibilitySettings !== 'undefined') AccessibilitySettings.apply();
-
-            if (accessButton && panel) {
-                accessButton.addEventListener('click', (e) => { e.stopPropagation(); panel.classList.toggle('open'); });
-                document.addEventListener('click', (e) => { if (!e.target.closest('.accessibility-menu')) panel.classList.remove('open'); });
-            }
-
-            textSizeButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    textSizeButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    if (typeof AccessibilitySettings !== 'undefined') { AccessibilitySettings.updateBodyClasses(); AccessibilitySettings.save(); }
-                });
-            });
-
-            if (contrastToggle) {
-                contrastToggle.addEventListener('change', () => {
-                    if (typeof AccessibilitySettings !== 'undefined') { AccessibilitySettings.updateBodyClasses(); AccessibilitySettings.save(); }
-                });
-            }
-
             // ================= LESSON CURRICULUM KNOWLEDGE BASE =================
             const lessons = {
                 "1-1": {
@@ -251,7 +224,7 @@
             document.getElementById('lesson-title').innerText = data.title;
             document.getElementById('lesson-text').innerHTML = data.content;
 
-            // ================= SHARED TOGGLE STATE HANDLER =================
+            // ================= LESSON PAGE PROGRESS STATE TOGGLE =================
             const completeBtn = document.getElementById('page-complete-btn');
             const completeBtnText = document.getElementById('complete-btn-text');
             const storageKey = `lesson_${lessonId}_complete`;
@@ -274,7 +247,7 @@
                 }
             });
 
-            // ================= FIXED: TEXT-TO-SPEECH WITH SYNCED TOGGLE CONTROLS =================
+            // ================= DYNAMIC LESSON PAGE SPEECH SYNTHESIS ENGINE =================
             const speakBtn = document.getElementById('lesson-speak-btn');
             const speakBtnText = document.getElementById('speak-btn-text');
             let isSpeaking = false;
@@ -306,7 +279,6 @@
                     }
                 });
             }
-            window.addEventListener('beforeunload', () => window.speechSynthesis.cancel());
         });
     </script>
 </body>
