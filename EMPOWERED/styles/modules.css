@@ -70,7 +70,7 @@ main {
 
 .logo p {
     font-size: 12px;
-    color: #6b7280;
+    color: #74767b;
 }
 
 .nav-controls {
@@ -112,7 +112,7 @@ main {
 
 .accessibility-panel {
     border: 1px solid #c7d2fe;
-    background: #eef2ff;
+    background: #f5f7ff;
     color: #2563eb;
     font-weight: 600;
     align-items: center;
@@ -490,7 +490,7 @@ body.high-contrast .profile p {
     color: #15803d;
 }
 .module-card.m2-green-theme .progress-text {
-    color: #16a34a;
+    color: #107b38;
     font-weight: 600;
     margin-left: 10px;
 }
@@ -517,7 +517,7 @@ body.high-contrast .profile p {
 .m2-green-theme .lesson-mockup-frame {
     background: #ede9fe; 
     border: 1px solid #86efac;
-    color: #16a34a;
+    color: #107b38;
 }
 
 /* Interactive Action Buttons */

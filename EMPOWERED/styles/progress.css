@@ -56,7 +56,7 @@ body {
 
     .logo p{
       font-size:12px;
-      color:#6b7280;
+      color:#74767b;
     }
 
     /*SIDEBAR MENU*/
@@ -173,7 +173,7 @@ body {
 
 .accessibility-panel {
     border:1px solid #c7d2fe;
-    background:#eef2ff;
+    background:#f5f7ff;
     color:#2563eb;
     font-weight:600;
     align-items:center;
