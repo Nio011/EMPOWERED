@@ -17,7 +17,7 @@ body {
 main {
     flex: 1 0 auto;
     width: 100%;
-    max-width: 100%; /* Allows the cards to stretch fluidly across the viewport */
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -70,7 +70,7 @@ main {
 
 .logo p {
     font-size: 12px;
-    color: #6b7280;
+    color: #74767b;
 }
 
 .nav-controls {
@@ -112,7 +112,7 @@ main {
 
 .accessibility-panel {
     border: 1px solid #c7d2fe;
-    background: #eef2ff;
+    background: #f5f7ff;
     color: #2563eb;
     font-weight: 600;
     align-items: center;
@@ -196,7 +196,7 @@ main {
     border-color: #0f172a;
 }
 
-/* Toggle Switch Styles */
+/* Toggle Switch Track Styles */
 .toggle-switch {
     display: flex;
     align-items: center;
@@ -244,7 +244,7 @@ main {
     margin-bottom: 0;
 }
 
-/* Profile Metadata Layout */
+/* Profile Badge Layout */
 .profile {
     display: flex;
     align-items: center;
@@ -278,9 +278,9 @@ body.high-contrast .profile p {
     color: #94a3b8 !important;
 }
 
-/* ================= MODULE CONTENT HOUSING UI ================= */
+/* ================= WORKSPACE CONTAINERS ================= */
 .modules-container {
-    padding: 2rem 7rem; /* Spacing coordinates match up with header elements */
+    padding: 2rem 7rem;
 }
 
 .back-button-container {
@@ -295,7 +295,7 @@ body.high-contrast .profile p {
 }
 
 .back-button:hover {
-    color: #0b41b7;
+    color: #2563eb;
 }
 
 /* Course Overview Summary Progress Banner Layout */
@@ -308,7 +308,7 @@ body.high-contrast .profile p {
     align-items: center;
     margin-bottom: 30px;
     border: 1px solid #e5e7eb;
-    width: 100%; /* Restored wide execution behavior across page columns */
+    width: 100%;
 }
 
 .overview-left {
@@ -325,7 +325,7 @@ body.high-contrast .profile p {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #531ecc;
+    color: #7c3aed;
     font-size: 42px;
 }
 
@@ -369,21 +369,21 @@ body.high-contrast .profile p {
 .progress-fill {
     width: 0%;
     height: 100%;
-    background: #531ecc;
+    background: #7c3aed;
 }
 
 .progress-wrapper small {
     color: #6b7280;
 }
 
-/* ================= LESSON CARD ELEMENTS LAYOUT ================= */
+/* ================= LESSON CARD PATH STRUCTURE ELEMENTS ================= */
 .module-card {
     background: white;
     border-radius: 12px;
     margin-bottom: 1.5rem;
     border: 1px solid #e0e6ed;
     overflow: hidden;
-    width: 100%; /* Restored wide card alignment layout blocks */
+    width: 100%;
 }
 
 .module-header {
@@ -471,35 +471,35 @@ body.high-contrast .profile p {
 /* Module Theming Variant Badges */
 .module-card.m1-violet-theme .module-header {
     background: #faf5ff;
-    border-left: 5px solid #531ecc;
+    border-left: 5px solid #8b5cf6;
 }
 .module-card.m1-violet-theme .module-header h3 {
-    color: #531ecc;
+    color: #6d28d9;
 }
 .module-card.m1-violet-theme .progress-text {
-    color: #531ecc;
+    color: #7c3aed;
     font-weight: 600;
     margin-left: 10px;
 }
 
 .module-card.m2-green-theme .module-header {
     background: #f0fdf4;
-    border-left: 5px solid #0d5427;
+    border-left: 5px solid #22c55e;
 }
 .module-card.m2-green-theme .module-header h3 {
-    color: #0d5427;
+    color: #15803d;
 }
 .module-card.m2-green-theme .progress-text {
-    color: #0d5427;
+    color: #107b38;
     font-weight: 600;
     margin-left: 10px;
 }
 
-/* Mockup Icons Layout Grid - Balanced Square Dimensions */
+/* Square Thumbnails Design Parameters */
 .lesson-mockup-frame {
     width: 90px;  
     height: 90px;
-    border-radius: 25px; /* Matches math template curves safely */
+    border-radius: 25px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -511,16 +511,16 @@ body.high-contrast .profile p {
 .m1-violet-theme .lesson-mockup-frame {
     background: #ede9fe; 
     border: 1px solid #d8b4fe;
-    color: #531ecc;
+    color: #9333ea;
 }
 
 .m2-green-theme .lesson-mockup-frame {
     background: #ede9fe; 
     border: 1px solid #86efac;
-    color: #0d5427;
+    color: #107b38;
 }
 
-/* Interactive Action Form Button Switches */
+/* Interactive Action Buttons */
 .btn-complete {
     background: #050509;
     color: white;
@@ -535,7 +535,7 @@ body.high-contrast .profile p {
 }
 
 .btn-complete.finished {
-    background: #0d5427;
+    background: #2ecc71;
 }
 
 .speak-btn {
@@ -564,7 +564,7 @@ body.high-contrast .profile p {
 .speak-btn.reading {
     background: #fee2e2 !important;
     border-color: #fca5a5 !important;
-    color: #8e0b0b !important;
+    color: #b91c1c !important;
 }
 
 /* ================= SYSTEM ACCESSIBILITY SCALING OVERRIDES ================= */
@@ -610,7 +610,6 @@ body.high-contrast .overview-icon { background: #1a1a1a !important; color: #ffd7
 body.high-contrast .progress-bar { background: #333333 !important; border: 1px solid #ffffff !important; }
 body.high-contrast .progress-fill { background: #ffd700 !important; }
 
-/* Module Headers & Badges Typography Color Swaps */
 body.high-contrast .module-header h3,
 body.high-contrast .module-header h3 span,
 body.high-contrast .module-header .progress-text,
@@ -619,7 +618,6 @@ body.high-contrast .module-header .global-badge-m2 {
     color: #ffffff !important;
 }
 
-/* Module structural containers keep standard accessible white lines */
 body.high-contrast .module-card { 
     background: #000000 !important; 
     border: 2px solid #ffffff !important; 
@@ -639,10 +637,9 @@ body.high-contrast .lesson-title {
     color: #ffffff !important; 
 }
 
-/* Isolated high contrast yellow target applied strictly to the speak button element node */
 body.high-contrast .speak-btn {
     background: #1a1a1a !important;
-    border: 2px solid #FFD700 !important; 
+    border: 2px solid #FFD700 !important;
     color: #FFD700 !important;
 }
 
@@ -679,15 +676,20 @@ body.high-contrast .btn-complete { background: #ffd700 !important; color: #00000
 body.high-contrast .lesson-mockup-frame { background: #000000 !important; color: #ffffff !important; border: 2px dashed #ffffff !important; }
 
 /* Dashboard Footer Alignment */
-body.high-contrast footer {
-    color: #FFFFFF;
+body.high-contrast footer { 
+    background: #000000 !important; 
+    color: #ffffff !important; 
+    border-top: 2px solid #FFD700 !important; 
 }
 
 
 /* ================= FOOTER ================= */
 footer {
     text-align: center;
-    padding: 1rem;
-    color: #000000;
+    padding: 1.5rem;
+    background: #1E2A4A;
+    color: #ffffff;
+    width: 100%;
+    font-size: 0.9rem;
     margin-top: auto;
 }

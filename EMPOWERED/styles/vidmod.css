@@ -55,7 +55,7 @@ body {
 }
 
 .brand-text p {
-    color: #6b7280; 
+    color: #74767b; 
     margin: 0;
     font-size: 12px;          
 }
@@ -92,7 +92,7 @@ body {
 }
 
 .brand-text p {
-    color: #6b7280;
+    color: #74767b;
     margin: 0;
     font-size: 13px;
 }
@@ -161,7 +161,7 @@ body {
 /* Accessibility Panel Setup */
 .accessibility-panel {
     border: 1px solid #c7d2fe;
-    background: #eef2ff;
+    background: #f5f7ff;
     color: #2563eb;
     font-weight: 600;
     position: absolute;
@@ -519,6 +519,10 @@ body.high-contrast footer {
 }
 
 /* --- Font Scaling --- */
+body.text-small { font-size: 16px; line-height: 1.6; }
+body.text-medium { font-size: 18px; line-height: 1.6; }
+body.text-large { font-size: 20px; line-height: 1.7; }
+
 body.text-large .custom-card h4 { font-size: 1.75rem; }
 body.text-large .custom-card h5 { font-size: 1.5rem; }
 body.text-large .description-text { font-size: 1.15rem; }

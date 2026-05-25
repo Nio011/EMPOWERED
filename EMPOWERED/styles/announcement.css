@@ -64,7 +64,7 @@ body {
 
 .logo p{
     font-size:12px;
-    color:#6b7280;
+    color:#74767b;
 }
 
 
@@ -107,7 +107,7 @@ body {
 
 .accessibility-panel {
     border:1px solid #c7d2fe;
-    background:#eef2ff;
+    background:#f5f7ff;
     color:#2563eb;
     font-weight:600;
     align-items:center;
@@ -395,15 +395,123 @@ footer {
 /* ================= TEXT SIZE ================= */
 
 body.text-small {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+body.text-small .header-container h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+}
+
+body.text-small .header-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+body.text-small .title-wrap h3 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+}
+
+body.text-small .meta-info {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+body.text-small .body-text {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+body.text-small .speak-btn {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+body.text-small .tag-red {
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 body.text-medium {
     font-size: 18px;
+    line-height: 1.6;
+}
+
+body.text-medium .header-container h1 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+}
+
+body.text-medium .header-container p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+body.text-medium .title-wrap h3 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+body.text-medium .meta-info {
+    font-size: 1.125rem;
+    line-height: 1.4;
+}
+
+body.text-medium .body-text {
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+body.text-medium .speak-btn {
+    font-size: 1.125rem;
+    line-height: 1.4;
+}
+
+body.text-medium .tag-red {
+    font-size: 1.125rem;
+    line-height: 1.4;
 }
 
 body.text-large {
-    font-size: 22px;
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+body.text-large .header-container h1 {
+    font-size: 3rem;
+    line-height: 1.3;
+}
+
+body.text-large .header-container p {
+    font-size: 1.375rem;
+    line-height: 1.7;
+}
+
+body.text-large .title-wrap h3 {
+    font-size: 1.75rem;
+    line-height: 1.7;
+}
+
+body.text-large .meta-info {
+    font-size: 1.375rem;
+    line-height: 1.7;
+}
+
+body.text-large .body-text {
+    font-size: 1.375rem;
+    line-height: 1.7;
+}
+
+body.text-large .speak-btn {
+    font-size: 1.375rem;
+    line-height: 1.7;
+}
+
+body.text-large .tag-red {
+    font-size: 1.375rem;
+    line-height: 1.7;
 }
 
 /* ================= HIGH CONTRAST ================= */
