@@ -430,7 +430,9 @@ body.high-contrast .feature-card-title h2 {
     color: #FFFFFF;
 }
 
-.body .high-contrast .hero p {
+body .high-contrast .hero p,
+body.high-contrast .logo p,
+body.high-contrast .header p{
     color: #FFFFFF;
 }
 

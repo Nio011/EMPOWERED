@@ -437,6 +437,11 @@ body.high-contrast .badge-custom {
     border: 1px solid #ffff00;
 }
 
+body .high-contrast .hero p,
+body.high-contrast .logo p {
+    color: #FFFFFF;
+}
+
 /* Accessibility Panel High Contrast */
 body.high-contrast .accessibility-panel {
     background-color: #000000;

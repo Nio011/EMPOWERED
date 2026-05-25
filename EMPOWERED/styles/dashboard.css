@@ -973,6 +973,10 @@ body.high-contrast .feature-card-title h2 {
     color: #FFFFFF;
 }
 
+body.high-contrast .logo p {
+    color: white;
+}
+
 body.high-contrast .accessibility-panel {
     background: #000000;
     border: 2px solid #FFD700;

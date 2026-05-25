@@ -631,17 +631,20 @@ body.high-contrast .tag-red {
     border: 1px solid white;
 }
 
+body.high-contrast .body-text,
+body.high-contrast .welcome p,
 body.high-contrast .meta-info,
 body.high-contrast .meta-info span,
-body.high-contrast .body-text,
-body.high-contrast .body-text p,
-body.high-contrast .logo p,
-body.high-contrast .brand-text p {
-    color: #74767b !important; /* Your new high-contrast tagline color */
-}
-body.high-contrast .welcome p,
-body.high-contrast footer {
-    color: #FFFFFF;
+body.high-contrast .title-wrap h3,
+body.high-contrast .back-btn,
+body.high-contrast .header-container h1,
+body.high-contrast .header-container p,
+body.high-contrast .accessibility-panel,
+body.high-contrast .accessibility-panel h2,
+body.high-contrast .accessibility-panel label,
+body.high-contrast .contrast-descriptio,
+body.high-contrast .logo p {
+    color: white;
 }
 
 /* Text Size Buttons */

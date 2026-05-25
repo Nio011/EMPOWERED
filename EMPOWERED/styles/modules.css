@@ -614,7 +614,9 @@ body.high-contrast .module-header h3,
 body.high-contrast .module-header h3 span,
 body.high-contrast .module-header .progress-text,
 body.high-contrast .module-header .global-badge-m1,
-body.high-contrast .module-header .global-badge-m2 {
+body.high-contrast .module-header .global-badge-m2
+body .high-contrast .hero p,
+body.high-contrast .logo p {
     color: #ffffff !important;
 }
 
@@ -675,19 +677,21 @@ body.high-contrast .read-tag { background: #1a1a1a !important; color: #ffd700 !i
 body.high-contrast .btn-complete { background: #ffd700 !important; color: #000000 !important; }
 body.high-contrast .lesson-mockup-frame { background: #000000 !important; color: #ffffff !important; border: 2px dashed #ffffff !important; }
 
-/* FIXED: Drops border top rules completely to match course-button.html specifications */
+/* Dashboard Footer Alignment */
 body.high-contrast footer { 
-    background: transparent !important; 
+    background: #000000 !important; 
     color: #ffffff !important; 
-    border-top: none !important; 
+    border-top: 2px solid #FFD700 !important; 
 }
+
 
 /* ================= FOOTER ================= */
 footer {
     text-align: center;
-    padding: 1rem; /* FIXED: Synced exactly with course-buttons template guidelines */
-    background: transparent; 
-    color: #000000;           
+    padding: 1.5rem;
+    background: #1E2A4A;
+    color: #ffffff;
     width: 100%;
+    font-size: 0.9rem;
     margin-top: auto;
 }

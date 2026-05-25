@@ -691,7 +691,8 @@ body.high-contrast .feature-card-title h2 {
     color: #FFFFFF;
 }
 
-body.high-contrast .welcome p {
+body.high-contrast .welcome p,
+body.high-contrast .logo p {
     color: #FFFFFF;
 }
 

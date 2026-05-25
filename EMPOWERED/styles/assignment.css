@@ -712,7 +712,8 @@ body.high-contrast .navbar {
 
 /* Headings */
 body.high-contrast .hero h2,
-body.high-contrast .feature-card-title h2 {
+body.high-contrast .feature-card-title h2,
+body.high-contrast .logo p{
     color: #FFFFFF;
 }
 

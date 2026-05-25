@@ -582,8 +582,7 @@ body.high-contrast .header-container p,
 body.high-contrast .accessibility-panel,
 body.high-contrast .accessibility-panel h2,
 body.high-contrast .accessibility-panel label,
-body.high-contrast .contrast-description,
-body.high-contrast .logo h2,
+body.high-contrast .contrast-descriptio,
 body.high-contrast .logo p
                             {
     color: white;
